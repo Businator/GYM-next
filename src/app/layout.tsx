@@ -1,7 +1,5 @@
+import { integral } from "'@/assets/styles/fonts'";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "GYM",
@@ -15,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={"flex justify-center m-auto bg-black text-white"}>
+        {children}
+      </body>
     </html>
   );
 }
