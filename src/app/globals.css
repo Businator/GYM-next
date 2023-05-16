@@ -5,3 +5,7 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  @apply flex flex-col justify-center m-auto bg-black text-white;
+}

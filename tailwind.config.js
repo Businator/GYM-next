@@ -14,7 +14,12 @@ module.exports = {
         "acid-green": "#D6FD51",
       },
       backgroundImage: {
-        hero: 'url("/image/hero.jpg")',
+        "hero-img": 'url("/image/hero.jpg")',
+        "hero-gradient":
+          "linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(0,0,0,0.2825552825552825) 50%, rgba(23,23,23,1) 100%)",
+      },
+      backgroundPosition: {
+        "hero-position": "center top -300px;",
       },
     },
   },

@@ -1,13 +1,10 @@
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
 const integral = localFont({
   src: "../fonts/IntegralCF-Medium.woff2",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["cyrillic", "latin"],
-});
+const openSans = Open_Sans({ subsets: ["cyrillic", "latin"] });
 
-export { integral, inter };
+export { integral, openSans };

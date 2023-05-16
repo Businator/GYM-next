@@ -1,43 +1,27 @@
 import { Button } from "'@/components/UI/button/Button'";
-import { Logo } from "'@/components/UI/logo/Logo'";
-import Image from "next/image";
 import Link from "next/link";
-import { integral } from "../../public/styles/fonts";
+import { integral, openSans } from "../../public/styles/fonts";
+import { Header } from "'@/components/UI/header/Header'";
+import { Hero } from "./components/hero/Hero";
+import { Footer } from "'@/components/UI/footer/Footer'";
 
 export default function Home() {
   return (
-    <section className="bg-hero">
-      <header className="flex gap-4">
-        <Logo />
-        <ul className="flex gap-2">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/shop"}>Shop</Link>
-          <Link href={"/App"}>App</Link>
-          <Link href={"/blog"}>Blog</Link>
-          <Link href={"/contact"}>Contact</Link>
-        </ul>
-        <ul className="flex gap-2">
-          <li>Search</li>
-          <li>Message</li>
-        </ul>
-      </header>
-      <main>
-        <h1 className={integral.className}>WORK WITH PROFFESOINALS</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          architecto inventore nihil sint accusamus fugiat, aut ducimus
-          perferendis cupiditate eum vitae ratione, repudiandae, error quas
-          doloremque. Ex soluta eius sequi.
-        </p>
-        <Button>START NOW</Button>
-        <Link className={integral.className} href={"/about"}>
-          Learn more
-        </Link>
-        <div>
-          <button>Left</button>
-          <button>Right</button>
+    <>
+      <div className="bg-hero-img bg-hero-position bg-no-repeat h-[600px] w-full">
+        <div className="bg-hero-gradient h-full w-full flex flex-col items-center justify-between gap-y-36">
+          <Header />
+          <main className="max-w-7xl flex flex-col items-center gap-y-4">
+            <Hero />
+          </main>
+          <div
+            className={`${integral.className} w-full text-center bg-acid-green text-black py-1`}
+          >
+            DRAWING UP AN INDIVIDUAL TRAINING PROGRAM BEST PROFFESSIONAL
+          </div>
         </div>
-      </main>
-    </section>
+      </div>
+      <Footer />
+    </>
   );
 }
