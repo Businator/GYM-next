@@ -1,0 +1,38 @@
+.about {
+  @apply flex flex-col gap-y-6;
+
+  h2 {
+    @apply text-left text-3xl;
+  }
+
+  img {
+    @apply rounded-default;
+  }
+
+  .description {
+    @apply flex;
+  }
+
+  .content {
+    @apply flex;
+
+    .circs {
+      @apply flex gap-4 w-1/2;
+      .cirgBg {
+        @apply relative rounded-full w-36 h-36 bg-acid-green flex items-center justify-center;
+
+        .circImg {
+          @apply rounded-full w-[95%] h-[95%] object-cover;
+        }
+      }
+    }
+
+    .contentDescription {
+      @apply flex gap-4 w-1/2;
+
+      h3 {
+        @apply text-amber-500;
+      }
+    }
+  }
+}

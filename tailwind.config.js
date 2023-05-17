@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      margin: {
+        default: "0 auto",
+      },
       backgroundColor: {
         "acid-green": "#D6FD51",
       },
@@ -20,13 +23,16 @@ module.exports = {
         "hero-position": "center top -300px;",
       },
       maxWidth: {
-        container: "80rem",
+        container: "50rem",
       },
       boxShadow: {
         button: "0px 0px 60px 0px #D6FD51",
       },
       colors: {
         "acid-green": "#D6FD51",
+      },
+      borderRadius: {
+        default: "15px",
       },
     },
   },
