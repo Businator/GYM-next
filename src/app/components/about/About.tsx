@@ -9,9 +9,9 @@ import { Button } from "'@/components/UI/button/Button'";
 
 export const About = () => {
   return (
-    <section className={styles.about}>
+    <section>
       <h2 className={integral.className}>ABOUT OUR GYM</h2>
-      <Image src={aboutImg} alt="A man with a barbell" />
+      <Image src={aboutImg} alt="A man with a dumbbell" />
       <div className={styles.description}>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Header } from "'@/components/UI/header/Header'";
 import clsx from "clsx";
 import styles from "./Hero.module.scss";
+import { Learn } from "'@/components/UI/learn/Learn'";
 
 export const Hero = () => {
   return (
@@ -20,9 +21,7 @@ export const Hero = () => {
           </p>
           <div>
             <Button>START NOW</Button>
-            <Link className={integral.className} href={"/about"}>
-              Learn more
-            </Link>
+            <Learn />
           </div>
           <div className={styles.buttonsContainer}>
             <button>Left</button>
