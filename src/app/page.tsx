@@ -1,15 +1,6 @@
-import { Hero } from "./components/hero/Hero";
-import { Footer } from "'@/components/UI/footer/Footer'";
-import { About } from "./components/about/About";
-import { Choose } from "./components/choose/Choose";
+import Main from "'@/pages/main/Main'";
+import React from "react";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Choose />
-      <About />
-      <Footer />
-    </>
-  );
+  return <Main />;
 }

@@ -5,9 +5,9 @@ import bottle from "./assets/image/bottle.png";
 import dumbbell from "./assets/image/dumbbell.png";
 import exspander from "./assets/image/exspander.png";
 import { Learn } from "'@/components/UI/learn/Learn'";
+import { integral } from "../../../../assets/fonts/fonts";
 
 import styles from "./Choose.module.scss";
-import { integral } from "../../../../public/styles/fonts";
 
 export const Choose = () => {
   return (

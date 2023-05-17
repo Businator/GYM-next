@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { integral } from "../../../../public/styles/fonts";
+import { integral } from "../../../assets/fonts/fonts";
 
 export const Learn = () => {
   return (

@@ -1,5 +1,5 @@
 .hero {
-  @apply bg-hero-img bg-hero-position bg-no-repeat h-[600px] w-full;
+  @apply bg-[url('./assets/image/hero.jpg')] bg-hero-position bg-no-repeat h-[600px] w-full;
 
   .heroBg {
     @apply bg-hero-gradient h-full w-full flex flex-col items-center justify-between gap-y-36;

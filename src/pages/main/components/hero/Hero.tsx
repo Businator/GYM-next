@@ -1,8 +1,7 @@
 import React from "react";
-import { integral, openSans } from "../../../../public/styles/fonts";
+import { integral, openSans } from "../../../../assets/fonts/fonts";
 import { Button } from "'@/components/UI/button/Button'";
-import Link from "next/link";
-import { Header } from "'@/components/UI/header/Header'";
+import { Header } from "'@/components/header/Header'";
 import clsx from "clsx";
 import styles from "./Hero.module.scss";
 import { Learn } from "'@/components/UI/learn/Learn'";

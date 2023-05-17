@@ -1,5 +1,5 @@
 import React from "react";
-import { integral } from "../../../../public/styles/fonts";
+import { integral } from "../../../assets/fonts/fonts";
 import clsx from "clsx";
 
 import styles from "./Button.module.scss";

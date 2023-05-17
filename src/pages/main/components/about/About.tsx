@@ -1,9 +1,9 @@
 import React from "react";
-import { integral } from "../../../../public/styles/fonts";
+import { integral } from "../../../../assets/fonts/fonts";
 import Image from "next/image";
-import aboutImg from "../../../../public/image/about.jpg";
-import aboutCircOne from "../../../../public/image/about-circ-1.jpg";
-import aboutCircTwo from "../../../../public/image/about-circ-2.jpg";
+import aboutImg from "./assets/image/about.jpg";
+import aboutCircOne from "./assets/image/about-circ-1.jpg";
+import aboutCircTwo from "./assets/image/about-circ-2.jpg";
 import styles from "./About.module.scss";
 import { Button } from "'@/components/UI/button/Button'";
 

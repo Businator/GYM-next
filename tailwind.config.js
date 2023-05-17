@@ -15,7 +15,6 @@ module.exports = {
       },
 
       backgroundImage: {
-        "hero-img": 'url("/image/hero.jpg")',
         "hero-gradient":
           "linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(0,0,0,0.2825552825552825) 50%, rgba(23,23,23,1) 100%)",
       },
