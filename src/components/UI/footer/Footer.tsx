@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo } from "../logo/Logo";
 
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   return (

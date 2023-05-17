@@ -1,0 +1,23 @@
+.footer {
+  @apply flex justify-around py-12;
+
+  div {
+    @apply flex flex-col gap-y-4 w-1/4;
+
+    ul {
+      @apply flex gap-4;
+    }
+  }
+
+  ul {
+    @apply flex gap-16;
+
+    h4 {
+      @apply text-acid-green;
+    }
+
+    ul {
+      @apply flex flex-col gap-2 mt-4;
+    }
+  }
+}

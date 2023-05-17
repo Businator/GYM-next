@@ -7,12 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        "3xl": "0px 0px 60px 0px #D6FD51",
-      },
       backgroundColor: {
         "acid-green": "#D6FD51",
       },
+
       backgroundImage: {
         "hero-img": 'url("/image/hero.jpg")',
         "hero-gradient":
@@ -20,6 +18,15 @@ module.exports = {
       },
       backgroundPosition: {
         "hero-position": "center top -300px;",
+      },
+      maxWidth: {
+        container: "80rem",
+      },
+      boxShadow: {
+        button: "0px 0px 60px 0px #D6FD51",
+      },
+      colors: {
+        "acid-green": "#D6FD51",
       },
     },
   },

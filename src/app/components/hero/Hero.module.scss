@@ -1,0 +1,31 @@
+.hero {
+  @apply bg-hero-img bg-hero-position bg-no-repeat h-[600px] w-full;
+
+  .heroBg {
+    @apply bg-hero-gradient h-full w-full flex flex-col items-center justify-between gap-y-36;
+
+    section {
+      @apply max-w-container flex flex-col items-center gap-y-4;
+
+      h1 {
+        @apply text-5xl text-center;
+      }
+
+      p {
+        @apply text-center text-gray-200;
+      }
+
+      div {
+        @apply flex items-center gap-8;
+      }
+
+      .buttonsContainer {
+        @apply flex gap-4;
+      }
+    }
+
+    .slider {
+      @apply w-full text-center bg-acid-green text-black py-1;
+    }
+  }
+}

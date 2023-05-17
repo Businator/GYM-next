@@ -1,7 +1,8 @@
 import React from "react";
 import { integral } from "../../../../public/styles/fonts";
+import clsx from "clsx";
 
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
 type ButtonType = {
   children: string;
@@ -9,7 +10,7 @@ type ButtonType = {
 
 export const Button = ({ children }: ButtonType) => {
   return (
-    <button className={`${styles.button} ${integral.className}`}>
+    <button className={clsx([styles.button, integral.className])}>
       {children}
     </button>
   );
