@@ -1,0 +1,11 @@
+.container {
+  @apply flex gap-3;
+
+  div {
+    @apply w-1/4 h-60;
+
+    img {
+      @apply h-[90%] object-cover;
+    }
+  }
+}

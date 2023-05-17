@@ -16,6 +16,10 @@ body {
       @apply text-left text-3xl;
     }
 
+    p {
+      @apply text-gray-200;
+    }
+
     img {
       @apply rounded-default;
     }
