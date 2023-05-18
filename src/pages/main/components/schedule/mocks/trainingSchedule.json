@@ -1,0 +1,70 @@
+[
+  {
+    "dayOfWeek": "mon",
+    "dailySchedule": [
+      { "typeOfTraining": "open gym", "time": ["8.00 AM", "9.00 AM"] },
+      { "typeOfTraining": "crossfit", "time": ["10.00 AM"] },
+      { "typeOfTraining": "cardio", "time": ["11.00 AM"] },
+      { "typeOfTraining": "cardio", "time": ["1.00 PM"] }
+    ]
+  },
+  {
+    "dayOfWeek": "tue",
+    "dailySchedule": [
+      { "typeOfTraining": "cardio", "time": ["8.00 AM", "9.00 AM"] },
+      { "typeOfTraining": "crossfit", "time": ["10.00 AM"] },
+      { "typeOfTraining": "open gym", "time": ["12.00 AM"] }
+    ]
+  },
+  {
+    "dayOfWeek": "wed",
+    "dailySchedule": [
+      {
+        "typeOfTraining": "open gym",
+        "time": ["8.00 AM", "9.00 AM", "10.00 AM"]
+      },
+      { "typeOfTraining": "crossfit", "time": ["12.00 AM"] },
+      { "typeOfTraining": "cardio", "time": ["1.00 PM"] }
+    ]
+  },
+  {
+    "dayOfWeek": "thu",
+    "dailySchedule": [
+      { "typeOfTraining": "crossfit", "time": ["9.00 AM"] },
+      { "typeOfTraining": "powerlifting", "time": ["10.00 AM"] },
+      { "typeOfTraining": "open gym", "time": ["12.00 AM", "1.00 PM"] }
+    ]
+  },
+  {
+    "dayOfWeek": "fri",
+    "dailySchedule": [
+      { "typeOfTraining": "stretching", "time": ["8.00 AM", "9.00 AM"] },
+      {
+        "typeOfTraining": "open gym",
+        "time": ["10.00 AM", "11.00 AM", "12.00 AM"]
+      },
+      { "typeOfTraining": "stretching", "time": ["1.00 PM"] }
+    ]
+  },
+  {
+    "dayOfWeek": "sat",
+    "dailySchedule": [
+      { "typeOfTraining": "crossfit", "time": ["8.00 AM"] },
+      { "typeOfTraining": "powerlifting", "time": ["9.00 AM"] },
+      {
+        "typeOfTraining": "stretching",
+        "time": ["10.00 AM", "11.00 AM", "12.00 AM"]
+      },
+      { "typeOfTraining": "crossfit", "time": ["1.00 PM"] }
+    ]
+  },
+  {
+    "dayOfWeek": "sun",
+    "dailySchedule": [
+      { "typeOfTraining": "crossfit", "time": ["8.00 AM", "9.00 AM"] },
+
+      { "typeOfTraining": "crossfit", "time": ["12.00 AM"] },
+      { "typeOfTraining": "powerlifting", "time": ["1.00 PM"] }
+    ]
+  }
+]

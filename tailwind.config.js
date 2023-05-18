@@ -22,7 +22,7 @@ module.exports = {
         "hero-position": "center top -300px;",
       },
       maxWidth: {
-        container: "50rem",
+        container: "65rem",
       },
       boxShadow: {
         button: "0px 0px 60px 0px #D6FD51",
