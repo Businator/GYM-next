@@ -6,6 +6,7 @@ import { Hero } from "./components/hero/Hero";
 import { Schedule } from "./components/schedule/Schedule";
 import girlsImg from "./assets/image/girls.jpg";
 import Image from "next/image";
+import { Passes } from "./components/passes/Passes";
 
 import styles from "./assets/styles/Main.module.scss";
 
@@ -22,6 +23,7 @@ export default function Main() {
         alt="girls pump their abs"
         className={styles.girlsImg}
       />
+      <Passes />
       <Footer />
     </>
   );

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "crossfit",
+    "price": {
+      "month": 120,
+      "yaer": 1200
+    },
+    "decription": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "Sed obcaecati, odit accusantium sapiente quod",
+      "cupiditate fugiat sit excepturi numquam quo, similique",
+      "nostrum illum laboriosam ut voluptatum magnam rem animi beatae"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "open gym",
+    "price": {
+      "month": 109,
+      "yaer": 1090
+    },
+    "decription": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "Sed obcaecati, odit accusantium sapiente quod",
+      "cupiditate fugiat sit excepturi numquam quo, similique",
+      "nostrum illum laboriosam ut voluptatum magnam rem animi beatae"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "stretching",
+    "price": {
+      "month": 80,
+      "yaer": 800
+    },
+    "decription": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "Sed obcaecati, odit accusantium sapiente quod",
+      "cupiditate fugiat sit excepturi numquam quo, similique",
+      "nostrum illum laboriosam ut voluptatum magnam rem animi beatae"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "powerlifting",
+    "price": {
+      "month": 100,
+      "yaer": 1000
+    },
+    "decription": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "Sed obcaecati, odit accusantium sapiente quod",
+      "cupiditate fugiat sit excepturi numquam quo, similique",
+      "nostrum illum laboriosam ut voluptatum magnam rem animi beatae"
+    ]
+  }
+]
