@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import { integral } from "'@/assets/fonts/fonts'";
-import { MySwitch } from "./components/MySwitch/MySwitch";
-import { MySwiper } from "./components/MySwiper/MySwiper";
+import { PassesSwitch } from "./components/PassesSwitch/PassesSwitch";
+import { PassesSwiper } from "./components/PassesSwiper/PassesSwiper";
 import styles from "./Passes.module.scss";
 
 export const Passes = () => {
@@ -15,8 +15,8 @@ export const Passes = () => {
       <h2 className={clsx([integral.className, styles.header])}>
         OUR GYM PASSES
       </h2>
-      <MySwitch switchState={[isYearly, setIsYearly]} />
-      <MySwiper isYearly={isYearly} />
+      <PassesSwitch switchState={[isYearly, setIsYearly]} />
+      <PassesSwiper isYearly={isYearly} />
     </section>
   );
 };

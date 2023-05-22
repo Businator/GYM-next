@@ -9,9 +9,9 @@ import { Button } from "'@/components/UI/button/Button'";
 import { SwiperButtons } from "./components/SwiperButtons/SwiperButtons";
 
 import passes from "../../mocks/passes.json";
-import styles from "./MySwiper.module.scss";
+import styles from "./PassesSwiper.module.scss";
 
-export const MySwiper = ({ isYearly }: { isYearly: boolean }) => {
+export const PassesSwiper = ({ isYearly }: { isYearly: boolean }) => {
   return (
     <div className={styles.swiperContainer}>
       <Swiper

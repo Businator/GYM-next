@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch } from "@mui/material";
-import styles from "./MySwitch.module.scss";
+import styles from "./PassesSwitch.module.scss";
 import clsx from "clsx";
 
 const switchStyles = {
@@ -34,7 +34,7 @@ const switchStyles = {
   },
 };
 
-export const MySwitch = ({ switchState }: React.ComponentState) => {
+export const PassesSwitch = ({ switchState }: React.ComponentState) => {
   const [isYearly, setIsYearly] = switchState;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
