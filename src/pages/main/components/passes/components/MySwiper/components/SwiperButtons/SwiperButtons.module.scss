@@ -1,0 +1,7 @@
+.buttonContainer {
+  @apply absolute w-full flex justify-between  bottom-[50%];
+
+  button {
+    @apply text-4xl cursor-pointer z-[1];
+  }
+}

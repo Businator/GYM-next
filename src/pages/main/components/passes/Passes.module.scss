@@ -1,19 +1,7 @@
-.header {
-  @apply text-center;
+.section {
+  @apply relative;
 }
 
-.swiperContainer {
-  @apply w-full;
-
-  .card {
-    @apply w-1/4 flex flex-col items-center gap-y-6;
-
-    .price {
-      @apply text-5xl font-bold;
-    }
-
-    .description {
-      @apply mb-2 last-of-type:mb-0;
-    }
-  }
+.header {
+  @apply text-center;
 }
