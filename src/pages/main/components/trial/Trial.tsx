@@ -23,8 +23,8 @@ export const Trial = () => {
   };
 
   return (
-    <section className={style.trial}>
-      <div className={style.container}>
+    <div className={style.container}>
+      <section className={style.trial}>
         <h2 className={integral.className}>GET YOUR FIRST TRIAL VISIT</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
@@ -37,7 +37,7 @@ export const Trial = () => {
           />
           <Button children="SUBMIT" type="submit" />
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };

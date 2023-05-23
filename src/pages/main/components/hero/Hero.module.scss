@@ -2,7 +2,7 @@
   @apply bg-[url('./assets/image/hero.jpg')] bg-hero-position bg-no-repeat h-[600px] w-full;
 
   .heroBg {
-    @apply bg-hero-gradient h-full w-full flex flex-col items-center justify-between gap-y-36;
+    @apply bg-hero-gradient h-full w-full flex flex-col items-center gap-y-36;
 
     section {
       @apply max-w-container flex flex-col items-center gap-y-4;
@@ -23,9 +23,8 @@
         @apply flex gap-4;
       }
     }
-
-    .slider {
-      @apply w-full text-center bg-acid-green text-black py-1;
-    }
+  }
+  .slider {
+    @apply w-full text-center bg-acid-green text-black py-1;
   }
 }

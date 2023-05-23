@@ -1,8 +1,8 @@
-.trial {
-  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center max-w-none w-full;
+.container {
+  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center w-full;
 
-  .container {
-    @apply bg-hero-gradient h-[600px] w-full flex flex-col items-center justify-center gap-y-4;
+  .trial {
+    @apply bg-hero-gradient h-[600px]  max-w-none w-full flex flex-col items-center justify-center gap-y-4;
 
     form {
       @apply relative flex flex-row;

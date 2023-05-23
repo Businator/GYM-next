@@ -27,9 +27,9 @@ export const Hero = () => {
             <button>Right</button>
           </div>
         </section>
-        <div className={clsx([integral.className, styles.slider])}>
-          DRAWING UP AN INDIVIDUAL TRAINING PROGRAM BEST PROFFESSIONAL
-        </div>
+      </div>
+      <div className={clsx([integral.className, styles.slider])}>
+        DRAWING UP AN INDIVIDUAL TRAINING PROGRAM BEST PROFFESSIONAL
       </div>
     </div>
   );
