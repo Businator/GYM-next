@@ -1,0 +1,19 @@
+.trial {
+  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center max-w-none w-full;
+
+  .container {
+    @apply bg-hero-gradient h-[600px] w-full flex flex-col items-center justify-center gap-y-4;
+
+    form {
+      @apply relative flex flex-row;
+
+      input {
+        @apply bg-stone-900 w-[300px] h-[40px] rounded-3xl pl-4;
+      }
+
+      button {
+        @apply absolute right-0;
+      }
+    }
+  }
+}

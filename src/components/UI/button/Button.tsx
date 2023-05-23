@@ -1,16 +1,13 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { integral } from "../../../assets/fonts/fonts";
 import clsx from "clsx";
 
 import styles from "./Button.module.scss";
+import { ButtonBaseProps } from "@mui/material";
 
-type ButtonType = {
-  children: string;
-};
-
-export const Button = ({ children }: ButtonType) => {
+export const Button = ({ children, ...rest }: ButtonBaseProps) => {
   return (
-    <button className={clsx([styles.button, integral.className])}>
+    <button className={clsx([styles.button, integral.className])} {...rest}>
       {children}
     </button>
   );
