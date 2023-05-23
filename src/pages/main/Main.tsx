@@ -10,6 +10,7 @@ import { Passes } from "./components/passes/Passes";
 
 import styles from "./assets/styles/Main.module.scss";
 import { Reviews } from "./components/reviews/Reviews";
+import { News } from "./components/news/News";
 
 export default function Main() {
   return (
@@ -26,6 +27,7 @@ export default function Main() {
       />
       <Passes />
       <Reviews />
+      <News />
       <Footer />
     </>
   );
