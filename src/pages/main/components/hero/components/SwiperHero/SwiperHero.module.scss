@@ -1,0 +1,7 @@
+.swiperContainer {
+  @apply w-[80%];
+
+  .buttonsContainer {
+    @apply flex gap-4 justify-center mb-4;
+  }
+}
