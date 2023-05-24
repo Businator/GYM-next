@@ -1,9 +1,8 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 
 import { integral } from "'@/assets/fonts/fonts'";
-import { FormControl, Input } from "@mui/material";
 import { Button } from "'@/components/UI/button/Button'";
 import { validateEmail } from "'@/utils/validateEmail'";
 import style from "./Trial.module.scss";
