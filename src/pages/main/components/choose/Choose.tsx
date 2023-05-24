@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-
+import { TiFlashOutline } from "react-icons/ti";
 import bottle from "./assets/image/bottle.png";
 import dumbbell from "./assets/image/dumbbell.png";
 import exspander from "./assets/image/exspander.png";
-import { Learn } from "'@/components/UI/learn/Learn'";
+import { LinkWithArrow } from "'@/components/UI/link/LinkWithArrow'";
 import { integral } from "../../../../assets/fonts/fonts";
 
 import styles from "./Choose.module.scss";
@@ -22,8 +22,10 @@ export const Choose = () => {
             repellendus similique vero illum sed totam soluta voluptas
           </p>
           <div>
-            <Learn />
-            <span>F</span>
+            <LinkWithArrow />
+            <span>
+              <TiFlashOutline />
+            </span>
           </div>
         </div>
         <div className={styles.card}>
@@ -34,8 +36,10 @@ export const Choose = () => {
             repellendus similique vero illum sed totam soluta voluptas
           </p>
           <div>
-            <Learn />
-            <span>F</span>
+            <LinkWithArrow />
+            <span>
+              <TiFlashOutline />
+            </span>
           </div>
         </div>
         <div className={styles.card}>
@@ -46,8 +50,10 @@ export const Choose = () => {
             repellendus similique vero illum sed totam soluta voluptas
           </p>
           <div>
-            <Learn />
-            <span>F</span>
+            <LinkWithArrow />
+            <span>
+              <TiFlashOutline />
+            </span>
           </div>
         </div>
       </div>

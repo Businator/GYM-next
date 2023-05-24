@@ -6,6 +6,18 @@
 
     ul {
       @apply flex gap-4;
+
+      li {
+        @apply w-16 h-16 flex items-center justify-center rounded-full bg-acid-green;
+
+        a {
+          @apply w-[92%] h-[92%] flex items-center justify-center rounded-full bg-black;
+
+          svg {
+            @apply h-8 w-8;
+          }
+        }
+      }
     }
   }
 

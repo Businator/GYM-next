@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
-import { ImArrowUpRight } from "react-icons/im";
+import { ImArrowUpRight2 } from "react-icons/im";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/scss";
@@ -12,6 +12,7 @@ import { NewsList, workWithNews } from "../../API/NewsApi";
 import { integral } from "'@/assets/fonts/fonts'";
 
 import styles from "./NewsSwiper.module.scss";
+import { LinkWithArrow } from "'@/components/UI/link/LinkWithArrow'";
 
 export const NewsSwiper = () => {
   const [news, setNews] = useState({} as NewsList);
@@ -50,16 +51,12 @@ export const NewsSwiper = () => {
                   className={styles.image}
                 />
                 <p className={styles.title}>{res.webTitle}</p>
-                <Link
+                <LinkWithArrow
+                  children="READ MORE"
                   href={res.webUrl}
                   target="_blank"
                   className={clsx([integral.className, styles.link])}
-                >
-                  READ MORE
-                  <span>
-                    <ImArrowUpRight />
-                  </span>
-                </Link>
+                />
               </SwiperSlide>
             );
           })}

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Logo } from "../UI/logo/Logo";
 import styles from "./Header.module.scss";
+import { BsMessenger, BsSearch } from "react-icons/bs";
 
 export const Header = () => {
   return (
@@ -14,10 +15,14 @@ export const Header = () => {
         <Link href={"/blog"}>Blog</Link>
         <Link href={"/contact"}>Contact</Link>
       </ul>
-      <ul className={styles.icons}>
-        <li>Search</li>
-        <li>Message</li>
-      </ul>
+      <div className={styles.icons}>
+        <span>
+          <BsSearch />
+        </span>
+        <span>
+          <BsMessenger />
+        </span>
+      </div>
     </header>
   );
 };

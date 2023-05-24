@@ -4,7 +4,7 @@ import { Button } from "'@/components/UI/button/Button'";
 import { Header } from "'@/components/header/Header'";
 import clsx from "clsx";
 import styles from "./Hero.module.scss";
-import { Learn } from "'@/components/UI/learn/Learn'";
+import { LinkWithArrow } from "'@/components/UI/link/LinkWithArrow'";
 
 export const Hero = () => {
   return (
@@ -20,7 +20,7 @@ export const Hero = () => {
           </p>
           <div>
             <Button>START NOW</Button>
-            <Learn />
+            <LinkWithArrow />
           </div>
           <div className={styles.buttonsContainer}>
             <button>Left</button>

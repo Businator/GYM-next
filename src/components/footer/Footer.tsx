@@ -1,4 +1,6 @@
 import React from "react";
+import { BsGithub, BsInstagram } from "react-icons/bs";
+
 import { Logo } from "../UI/logo/Logo";
 
 import styles from "./Footer.module.scss";
@@ -14,10 +16,14 @@ export const Footer = () => {
         </p>
         <ul>
           <li>
-            <a href="">Github</a>
+            <a href="">
+              <BsGithub />
+            </a>
           </li>
           <li>
-            <a href="">Instagram</a>
+            <a href="">
+              <BsInstagram />
+            </a>
           </li>
         </ul>
       </div>
