@@ -41,12 +41,7 @@ export const Choose = () => {
         {data.map((element) => {
           return (
             <div key={element.id} className={styles.card}>
-              <Image
-                alt={element.img.src}
-                src={element.img}
-                width={100}
-                height={100}
-              />
+              <Image alt={element.img.src} src={element.img} />
               <h3 className={integral.className}>{element.header}</h3>
               <p>{element.description}</p>
               <div>
