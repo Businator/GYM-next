@@ -1,0 +1,7 @@
+.bullet {
+  @apply bg-gray-500 w-3 h-3 inline-block rounded-full m-1 cursor-pointer;
+}
+
+.bulletActive {
+  @apply bg-white w-3 h-3 inline-block rounded-full;
+}
