@@ -6,11 +6,12 @@ import {
 } from "react-icons/hi";
 
 import styles from "./SwiperButtons.module.scss";
+import clsx from "clsx";
 
-export const SwiperButtons = () => {
+export const SwiperButtons = ({ className }: { className?: string }) => {
   const swiper = useSwiper();
   return (
-    <div className={styles.buttonContainer}>
+    <div className={clsx([styles.buttonContainer, className])}>
       <button onClick={() => swiper.slidePrev()}>
         <HiOutlineArrowCircleLeft />
       </button>

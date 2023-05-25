@@ -6,26 +6,37 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 
 import styles from "./MySwiper.module.scss";
+import { SwiperButtons } from "../SwiperButtons/SwiperButtons";
 
 interface MySwiperProps extends SwiperOptions {
   children: ReactNode;
-  usePagination: boolean;
+  usePagination?: boolean;
+  useButtons?: boolean;
+  style?: React.CSSProperties;
+  stylesForButtons?: string;
 }
 
-export const MySwiper: React.FC<MySwiperProps> = ({ children, ...options }) => {
+export const MySwiper: React.FC<MySwiperProps> = ({
+  children,
+  useButtons,
+  stylesForButtons,
+  usePagination,
+  style,
+  ...options
+}) => {
   return (
     <Swiper
+      style={style}
       {...options}
-      slidesPerView={3}
-      spaceBetween={10}
       pagination={{
         clickable: true,
         bulletClass: styles.bullet,
         bulletActiveClass: styles.bulletActive,
       }}
-      modules={[Pagination]}
+      modules={usePagination ? [Pagination] : []}
     >
       {children}
+      {useButtons ? <SwiperButtons className={stylesForButtons} /> : ""}
     </Swiper>
   );
 };
