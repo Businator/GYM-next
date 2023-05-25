@@ -33,6 +33,17 @@ module.exports = {
       borderRadius: {
         default: "15px",
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+      },
+      animation: {
+        marquee: "marquee 10s linear infinite",
+      },
     },
   },
   plugins: [],

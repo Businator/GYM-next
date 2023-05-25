@@ -1,9 +1,16 @@
 import React from "react";
-import { integral, openSans } from "../../../../assets/fonts/fonts";
+import { integral } from "../../../../assets/fonts/fonts";
 import { Header } from "'@/components/header/Header'";
 import clsx from "clsx";
+import { GiDeathStar } from "react-icons/gi";
 import styles from "./Hero.module.scss";
 import { SwiperHero } from "./components/SwiperHero/SwiperHero";
+
+const textList = [
+  "DRAWING UP AN INDIVIDUAL TRAINING PROGRAM BEST PROFFESSIONAL",
+  "INDIVIDUAL SELECTION OF A DIET",
+  "CONVENIENT FUNCTIONALITY FOR MAKING AN INDIVIDUAL WORKOUT",
+];
 
 export const Hero = () => {
   return (
@@ -12,8 +19,17 @@ export const Hero = () => {
         <Header />
         <SwiperHero />
       </div>
-      <div className={clsx([integral.className, styles.slider])}>
-        DRAWING UP AN INDIVIDUAL TRAINING PROGRAM BEST PROFFESSIONAL
+      <div className={styles.marqueeContainer}>
+        <div className={clsx([integral.className, styles.marquee])}>
+          {textList.map((text) => {
+            return (
+              <span>
+                {text}
+                <GiDeathStar />
+              </span>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

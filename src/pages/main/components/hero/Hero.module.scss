@@ -16,7 +16,15 @@
       }
     }
   }
-  .slider {
-    @apply w-full text-center bg-acid-green text-black py-1;
+
+  .marqueeContainer {
+    @apply relative h-[35px] w-full bg-acid-green overflow-hidden;
+    .marquee {
+      @apply absolute w-[200%] flex gap-8 text-right text-black py-1  animate-marquee;
+
+      span {
+        @apply flex items-center gap-8;
+      }
+    }
   }
 }
