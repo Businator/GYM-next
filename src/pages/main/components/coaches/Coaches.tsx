@@ -1,7 +1,26 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import Image from "next/image";
+import { SwiperSlide } from "swiper/react";
 import { integral } from "'@/assets/fonts/fonts'";
-import { SwiperCoaches } from "./components/SwiperCoaches/SwiperCoaches";
+import { MySwiper } from "'@/components/swiper/MySwiper'";
+import { Coach, coachesList } from "./mocks/coahesList";
+import styles from "./Coaches.module.scss";
+
+const Card = (coachs: Coach[]) => {
+  return coachs.map((coach) => {
+    return (
+      <SwiperSlide className={styles.card}>
+        <Image src={coach.img} alt={coach.name} />
+        <div>
+          <h3>{coach.name}</h3>
+          <p>{coach.spec.toUpperCase()}</p>
+        </div>
+      </SwiperSlide>
+    );
+  });
+};
 
 export const Coaches = () => {
   return (
@@ -11,7 +30,14 @@ export const Coaches = () => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
         voluptate atque sapiente quia.
       </p>
-      <SwiperCoaches />
+      <div className={styles.swiperContainer}>
+        <MySwiper
+          slidesPerView={3}
+          spaceBetween={10}
+          children={Card(coachesList)}
+          usePagination={true}
+        />
+      </div>
     </section>
   );
 };

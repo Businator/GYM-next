@@ -1,0 +1,15 @@
+.swiperContainer {
+  @apply w-full;
+
+  .card {
+    @apply flex flex-col gap-3 w-1/3;
+
+    img {
+      @apply h-[350px] object-cover;
+    }
+
+    div {
+      @apply h-[100px];
+    }
+  }
+}

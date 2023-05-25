@@ -14,20 +14,18 @@ interface MySwiperProps extends SwiperOptions {
 
 export const MySwiper: React.FC<MySwiperProps> = ({ children, ...options }) => {
   return (
-    <div>
-      <Swiper
-        {...options}
-        slidesPerView={3}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-          bulletClass: styles.bullet,
-          bulletActiveClass: styles.bulletActive,
-        }}
-        modules={[Pagination]}
-      >
-        {children}
-      </Swiper>
-    </div>
+    <Swiper
+      {...options}
+      slidesPerView={3}
+      spaceBetween={10}
+      pagination={{
+        clickable: true,
+        bulletClass: styles.bullet,
+        bulletActiveClass: styles.bulletActive,
+      }}
+      modules={[Pagination]}
+    >
+      {children}
+    </Swiper>
   );
 };
