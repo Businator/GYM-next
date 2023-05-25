@@ -70,7 +70,7 @@ export const SwiperCoaches = () => {
       >
         {coachesList.map((coach) => {
           return (
-            <SwiperSlide className={styles.card}>
+            <SwiperSlide key={coach.id} className={styles.card}>
               <Image src={coach.img} alt={coach.name} />
               <div>
                 <h3>{coach.name}</h3>

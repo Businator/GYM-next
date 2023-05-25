@@ -1,10 +1,10 @@
 import React from "react";
-import { integral } from "../../../../assets/fonts/fonts";
-import { Header } from "'@/components/header/Header'";
 import clsx from "clsx";
+import { integral } from "../../../../assets/fonts/fonts";
+import { Header } from "'@/UI/header/Header'";
 import { GiDeathStar } from "react-icons/gi";
-import styles from "./Hero.module.scss";
 import { SwiperHero } from "./components/SwiperHero/SwiperHero";
+import styles from "./Hero.module.scss";
 
 const textList = [
   "DRAWING UP AN INDIVIDUAL TRAINING PROGRAM BEST PROFFESSIONAL",

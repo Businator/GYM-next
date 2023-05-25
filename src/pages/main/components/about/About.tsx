@@ -5,7 +5,7 @@ import aboutImg from "./assets/image/about.jpg";
 import aboutCircOne from "./assets/image/about-circ-1.jpg";
 import aboutCircTwo from "./assets/image/about-circ-2.jpg";
 import styles from "./About.module.scss";
-import { Button } from "'@/components/UI/button/Button'";
+import { Button } from "'@/UI/button/Button'";
 
 export const About = () => {
   return (

@@ -12,7 +12,7 @@ import { NewsList, workWithNews } from "../../API/NewsApi";
 import { integral } from "'@/assets/fonts/fonts'";
 
 import styles from "./NewsSwiper.module.scss";
-import { LinkWithArrow } from "'@/components/UI/link/LinkWithArrow'";
+import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 
 export const NewsSwiper = () => {
   const [news, setNews] = useState({} as NewsList);

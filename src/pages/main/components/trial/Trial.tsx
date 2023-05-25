@@ -3,7 +3,7 @@
 import React, { FormEvent, useEffect, useState } from "react";
 
 import { integral } from "'@/assets/fonts/fonts'";
-import { Button } from "'@/components/UI/button/Button'";
+import { Button } from "'@/UI/button/Button'";
 import { validateEmail } from "'@/utils/validateEmail'";
 import style from "./Trial.module.scss";
 

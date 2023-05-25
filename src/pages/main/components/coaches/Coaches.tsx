@@ -1,6 +1,5 @@
 import React from "react";
 
-import styles from "./Coaches.module.scss";
 import { integral } from "'@/assets/fonts/fonts'";
 import { SwiperCoaches } from "./components/SwiperCoaches/SwiperCoaches";
 

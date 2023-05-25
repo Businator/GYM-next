@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Logo } from "../UI/logo/Logo";
+import { Logo } from "../logo/Logo";
 import styles from "./Header.module.scss";
 import { BsMessenger, BsSearch } from "react-icons/bs";
 

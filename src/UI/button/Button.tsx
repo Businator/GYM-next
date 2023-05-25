@@ -1,9 +1,9 @@
-import React, { ButtonHTMLAttributes } from "react";
-import { integral } from "../../../assets/fonts/fonts";
+import React from "react";
 import clsx from "clsx";
 
 import styles from "./Button.module.scss";
 import { ButtonBaseProps } from "@mui/material";
+import { integral } from "'@/assets/fonts/fonts'";
 
 export const Button = ({ children, ...rest }: ButtonBaseProps) => {
   return (

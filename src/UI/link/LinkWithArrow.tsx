@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { integral } from "../../../assets/fonts/fonts";
 import { ImArrowUpRight2 } from "react-icons/im";
 import clsx from "clsx";
 import styles from "./LinkWithArrow.module.scss";
+import { integral } from "'@/assets/fonts/fonts'";
 
 export const LinkWithArrow = ({
   href = "/",

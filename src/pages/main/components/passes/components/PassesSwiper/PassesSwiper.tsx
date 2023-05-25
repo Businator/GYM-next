@@ -5,7 +5,7 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 
 import { integral } from "'@/assets/fonts/fonts'";
-import { Button } from "'@/components/UI/button/Button'";
+import { Button } from "'@/UI/button/Button'";
 import { SwiperButtons } from "./components/SwiperButtons/SwiperButtons";
 
 import passes from "../../mocks/passes.json";

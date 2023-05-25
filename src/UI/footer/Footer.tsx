@@ -1,9 +1,8 @@
 import React from "react";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 
-import { Logo } from "../UI/logo/Logo";
-
 import styles from "./Footer.module.scss";
+import { Logo } from "../logo/Logo";
 
 export const Footer = () => {
   return (

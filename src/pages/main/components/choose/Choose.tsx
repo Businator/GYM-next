@@ -4,7 +4,7 @@ import { TiFlashOutline } from "react-icons/ti";
 import bottle from "./assets/image/bottle.png";
 import dumbbell from "./assets/image/dumbbell.png";
 import exspander from "./assets/image/exspander.png";
-import { LinkWithArrow } from "'@/components/UI/link/LinkWithArrow'";
+import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 import { integral } from "../../../../assets/fonts/fonts";
 
 import styles from "./Choose.module.scss";

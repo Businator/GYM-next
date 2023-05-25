@@ -1,4 +1,4 @@
-import { Footer } from "'@/components/footer/Footer'";
+import { Footer } from "'@/UI/footer/Footer'";
 import { About } from "./components/about/About";
 import { Choose } from "./components/choose/Choose";
 import { Coaches } from "./components/coaches/Coaches";
@@ -7,11 +7,10 @@ import { Schedule } from "./components/schedule/Schedule";
 import girlsImg from "./assets/image/girls.jpg";
 import Image from "next/image";
 import { Passes } from "./components/passes/Passes";
-
-import styles from "./assets/styles/Main.module.scss";
 import { Reviews } from "./components/reviews/Reviews";
 import { News } from "./components/news/News";
 import { Trial } from "./components/trial/Trial";
+import styles from "./Main.module.scss";
 
 export default function Main() {
   return (
@@ -28,8 +27,7 @@ export default function Main() {
       />
       <Passes />
       <Reviews />
-      {/*       <News />
-       */}{" "}
+      <News />
       <Trial />
       <Footer />
     </>
