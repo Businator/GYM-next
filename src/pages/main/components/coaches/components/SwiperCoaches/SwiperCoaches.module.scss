@@ -1,0 +1,23 @@
+.swiperContainer {
+  @apply w-full;
+
+  .card {
+    @apply flex flex-col gap-3;
+
+    img {
+      @apply h-[350px] object-cover;
+    }
+
+    div {
+      @apply h-[100px];
+    }
+  }
+
+  .bullet {
+    @apply bg-gray-500 w-3 h-3 inline-block rounded-full m-1 cursor-pointer;
+  }
+
+  .bulletActive {
+    @apply bg-white w-3 h-3 inline-block rounded-full;
+  }
+}
