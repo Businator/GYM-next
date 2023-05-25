@@ -21,9 +21,9 @@ export const Hero = () => {
       </div>
       <div className={styles.marqueeContainer}>
         <div className={clsx([integral.className, styles.marquee])}>
-          {textList.map((text) => {
+          {textList.map((text, index) => {
             return (
-              <span>
+              <span key={index}>
                 {text}
                 <GiDeathStar />
               </span>
