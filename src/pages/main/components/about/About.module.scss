@@ -1,14 +1,18 @@
 .description {
   @apply flex;
+
+  button {
+    @apply absolute top-[40%] right-[5%] md:relative md:top-auto md:right-auto;
+  }
 }
 
 .content {
-  @apply flex;
+  @apply flex flex-col gap-y-4 md:flex-row;
 
   .circs {
-    @apply flex gap-4 w-1/2;
+    @apply flex gap-4 w-full justify-around md:w-1/2;
     .cirgBg {
-      @apply relative rounded-full w-36 h-36 bg-acid-green flex items-center justify-center;
+      @apply relative rounded-full w-48 h-48 md:w-36 md:h-36 bg-acid-green flex items-center justify-center;
 
       .circImg {
         @apply rounded-full w-[95%] h-[95%] object-cover;
@@ -17,7 +21,7 @@
   }
 
   .contentDescription {
-    @apply flex gap-4 w-1/2;
+    @apply flex flex-col gap-4 w-full md:w-1/2 md:flex-row md:gap-0;
 
     h3 {
       @apply text-amber-500;

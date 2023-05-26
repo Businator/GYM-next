@@ -1,6 +1,10 @@
 .container {
   @apply bg-[url('./assets/image/trialImage.jpg')] bg-center w-full;
 
+  p {
+    @apply text-center;
+  }
+
   .trial {
     @apply bg-hero-gradient h-[600px]  max-w-none w-full flex flex-col items-center justify-center gap-y-4;
 

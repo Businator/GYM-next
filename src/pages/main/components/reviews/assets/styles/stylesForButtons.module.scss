@@ -1,7 +1,10 @@
 .buttonContainer {
-  @apply absolute w-full flex gap-1 bottom-[10%] left-[30%];
+  @apply absolute w-full flex gap-1 bottom-[10%] left-[30%] 
+  sm:bottom-[2%]
+  lg:bottom-[5%];
 
   button {
-    @apply text-4xl cursor-pointer z-[1];
+    @apply text-4xl cursor-pointer z-[1]
+    hidden sm:block;
   }
 }

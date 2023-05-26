@@ -27,7 +27,7 @@ export const reviewsList = [
   {
     id: 3,
     user: {
-      name: "Dwayne 'The Rock' Johnson",
+      name: "Dwayne Johnson",
       post: "coach",
       img: rock,
     },

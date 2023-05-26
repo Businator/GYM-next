@@ -24,6 +24,7 @@ const Card = () => {
 };
 
 export const Coaches = () => {
+  console.log();
   return (
     <section>
       <h2 className={integral.className}>OUR BEST COACHES</h2>
@@ -33,7 +34,7 @@ export const Coaches = () => {
       </p>
       <div className={styles.swiperContainer}>
         <MySwiper
-          slidesPerView={3}
+          slidesPerView={document.documentElement.scrollWidth < 768 ? 2 : 3}
           spaceBetween={10}
           children={Card()}
           modules={[Pagination]}
