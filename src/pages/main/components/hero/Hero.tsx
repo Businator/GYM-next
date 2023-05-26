@@ -5,10 +5,10 @@ import Marquee from "react-fast-marquee";
 import { integral } from "../../../../assets/fonts/fonts";
 import { Header } from "'@/UI/header/Header'";
 import { GiDeathStar } from "react-icons/gi";
-import { MySwiper } from "'@/components/swiper/MySwiper'";
+import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { Button } from "'@/UI/button/Button'";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
-import { SwiperSlides } from "./components/SwiperSlides/SwiperSlides";
+import { HeroCards } from "./components/HeroCards/HeroCards";
 import styles from "./Hero.module.scss";
 
 const textList = [
@@ -25,7 +25,7 @@ export const Hero = () => {
         <div className={styles.swiperContainer}>
           <MySwiper
             slidesPerView={1}
-            children={SwiperSlides()}
+            children={HeroCards()}
             useButtons={true}
           />
           <div className={styles.buttonsContainer}>

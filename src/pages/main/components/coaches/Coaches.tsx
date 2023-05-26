@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { integral } from "'@/assets/fonts/fonts'";
-import { MySwiper } from "'@/components/swiper/MySwiper'";
+import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { coachesList } from "./mocks/coahesList";
 import styles from "./Coaches.module.scss";
 import { Pagination } from "swiper";

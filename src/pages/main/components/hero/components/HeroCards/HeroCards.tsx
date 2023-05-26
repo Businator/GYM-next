@@ -1,10 +1,10 @@
 import React from "react";
 import { SwiperSlide } from "swiper/react";
 
-import styles from "./SwiperSlides.module.scss";
+import styles from "./HeroCards.module.scss";
 import { integral, openSans } from "'@/assets/fonts/fonts'";
 
-export const SwiperSlides = () => {
+export const HeroCards = () => {
   return (
     <>
       <SwiperSlide className={styles.card}>
