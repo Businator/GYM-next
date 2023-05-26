@@ -7,13 +7,17 @@
     form {
       @apply relative flex flex-row;
 
-      input {
-        @apply bg-stone-900 w-[300px] h-[40px] rounded-3xl pl-4;
-      }
-
       button {
-        @apply absolute right-0;
+        @apply absolute right-[-5px] top-[-3px];
+
+        &.buttonError {
+          @apply bg-red-600 shadow-button-error;
+        }
       }
+    }
+
+    .error {
+      @apply p-2 rounded-default text-red-600 font-bold;
     }
   }
 }

@@ -1,3 +1,5 @@
+const { error } = require("console");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -26,6 +28,7 @@ module.exports = {
       },
       boxShadow: {
         button: "0px 0px 60px 0px #D6FD51",
+        "button-error": "0px 0px 60px 0px rgba(255, 0, 0, 1)",
       },
       colors: {
         "acid-green": "#D6FD51",
