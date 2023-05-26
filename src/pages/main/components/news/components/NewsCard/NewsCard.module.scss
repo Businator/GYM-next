@@ -1,0 +1,15 @@
+.card {
+  @apply h-[90%] flex flex-col items-stretch justify-between gap-y-2;
+
+  .image {
+    @apply h-2/4 object-cover;
+  }
+
+  .title {
+    @apply h-1/4;
+  }
+
+  .link {
+    @apply flex items-center gap-2;
+  }
+}

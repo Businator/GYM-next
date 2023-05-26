@@ -3,11 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import { integral } from "'@/assets/fonts/fonts'";
 import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { coachesList } from "./mocks/coahesList";
 import styles from "./Coaches.module.scss";
-import { Pagination } from "swiper";
+import stylesForButtom from "./assets/styles/SwiperButtons.module.scss";
 
 const Card = () => {
   return coachesList.map((coach) => {
@@ -24,7 +25,6 @@ const Card = () => {
 };
 
 export const Coaches = () => {
-  console.log();
   return (
     <section>
       <h2 className={integral.className}>OUR BEST COACHES</h2>
@@ -38,6 +38,8 @@ export const Coaches = () => {
           spaceBetween={10}
           children={Card()}
           modules={[Pagination]}
+          useButtons={true}
+          stylesForButtons={stylesForButtom.buttonContainer}
         />
       </div>
     </section>
