@@ -24,7 +24,6 @@ export const Passes = () => {
           style={{ height: 400 }}
           slidesPerView={2}
           spaceBetween={100}
-          usePagination={true}
           children={Cards(isYearly)}
           useButtons={true}
           stylesForButtons={stylesForButtons.buttonContainer}

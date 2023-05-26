@@ -1,0 +1,7 @@
+.buttonContainer {
+  @apply absolute w-full flex gap-1 bottom-[10%] left-[30%];
+
+  button {
+    @apply text-4xl cursor-pointer z-[1];
+  }
+}

@@ -5,11 +5,12 @@ import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { integral } from "'@/assets/fonts/fonts'";
 import { MySwiper } from "'@/components/swiper/MySwiper'";
-import { Coach, coachesList } from "./mocks/coahesList";
+import { coachesList } from "./mocks/coahesList";
 import styles from "./Coaches.module.scss";
+import { Pagination } from "swiper";
 
-const Card = (coachs: Coach[]) => {
-  return coachs.map((coach) => {
+const Card = () => {
+  return coachesList.map((coach) => {
     return (
       <SwiperSlide key={coach.id} className={styles.card}>
         <Image src={coach.img} alt={coach.name} />
@@ -34,8 +35,8 @@ export const Coaches = () => {
         <MySwiper
           slidesPerView={3}
           spaceBetween={10}
-          children={Card(coachesList)}
-          usePagination={true}
+          children={Card()}
+          modules={[Pagination]}
         />
       </div>
     </section>

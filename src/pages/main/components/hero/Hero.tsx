@@ -26,7 +26,6 @@ export const Hero = () => {
           <MySwiper
             slidesPerView={1}
             children={SwiperSlides()}
-            usePagination={false}
             useButtons={true}
           />
           <div className={styles.buttonsContainer}>
