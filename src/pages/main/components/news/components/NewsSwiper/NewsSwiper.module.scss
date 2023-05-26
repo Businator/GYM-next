@@ -1,3 +1,4 @@
 .swiperContainer {
-  @apply w-[100%] relative;
+  @apply w-[100%] relative
+   sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-container 2xl:max-w-6xl;
 }

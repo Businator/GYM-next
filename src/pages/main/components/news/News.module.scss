@@ -2,6 +2,10 @@
   @apply bg-stone-900 max-w-none w-full py-12;
 
   .container {
-    @apply max-w-container flex flex-col items-center gap-y-4;
+    @apply flex flex-col items-center gap-y-4;
+
+    p {
+      @apply text-center;
+    }
   }
 }

@@ -14,7 +14,7 @@ export const NewsSwiper = () => {
     <div className={styles.swiperContainer}>
       <MySwiper
         children={NewsCard()}
-        slidesPerView={3}
+        slidesPerView={document.documentElement.scrollWidth < 768 ? 2 : 3}
         spaceBetween={10}
         modules={[Pagination]}
         useButtons={true}
