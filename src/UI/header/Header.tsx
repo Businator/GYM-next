@@ -1,5 +1,7 @@
 import React from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import clsx from "clsx";
 import { capitalize } from "@mui/material";
 import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
@@ -30,6 +32,8 @@ const pageList = [
 ];
 
 export const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className={styles.header}>
       <Logo />
@@ -41,7 +45,14 @@ export const Header = () => {
             {pageList.map((page) => {
               return (
                 <li key={page.name}>
-                  <Link href={page.href}>{capitalize(page.name)}</Link>
+                  <Link
+                    href={page.href}
+                    className={clsx([
+                      pathname === page.href ? styles.active : undefined,
+                    ])}
+                  >
+                    {capitalize(page.name)}
+                  </Link>
                 </li>
               );
             })}

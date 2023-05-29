@@ -4,4 +4,8 @@
   ul {
     @apply flex gap-20;
   }
+
+  .active {
+    @apply text-acid-green;
+  }
 }

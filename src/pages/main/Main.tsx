@@ -27,7 +27,8 @@ export default function Main() {
       />
       <Passes />
       <Reviews />
-      <News />
+      {/*       <News />
+       */}{" "}
       <Trial />
       <Footer />
     </>
