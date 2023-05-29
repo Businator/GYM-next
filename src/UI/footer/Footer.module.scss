@@ -1,8 +1,12 @@
 .footer {
-  @apply flex justify-around py-12;
+  @apply flex justify-around py-12
+  min-[320px]:flex-col min-[320px]:items-center min-[320px]:gap-y-3 
+  md:flex-row md:items-baseline md:gap-y-0;
 
   div {
-    @apply flex flex-col gap-y-4 w-1/4;
+    @apply flex flex-col gap-y-4
+    min-[320px]:w-[90%] min-[320px]:items-center
+    md:w-1/4 md:items-baseline;
 
     ul {
       @apply flex gap-4;
@@ -22,14 +26,18 @@
   }
 
   ul {
-    @apply flex gap-16;
+    @apply flex min-[320px]:gap-3 sm:gap-16;
 
     h4 {
-      @apply text-acid-green;
+      @apply text-acid-green text-sm sm:text-base;
     }
 
     ul {
       @apply flex flex-col gap-2 mt-4;
+
+      li {
+        @apply text-xs sm:text-base;
+      }
     }
   }
 }

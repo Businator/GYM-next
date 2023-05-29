@@ -9,7 +9,8 @@
     @apply bg-hero-gradient h-[600px]  max-w-none w-full flex flex-col items-center justify-center gap-y-4;
 
     form {
-      @apply relative flex flex-row;
+      @apply min-[320px]:w-[300px] sm:w-auto 
+      relative flex flex-row;
 
       button {
         @apply absolute right-[-5px] top-[-3px];

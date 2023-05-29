@@ -1,13 +1,18 @@
 .card {
-  @apply flex flex-col gap-y-2 p-6 bg-acid-green rounded-default
+  @apply flex flex-col gap-y-2 bg-acid-green rounded-default
+  min-[320px]:p-1
   sm:p-2;
 
   .pagination {
-    @apply relative left-[80%] md:left-[85%] lg:left-[90%];
+    @apply relative
+    min-[320px]:left-[65%] min-[320px]:text-xs
+    sm:left-[80%] md:left-[85%] lg:left-[90%];
   }
 
   p {
-    @apply text-black text-xs lg:text-base;
+    @apply text-black
+    min-[320px]:text-[8px]
+    sm:text-xs lg:text-base;
   }
 
   .client {
@@ -15,6 +20,7 @@
 
     img {
       @apply w-[75px] h-[75px] rounded-full object-cover
+      min-[320px]:w-8  min-[320px]:h-8 
       sm:w-[50px] sm:h-[50px];
     }
   }

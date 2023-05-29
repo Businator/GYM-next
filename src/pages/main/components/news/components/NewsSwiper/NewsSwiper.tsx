@@ -8,13 +8,14 @@ import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { NewsCard } from "../NewsCard/NewsCard";
 import styles from "./NewsSwiper.module.scss";
 import stylesForButtons from "../../assets/styles/SwiperButtons.module.scss";
+import { showNumberOfCards } from "'@/utils/showNumberOfCards'";
 
 export const NewsSwiper = () => {
   return (
     <div className={styles.swiperContainer}>
       <MySwiper
         children={NewsCard()}
-        slidesPerView={document.documentElement.scrollWidth < 768 ? 2 : 3}
+        slidesPerView={showNumberOfCards()}
         spaceBetween={10}
         modules={[Pagination]}
         useButtons={true}

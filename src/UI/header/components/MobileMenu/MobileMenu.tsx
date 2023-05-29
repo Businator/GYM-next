@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, MenuItem, MenuList, capitalize } from "@mui/material";
+import { Menu, MenuItem, MenuList, SxProps, capitalize } from "@mui/material";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MessengerAndSearchMenu } from "../MessengerAndSearchMenu/MessengerAndSearchMenu";
@@ -13,18 +13,27 @@ const menuStyle = {
   },
   "& .MuiMenu-paper": {
     width: 150,
+    height: 250,
     backgroundColor: "#D6FD51",
     boxShadow: "0px 0px 60px 0px #D6FD51",
   },
-};
+} as SxProps;
 
-export const MobileMenu = ({ pageList }: { pageList: string[] }) => {
+export const MobileMenu = ({
+  pageList,
+}: {
+  pageList: {
+    name: string;
+    href: string;
+  }[];
+}) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
       <Menu
         anchorOrigin={{ horizontal: "right", vertical: "top" }}
+        transformOrigin={{ horizontal: "right", vertical: "top" }}
         open={openMenu}
         onClick={() => setOpenMenu((prev) => !prev)}
         sx={menuStyle}
@@ -32,8 +41,8 @@ export const MobileMenu = ({ pageList }: { pageList: string[] }) => {
         <MenuList>
           {pageList.map((page) => {
             return (
-              <MenuItem key={page}>
-                <Link href={page}>{capitalize(page)}</Link>
+              <MenuItem key={page.name}>
+                <Link href={page.href}>{capitalize(page.name)}</Link>
               </MenuItem>
             );
           })}

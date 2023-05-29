@@ -21,7 +21,7 @@ export const Passes = () => {
       <div className={styles.swiperContainer}>
         <MySwiper
           style={{ height: 400 }}
-          slidesPerView={2}
+          slidesPerView={document.documentElement.scrollWidth < 639 ? 1 : 2}
           spaceBetween={100}
           children={Cards(isYearly)}
           useButtons={true}

@@ -2,7 +2,7 @@
   @apply flex;
 
   button {
-    @apply absolute top-[40%] right-[5%] md:relative md:top-auto md:right-auto;
+    @apply absolute min-[320px]:top-[28%] sm:top-[40%] right-[5%] md:relative md:top-auto md:right-auto;
   }
 }
 
@@ -12,7 +12,10 @@
   .circs {
     @apply flex gap-4 w-full justify-around md:w-1/2;
     .cirgBg {
-      @apply relative rounded-full w-48 h-48 md:w-36 md:h-36 bg-acid-green flex items-center justify-center;
+      @apply relative rounded-full bg-acid-green flex items-center justify-center
+      w-32 h-32
+      sm:w-48 sm:h-48
+      md:w-36 md:h-36;
 
       .circImg {
         @apply rounded-full w-[95%] h-[95%] object-cover;

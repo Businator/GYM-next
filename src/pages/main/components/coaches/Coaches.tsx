@@ -9,6 +9,7 @@ import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { coachesList } from "./mocks/coahesList";
 import styles from "./Coaches.module.scss";
 import stylesForButtom from "./assets/styles/SwiperButtons.module.scss";
+import { showNumberOfCards } from "'@/utils/showNumberOfCards'";
 
 const Card = () => {
   return coachesList.map((coach) => {
@@ -34,7 +35,7 @@ export const Coaches = () => {
       </p>
       <div className={styles.swiperContainer}>
         <MySwiper
-          slidesPerView={document.documentElement.scrollWidth < 768 ? 2 : 3}
+          slidesPerView={showNumberOfCards()}
           spaceBetween={10}
           children={Card()}
           modules={[Pagination]}

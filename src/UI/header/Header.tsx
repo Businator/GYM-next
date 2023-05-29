@@ -6,7 +6,28 @@ import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 import { MessengerAndSearchMenu } from "./components/MessengerAndSearchMenu/MessengerAndSearchMenu";
 import styles from "./Header.module.scss";
 
-const pageList = ["home", "shop", "app", "blog", "contact"];
+const pageList = [
+  {
+    name: "home",
+    href: "/",
+  },
+  {
+    name: "shop",
+    href: "shop",
+  },
+  {
+    name: "app",
+    href: "app",
+  },
+  {
+    name: "blog",
+    href: "blog",
+  },
+  {
+    name: "contact",
+    href: "contact",
+  },
+];
 
 export const Header = () => {
   return (
@@ -19,8 +40,8 @@ export const Header = () => {
           <ul>
             {pageList.map((page) => {
               return (
-                <li key={page}>
-                  <Link href={page}>{capitalize(page)}</Link>
+                <li key={page.name}>
+                  <Link href={page.href}>{capitalize(page.name)}</Link>
                 </li>
               );
             })}
