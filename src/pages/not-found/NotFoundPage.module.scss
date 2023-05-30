@@ -1,0 +1,27 @@
+.container {
+  @apply absolute w-full h-full flex items-center justify-center;
+
+  .content {
+    @apply w-[80%] bg-gray-800 flex items-center p-8 rounded-default;
+
+    div {
+      @apply w-1/2 flex flex-col items-center gap-y-4;
+
+      h1 {
+        @apply text-5xl;
+      }
+
+      p {
+        @apply text-2xl text-center;
+      }
+
+      button {
+        @apply text-acid-green font-bold underline;
+      }
+    }
+  }
+
+  img {
+    @apply rounded-default;
+  }
+}
