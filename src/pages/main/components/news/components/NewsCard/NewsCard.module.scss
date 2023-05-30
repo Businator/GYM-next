@@ -2,7 +2,7 @@
   @apply h-[90%] flex flex-col items-stretch justify-between gap-y-2;
 
   .image {
-    @apply h-2/4 object-cover;
+    @apply h-2/4 w-full object-cover;
   }
 
   .title {

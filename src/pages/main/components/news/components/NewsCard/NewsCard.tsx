@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { NewsList, workWithNews } from "../../API/NewsApi";
+import Image from "next/image";
+import clsx from "clsx";
 import { SwiperSlide } from "swiper/react";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
-
-import clsx from "clsx";
+import { NewsList, workWithNews } from "../../API/NewsApi";
+import plug from "../../assets/image/plug.jpg";
 import { integral } from "'@/assets/fonts/fonts'";
 import styles from "./NewsCard.module.scss";
 
@@ -24,18 +25,22 @@ export const NewsCard = () => {
     news.response.results.map((res) => {
       return (
         <SwiperSlide key={res.webTitle} className={styles.card}>
-          <img
-            src={res.fields.thumbnail}
-            alt="plug for image"
+          <Image
+            loader={() => res.fields.thumbnail}
+            src={plug}
+            alt="image from news"
             className={styles.image}
+            width={200}
+            height={100}
           />
           <p className={styles.title}>{res.webTitle}</p>
           <LinkWithArrow
-            children="READ MORE"
             href={res.webUrl}
             target="_blank"
             className={clsx([integral.className, styles.link])}
-          />
+          >
+            READ MORE
+          </LinkWithArrow>
         </SwiperSlide>
       );
     })

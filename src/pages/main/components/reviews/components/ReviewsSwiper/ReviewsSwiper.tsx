@@ -11,14 +11,15 @@ export const ReviewsSwiper = () => {
   return (
     <div className={styles.container}>
       <MySwiper
-        children={ReviewsCards()}
         effect={"cards"}
         grabCursor={true}
         slidesPerView={1}
         modules={[EffectCards]}
         useButtons={true}
         stylesForButtons={stylesForButtons.buttonContainer}
-      />
+      >
+        {ReviewsCards()}
+      </MySwiper>
     </div>
   );
 };

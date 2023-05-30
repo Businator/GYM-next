@@ -14,14 +14,15 @@ export const NewsSwiper = () => {
   return (
     <div className={styles.swiperContainer}>
       <MySwiper
-        children={NewsCard()}
         slidesPerView={showNumberOfCards()}
         spaceBetween={10}
         modules={[Pagination]}
         useButtons={true}
         stylesForButtons={stylesForButtons.buttonContainer}
         style={{ height: 400 }}
-      />
+      >
+        {NewsCard()}
+      </MySwiper>
     </div>
   );
 };

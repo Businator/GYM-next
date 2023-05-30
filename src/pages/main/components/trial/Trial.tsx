@@ -63,11 +63,9 @@ export const Trial = () => {
             helperText={error && "Please enter a valid email address"}
             sx={textFieldStyles}
           />
-          <Button
-            children="SUBMIT"
-            type="submit"
-            className={clsx([error && style.buttonError])}
-          />
+          <Button type="submit" className={clsx([error && style.buttonError])}>
+            SUBMIT
+          </Button>
         </form>
       </section>
     </div>

@@ -23,11 +23,9 @@ export const Hero = () => {
       <div className={styles.heroBg}>
         <Header />
         <div className={styles.swiperContainer}>
-          <MySwiper
-            slidesPerView={1}
-            children={HeroCards()}
-            useButtons={true}
-          />
+          <MySwiper slidesPerView={1} useButtons={true}>
+            {HeroCards()}
+          </MySwiper>
           <div className={styles.buttonsContainer}>
             <Button>START NOW</Button>
             <LinkWithArrow />

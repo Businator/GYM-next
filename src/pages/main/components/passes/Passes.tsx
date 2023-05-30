@@ -23,10 +23,11 @@ export const Passes = () => {
           style={{ height: 400 }}
           slidesPerView={document.documentElement.scrollWidth < 639 ? 1 : 2}
           spaceBetween={100}
-          children={Cards(isYearly)}
           useButtons={true}
           stylesForButtons={stylesForButtons.buttonContainer}
-        />
+        >
+          {Cards(isYearly)}
+        </MySwiper>
       </div>
     </section>
   );

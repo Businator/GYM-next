@@ -37,11 +37,12 @@ export const Coaches = () => {
         <MySwiper
           slidesPerView={showNumberOfCards()}
           spaceBetween={10}
-          children={Card()}
           modules={[Pagination]}
           useButtons={true}
           stylesForButtons={stylesForButtom.buttonContainer}
-        />
+        >
+          {Card()}
+        </MySwiper>
       </div>
     </section>
   );

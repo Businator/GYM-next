@@ -19,7 +19,7 @@ export const About = () => {
           minima pariatur esse temporibus qui quod eos, id nihil fugit
           reiciendis?
         </p>
-        <Button children="10 YEARS" />
+        <Button>10 YEARS</Button>
       </div>
       <div className={styles.content}>
         <div className={styles.circs}>
