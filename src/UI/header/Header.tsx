@@ -5,10 +5,10 @@ import clsx from "clsx";
 import { capitalize } from "@mui/material";
 import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
-import { MessengerAndSearchMenu } from "./components/MessengerAndSearchMenu/MessengerAndSearchMenu";
 import styles from "./Header.module.scss";
+import { Switches } from "./components/Switches/Switches";
 
-const pageList = [
+export const pageList = [
   {
     name: "home",
     href: "/",
@@ -34,32 +34,30 @@ const pageList = [
 export const Header = () => {
   const pathname = usePathname();
 
+  const isMobile = document.documentElement.scrollWidth < 768;
+
   return (
     <header className={styles.header}>
       <Logo />
-      {document.documentElement.scrollWidth < 768 ? (
-        <MobileMenu pageList={pageList} />
-      ) : (
-        <>
-          <ul>
-            {pageList.map((page) => {
-              return (
-                <li key={page.name}>
-                  <Link
-                    href={page.href}
-                    className={clsx([
-                      pathname === page.href ? styles.active : undefined,
-                    ])}
-                  >
-                    {capitalize(page.name)}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <MessengerAndSearchMenu />
-        </>
+      {!isMobile && (
+        <ul>
+          {pageList.map((page) => {
+            return (
+              <li key={page.name}>
+                <Link
+                  href={page.href}
+                  className={clsx([
+                    pathname === page.href ? styles.active : undefined,
+                  ])}
+                >
+                  {capitalize(page.name)}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       )}
+      <MobileMenu pages={isMobile ? pageList : undefined} />
     </header>
   );
 };
