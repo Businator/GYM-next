@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -26,6 +26,12 @@ const Card = () => {
 };
 
 export const Coaches = () => {
+  const [numberOfCards, setNumberOfCards] = useState(0);
+
+  useEffect(() => {
+    setNumberOfCards(showNumberOfCards());
+  }, []);
+
   return (
     <section>
       <h2 className={integral.className}>OUR BEST COACHES</h2>
@@ -35,7 +41,7 @@ export const Coaches = () => {
       </p>
       <div className={styles.swiperContainer}>
         <MySwiper
-          slidesPerView={showNumberOfCards()}
+          slidesPerView={numberOfCards}
           spaceBetween={10}
           modules={[Pagination]}
           useButtons={true}

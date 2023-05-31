@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { integral } from "'@/assets/fonts/fonts'";
 import { PassesSwitch } from "./components/PassesSwitch/PassesSwitch";
@@ -11,6 +11,11 @@ import styles from "./Passes.module.scss";
 
 export const Passes = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.scrollWidth < 639 && setIsMobile(true);
+  }, []);
 
   return (
     <section>
@@ -21,7 +26,7 @@ export const Passes = () => {
       <div className={styles.swiperContainer}>
         <MySwiper
           style={{ height: 400 }}
-          slidesPerView={document.documentElement.scrollWidth < 639 ? 1 : 2}
+          slidesPerView={isMobile ? 1 : 2}
           spaceBetween={100}
           useButtons={true}
           stylesForButtons={stylesForButtons.buttonContainer}
