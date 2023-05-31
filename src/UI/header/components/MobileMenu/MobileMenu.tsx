@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, MenuItem, MenuList, SxProps, capitalize } from "@mui/material";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -20,11 +20,16 @@ const menuStyle = {
 
 export const MobileMenu = ({ pages }: { pages?: typeof pageList }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [element, setElement] = useState(null as unknown as HTMLElement);
+
+  useEffect(() => {
+    document.body && setElement(document.body);
+  }, []);
 
   return (
     <>
       <Menu
-        anchorEl={document.body}
+        anchorEl={element}
         anchorOrigin={{ horizontal: "right", vertical: "top" }}
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         open={openMenu}

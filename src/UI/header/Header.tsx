@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
@@ -16,47 +16,52 @@ export const pageList = [
   },
   {
     name: "shop",
-    href: "shop",
+    href: "/shop",
   },
   {
     name: "app",
-    href: "app",
+    href: "/app",
   },
   {
     name: "blog",
-    href: "blog",
+    href: "/blog",
   },
   {
-    name: "contact",
-    href: "contact",
+    name: "contacts",
+    href: "/contacts",
   },
 ];
 
 export const Header = () => {
   const pathname = usePathname();
+  const [isMobile, setIsMobile] = useState(false);
 
-  const isMobile = document.documentElement.scrollWidth < 768;
+  useEffect(() => {
+    document.documentElement.scrollWidth < 768 && setIsMobile(true);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header, pathname === "/" && styles.abs)}>
       <Logo />
       {!isMobile && (
-        <ul>
-          {pageList.map((page) => {
-            return (
-              <li key={page.name}>
-                <Link
-                  href={page.href}
-                  className={clsx([
-                    pathname === page.href ? styles.active : undefined,
-                  ])}
-                >
-                  {capitalize(page.name)}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <nav>
+          <ul>
+            {pageList.map((page) => {
+              return (
+                <li key={page.name}>
+                  <Link
+                    href={page.href}
+                    className={clsx([
+                      pathname === page.href ? styles.active : undefined,
+                    ])}
+                  >
+                    {capitalize(page.name)}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       )}
       <MobileMenu pages={isMobile ? pageList : undefined} />
     </header>
