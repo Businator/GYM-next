@@ -29,7 +29,6 @@ export default function Main() {
       <Reviews />
       {/* <News /> */}
       <Trial />
-      <Footer />
     </>
   );
 }

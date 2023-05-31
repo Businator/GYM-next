@@ -19,9 +19,8 @@ const textList = [
 
 export const Hero = () => {
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <div className={styles.heroBg}>
-        <Header />
         <div className={styles.swiperContainer}>
           <MySwiper slidesPerView={1} useButtons={true}>
             {HeroCards()}
@@ -44,6 +43,6 @@ export const Hero = () => {
           })}
         </div>
       </Marquee>
-    </div>
+    </section>
   );
 };

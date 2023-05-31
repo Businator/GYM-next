@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -6,7 +8,6 @@ import { capitalize } from "@mui/material";
 import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 import styles from "./Header.module.scss";
-import { Switches } from "./components/Switches/Switches";
 
 export const pageList = [
   {

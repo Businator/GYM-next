@@ -1,5 +1,5 @@
 .header {
-  @apply w-full flex justify-around pt-4;
+  @apply z-[1] absolute w-full flex justify-around pt-4;
 
   ul {
     @apply flex gap-20;

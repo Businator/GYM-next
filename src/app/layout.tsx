@@ -1,3 +1,5 @@
+import { Footer } from "'@/UI/footer/Footer'";
+import { Header } from "'@/UI/header/Header'";
 import "./globals.scss";
 
 export const metadata = {
@@ -16,7 +18,11 @@ export default function RootLayout({
         <link rel="icon" href="icon/favicon.ico" />
         <link rel="apple-touch-icon" href="icon/apple-touch.ico" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

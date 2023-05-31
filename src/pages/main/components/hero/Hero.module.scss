@@ -1,8 +1,8 @@
 .hero {
-  @apply bg-[url('./assets/image/hero.jpg')] bg-hero-position bg-no-repeat h-[600px] w-full;
+  @apply bg-[url('./assets/image/hero.jpg')] bg-hero-position bg-no-repeat h-[600px] w-full max-w-none p-0;
 
   .heroBg {
-    @apply bg-hero-gradient h-full w-full flex flex-col items-center gap-y-36;
+    @apply bg-hero-gradient h-full w-full flex items-center justify-center;
 
     .swiperContainer {
       @apply w-full;
@@ -14,7 +14,7 @@
   }
 
   .marqueeContainer {
-    @apply relative flex gap-8 h-[35px] w-full bg-acid-green overflow-hidden;
+    @apply absolute bottom-0 flex gap-8 h-[35px] w-full bg-acid-green overflow-hidden;
     .marquee {
       @apply flex gap-8 text-right text-black;
 
