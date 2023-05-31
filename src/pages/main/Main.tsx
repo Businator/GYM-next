@@ -1,4 +1,3 @@
-import { Footer } from "'@/UI/footer/Footer'";
 import { About } from "./components/about/About";
 import { Choose } from "./components/choose/Choose";
 import { Coaches } from "./components/coaches/Coaches";
