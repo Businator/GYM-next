@@ -57,9 +57,8 @@ export const MobileMenu = ({ pages }: { pages?: typeof pageList }) => {
               })}
             </nav>
           )}
-          <MenuItem>
-            <Switches />
-          </MenuItem>
+
+          <Switches />
         </MenuList>
       </Menu>
       <div className={styles.buttonContainer}>
