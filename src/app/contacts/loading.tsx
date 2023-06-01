@@ -1,6 +1,6 @@
-import { MySkeleton } from "'@/UI/skeleton/MySkeleton'";
+import { ContactsLoading } from "'@/pages/contacts/components/loading/ContactsLoading'";
 import React from "react";
 
 export default function Loading() {
-  return <MySkeleton />;
+  return <ContactsLoading />;
 }

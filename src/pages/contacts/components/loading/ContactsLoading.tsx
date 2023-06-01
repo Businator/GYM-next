@@ -1,11 +1,10 @@
 "use client";
 
+import { Skeleton } from "@mui/material";
 import React from "react";
-import { Skeleton, SkeletonProps } from "@mui/material";
+import styles from "./ContactsLoading.module.scss";
 
-import styles from "./MySkeleton.module.scss";
-
-export const MySkeleton = (props: SkeletonProps) => {
+export const ContactsLoading = () => {
   return (
     <div className={styles.container}>
       <Skeleton
@@ -16,7 +15,6 @@ export const MySkeleton = (props: SkeletonProps) => {
         sx={{
           backgroundColor: "gray",
         }}
-        {...props}
       />
     </div>
   );

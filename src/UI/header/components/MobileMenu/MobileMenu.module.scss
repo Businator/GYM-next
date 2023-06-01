@@ -1,3 +1,11 @@
+.navigation {
+  @apply hidden;
+
+  &.active {
+    @apply block;
+  }
+}
+
 .buttonContainer {
   @apply flex flex-row-reverse items-center gap-4;
 }

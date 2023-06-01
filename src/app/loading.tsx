@@ -1,6 +1,6 @@
-import { MySkeleton } from "'@/UI/skeleton/MySkeleton'";
+import { MainLoading } from "'@/pages/main/components/loading/MainLoading'";
 import React from "react";
 
 export default function Loading() {
-  return <MySkeleton />;
+  return <MainLoading />;
 }

@@ -5,6 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Switches } from "../Switches/Switches";
 import { pageList } from "../../Header";
 import styles from "./MobileMenu.module.scss";
+import clsx from "clsx";
 
 const menuStyle = {
   "& .MuiBackdrop-root": {
@@ -40,14 +41,22 @@ export const MobileMenu = ({ pages }: { pages?: typeof pageList }) => {
         sx={menuStyle}
       >
         <MenuList>
-          {pages &&
-            pages.map((page) => {
-              return (
-                <MenuItem key={page.name}>
-                  <Link href={page.href}>{capitalize(page.name)}</Link>
-                </MenuItem>
-              );
-            })}
+          {pages && (
+            <nav
+              className={clsx(
+                styles.navigation,
+                document.documentElement.scrollWidth < 768 && styles.active
+              )}
+            >
+              {pages.map((page) => {
+                return (
+                  <MenuItem key={page.name}>
+                    <Link href={page.href}>{capitalize(page.name)}</Link>
+                  </MenuItem>
+                );
+              })}
+            </nav>
+          )}
           <MenuItem>
             <Switches />
           </MenuItem>

@@ -1,15 +1,23 @@
 .header {
   @apply z-[1] w-full flex justify-around py-4;
 
-  &.abs {
+  &.headerOnMain {
     @apply absolute;
   }
 
-  ul {
-    @apply flex gap-20;
+  .navigation {
+    @apply hidden;
+
+    &.active {
+      @apply block;
+    }
+
+    ul {
+      @apply flex gap-20;
+    }
   }
 
-  .active {
+  .thisPage {
     @apply text-acid-green;
   }
 }
