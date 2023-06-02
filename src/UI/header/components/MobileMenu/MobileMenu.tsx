@@ -3,9 +3,9 @@ import { Menu, MenuItem, MenuList, SxProps, capitalize } from "@mui/material";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Switches } from "../Switches/Switches";
-import { pageList } from "../../Header";
 import styles from "./MobileMenu.module.scss";
 import clsx from "clsx";
+import { navigation } from "../../Header";
 
 const menuStyle = {
   "& .MuiBackdrop-root": {
@@ -19,7 +19,7 @@ const menuStyle = {
   },
 } as SxProps;
 
-export const MobileMenu = ({ pages }: { pages?: typeof pageList }) => {
+export const MobileMenu = ({ pages }: { pages?: navigation }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [element, setElement] = useState(null as unknown as HTMLElement);
 

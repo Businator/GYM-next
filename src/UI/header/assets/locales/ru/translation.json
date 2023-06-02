@@ -1,0 +1,24 @@
+{
+  "navigation": [
+    {
+      "name": "домой",
+      "href": "/"
+    },
+    {
+      "name": "магазин",
+      "href": "/shop"
+    },
+    {
+      "name": "приложение",
+      "href": "/app"
+    },
+    {
+      "name": "блог",
+      "href": "/blog"
+    },
+    {
+      "name": "контакты",
+      "href": "/contacts"
+    }
+  ]
+}

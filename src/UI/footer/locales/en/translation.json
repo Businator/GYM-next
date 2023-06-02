@@ -1,0 +1,23 @@
+{
+  "footer": {
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore odio mollitia voluptate?",
+    "sections": [
+      {
+        "title": "about",
+        "list": ["about us", "blog", "contact", "how to work"]
+      },
+      {
+        "title": "services",
+        "list": ["how to work", "work", "price"]
+      },
+      {
+        "title": "support",
+        "list": ["contact us", "our channel", "instagram", "telegram"]
+      },
+      {
+        "title": "faq",
+        "list": ["payment", "monthly day", "work time", "more"]
+      }
+    ]
+  }
+}

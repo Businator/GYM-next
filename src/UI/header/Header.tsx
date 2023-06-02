@@ -1,39 +1,37 @@
 "use client";
 
-import React from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import React, { useEffect } from "react";
+import {
+  ReadonlyURLSearchParams,
+  usePathname,
+  useSearchParams,
+} from "next/navigation";
 import clsx from "clsx";
 import { capitalize } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
-import styles from "./Header.module.scss";
 
-export const pageList = [
-  {
-    name: "home",
-    href: "/",
-  },
-  {
-    name: "shop",
-    href: "/shop",
-  },
-  {
-    name: "app",
-    href: "/app",
-  },
-  {
-    name: "blog",
-    href: "/blog",
-  },
-  {
-    name: "contacts",
-    href: "/contacts",
-  },
-];
+import "./assets/locales/i18n";
+import styles from "./Header.module.scss";
+import Link from "next/link";
+
+export type navigation = {
+  name: string;
+  href: string;
+}[];
 
 export const Header = () => {
   const pathname = usePathname();
+  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
+
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(searchParams.get("lang") as string | undefined);
+  }, [searchParams]);
+
+  const pageList: navigation = t("navigation", { returnObjects: true });
 
   return (
     <header
@@ -47,9 +45,9 @@ export const Header = () => {
         )}
       >
         <ul>
-          {pageList.map((page) => {
+          {pageList.map((page, index) => {
             return (
-              <li key={page.name}>
+              <li key={index}>
                 <Link
                   href={page.href}
                   className={clsx([
