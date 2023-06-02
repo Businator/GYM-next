@@ -10,7 +10,7 @@ export default i18next
   .use(I18nextBrowserLanguageDetector)
   .use(I18NextHttpBackend)
   .init({
-    fallbackLng: "en",
+    lng: "en",
     resources: {
       en: {
         translation: enTranslation,

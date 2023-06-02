@@ -20,16 +20,18 @@ export const LanguageSwitch = () => {
     switch (event.target.checked) {
       case false:
         router.replace(pathname + "?lang=en");
+        localStorage.setItem("lang", "en");
         break;
       case true:
         router.replace(pathname + "?lang=ru");
+        localStorage.setItem("lang", "ru");
         break;
     }
   };
   return (
     <Switch
       onChange={handlerSwitch}
-      checked={searchParams.get("lang") === "ru"}
+      checked={localStorage.getItem("lang") === "ru"}
       sx={stylesForSwitch}
     />
   );
