@@ -12,9 +12,9 @@ import { useTranslation } from "react-i18next";
 import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 
-import "./assets/locales/i18n";
 import styles from "./Header.module.scss";
 import Link from "next/link";
+import "../../i18n/i18n";
 
 export type navigation = {
   name: string;
@@ -25,13 +25,12 @@ export const Header = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams() as ReadonlyURLSearchParams;
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("header");
+  const pageList: navigation = t("navigation", { returnObjects: true });
 
   useEffect(() => {
     i18n.changeLanguage(searchParams.get("lang") as string | undefined);
   }, [searchParams]);
-
-  const pageList: navigation = t("navigation", { returnObjects: true });
 
   return (
     <header

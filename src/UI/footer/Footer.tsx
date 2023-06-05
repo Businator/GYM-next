@@ -1,18 +1,40 @@
-import React from "react";
-import { BsGithub, BsInstagram } from "react-icons/bs";
+"use client";
 
+import React, { useEffect } from "react";
+import { BsGithub, BsInstagram } from "react-icons/bs";
 import styles from "./Footer.module.scss";
 import { Logo } from "../logo/Logo";
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
+import { useTranslation } from "react-i18next";
+
+import "../../i18n/i18n";
+import { capitalize } from "@mui/material";
+
+type footerContentType = {
+  description: string;
+  sections: {
+    title: string;
+    list: string[];
+  }[];
+};
 
 export const Footer = () => {
+  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
+  const { t, i18n } = useTranslation("footer");
+
+  useEffect(() => {
+    i18n.changeLanguage(searchParams.get("lang") as string | undefined);
+  }, [searchParams]);
+
+  const footerContent: footerContentType = t("footer", { returnObjects: true });
+
+  console.log(footerContent);
+
   return (
     <footer className={styles.footer}>
       <div>
         <Logo />
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
-          odio mollitia voluptate?
-        </p>
+        <p>{footerContent.description}</p>
         <ul>
           <li>
             <a href="">
@@ -27,7 +49,23 @@ export const Footer = () => {
         </ul>
       </div>
       <ul>
-        <li>
+        {footerContent.sections.map((section) => {
+          return (
+            <li>
+              <h4>{capitalize(section.title)}</h4>
+              <ul>
+                {section.list.map((item) => {
+                  return <li>{capitalize(item)}</li>;
+                })}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+    </footer>
+  );
+};
+/* <li>
           <h4>About</h4>
           <ul>
             <li>About us</li>
@@ -61,8 +99,4 @@ export const Footer = () => {
             <li>Work time</li>
             <li>More</li>
           </ul>
-        </li>
-      </ul>
-    </footer>
-  );
-};
+        </li> */

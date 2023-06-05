@@ -2,8 +2,10 @@ import i18next from "i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 import I18NextHttpBackend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
-import enTranslation from "./en/translation.json";
-import ruTranslation from "./ru/translation.json";
+import enHeader from "../UI/header/assets/locales/en/translation.json";
+import ruHeader from "../UI/header/assets/locales/ru/translation.json";
+import enFooter from "../UI/footer/assets/locales/en/translation.json";
+import ruFooter from "../UI/footer/assets/locales/ru/translation.json";
 
 export default i18next
   .use(initReactI18next)
@@ -13,10 +15,12 @@ export default i18next
     lng: "en",
     resources: {
       en: {
-        translation: enTranslation,
+        header: enHeader,
+        footer: enFooter,
       },
       ru: {
-        translation: ruTranslation,
+        header: ruHeader,
+        footer: ruFooter,
       },
     },
   });
