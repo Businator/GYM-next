@@ -1,16 +1,30 @@
+"use client";
 import React from "react";
-import { integral } from "'@/assets/fonts/fonts'";
 
-import styles from "./ContactsPage.module.scss";
 import { BsGithub, BsTelegram, BsTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useLanguage } from "'@/hooks/useLanguage'";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import styles from "./ContactsPage.module.scss";
+
+type contactsContenttype = {
+  header: string;
+  location: string;
+};
 
 export const ContactsPage = () => {
+  const contactsContent = useLanguage({
+    resourse: "contacts",
+    translationName: "contacts",
+  }) as contactsContenttype;
+
   return (
     <section className={styles.contacts}>
       <div className={styles.container}>
-        <h1 className={integral.className}>Contacts</h1>
+        <h1 className={chooseLanguage()}>
+          {contactsContent.header.toUpperCase()}
+        </h1>
         <ul>
           <li>
             <a href="https://github.com/Businator" target="_blank">
@@ -49,7 +63,7 @@ export const ContactsPage = () => {
               <span>
                 <FaMapMarkerAlt />
               </span>
-              Togliatti, Russia
+              {contactsContent.location}
             </a>
           </li>
         </ul>

@@ -8,6 +8,8 @@ import enFooter from "../UI/footer/assets/locales/en/translation.json";
 import ruFooter from "../UI/footer/assets/locales/ru/translation.json";
 import enMain from "../pages/main/assets/locales/en/translation.json";
 import ruMain from "../pages/main/assets/locales/ru/translation.json";
+import enContacts from "../pages/contacts/assets/locales/en/translation.json";
+import ruContacts from "../pages/contacts/assets/locales/ru/translation.json";
 
 export default i18next
   .use(initReactI18next)
@@ -20,11 +22,13 @@ export default i18next
         header: enHeader,
         footer: enFooter,
         main: enMain,
+        contacts: enContacts,
       },
       ru: {
         header: ruHeader,
         footer: ruFooter,
         main: ruMain,
+        contacts: ruContacts,
       },
     },
   });
