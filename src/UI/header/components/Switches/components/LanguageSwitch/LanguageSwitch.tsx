@@ -16,14 +16,22 @@ export const LanguageSwitch = () => {
   const pathname = usePathname() as string;
   const searchParams = useSearchParams() as ReadonlyURLSearchParams;
 
+  const changeLanguage = (lang: string) => {
+    const current = new URLSearchParams(searchParams.toString());
+    current.delete("lang");
+    const path = pathname + `?lang=${lang}` + "&" + current.toString();
+
+    return path;
+  };
+
   const handlerSwitch = (event: ChangeEvent<HTMLInputElement>) => {
     switch (event.target.checked) {
       case false:
-        router.replace(pathname + "?lang=en");
+        router.replace(changeLanguage("en"));
         localStorage.setItem("lang", "en");
         break;
       case true:
-        router.replace(pathname + "?lang=ru");
+        router.replace(changeLanguage("ru"));
         localStorage.setItem("lang", "ru");
         break;
     }
