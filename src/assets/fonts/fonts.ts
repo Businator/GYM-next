@@ -4,4 +4,8 @@ const integral = localFont({
   src: "../fonts/IntegralCF-Medium.woff2",
 });
 
-export { integral };
+const russoOne = localFont({
+  src: "./RussoOne-Regular.ttf",
+});
+
+export { integral, russoOne };

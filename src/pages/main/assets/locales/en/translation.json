@@ -46,6 +46,16 @@
           "title": "MUSCLE BUILDING",
           "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus similique vero illum sed totam soluta voluptas",
           "link": "LEARN MORE"
+        },
+        {
+          "title": "MUSCLE BUILDING",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus similique vero illum sed totam soluta voluptas",
+          "link": "LEARN MORE"
+        },
+        {
+          "title": "MUSCLE BUILDING",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus similique vero illum sed totam soluta voluptas",
+          "link": "LEARN MORE"
         }
       ]
     },
@@ -53,8 +63,14 @@
       "header": "about our gym",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, minima? Quia quasi velit nesciunt rem autem veritatis cum repudiandae minima pariatur esse temporibus qui quod eos, id nihil fugit reiciendis?",
       "cards": [
-        { "title": "Lorem ipsum dolor sit amet" },
-        { "title": "Lorem ipsum dolor sit amet" }
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciun"
+        },
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciun"
+        }
       ]
     },
     "coaches": {
@@ -72,7 +88,11 @@
             "Sed obcaecati, odit accusantium",
             "cupiditate fugiat sit excepturi",
             "nostrum illum laboriosam ut"
-          ]
+          ],
+          "price": {
+            "month": 120,
+            "yaer": 1200
+          }
         },
         {
           "title": "open gym",
@@ -81,7 +101,11 @@
             "Sed obcaecati, odit accusantium",
             "cupiditate fugiat sit excepturi",
             "nostrum illum laboriosam ut"
-          ]
+          ],
+          "price": {
+            "month": 109,
+            "yaer": 1090
+          }
         },
         {
           "title": "stretching",
@@ -90,7 +114,11 @@
             "Sed obcaecati, odit accusantium",
             "cupiditate fugiat sit excepturi",
             "nostrum illum laboriosam ut"
-          ]
+          ],
+          "price": {
+            "month": 80,
+            "yaer": 800
+          }
         },
         {
           "title": "powerlifting",
@@ -99,13 +127,39 @@
             "Sed obcaecati, odit accusantium",
             "cupiditate fugiat sit excepturi",
             "nostrum illum laboriosam ut"
-          ]
+          ],
+          "price": {
+            "month": 100,
+            "yaer": 1000
+          }
         }
       ],
       "button": "puchase now"
     },
     "reviews": {
-      "header": "reviews from clients"
+      "header": "reviews from clients",
+      "cards": [
+        {
+          "user": "john wick",
+          "status": "client",
+          "review": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique enim explicabo earum, reiciendis"
+        },
+        {
+          "user": "dominic toretto",
+          "status": "client",
+          "review": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique enim explicabo earum, reiciendis"
+        },
+        {
+          "user": "dwayne johnson",
+          "status": "coach",
+          "review": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique enim explicabo earum, reiciendis"
+        },
+        {
+          "user": "michael scott",
+          "status": "client",
+          "review": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique enim explicabo earum, reiciendis"
+        }
+      ]
     },
     "trial": {
       "header": "reviews from clientsget your first trial visit",

@@ -1,0 +1,19 @@
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
+type useLangaugeType = {
+  resourse: string;
+  translationName: string;
+};
+
+export const useLanguage = ({ resourse, translationName }: useLangaugeType) => {
+  const { t, i18n } = useTranslation(resourse);
+  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
+
+  useEffect(() => {
+    i18n.changeLanguage(searchParams.get("lang") as string | undefined);
+  }, [searchParams]);
+
+  return t(translationName, { returnObjects: true });
+};

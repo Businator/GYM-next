@@ -1,9 +1,10 @@
-import Link from "next/link";
+"use client";
 import React from "react";
+import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
 import clsx from "clsx";
 import styles from "./LinkWithArrow.module.scss";
-import { integral } from "'@/assets/fonts/fonts'";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
 
 export const LinkWithArrow = ({
   href = "/",
@@ -13,7 +14,7 @@ export const LinkWithArrow = ({
   return (
     <Link
       {...rest}
-      className={clsx([integral.className, styles.link])}
+      className={clsx([chooseLanguage(), styles.link])}
       href={href}
     >
       {children}

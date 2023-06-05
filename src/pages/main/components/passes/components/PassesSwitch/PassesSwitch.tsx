@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch } from "@mui/material";
+import { Switch, capitalize } from "@mui/material";
 import styles from "./PassesSwitch.module.scss";
 import clsx from "clsx";
 
@@ -34,7 +34,13 @@ const switchStyles = {
   },
 };
 
-export const PassesSwitch = ({ switchState }: React.ComponentState) => {
+export const PassesSwitch = ({
+  switchState,
+  switchesText,
+}: {
+  switchState: React.ComponentState;
+  switchesText: string[];
+}) => {
   const [isYearly, setIsYearly] = switchState;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,9 +50,13 @@ export const PassesSwitch = ({ switchState }: React.ComponentState) => {
   return (
     <div className={styles.container}>
       <span>
-        <span className={clsx([!isYearly && styles.active])}>Monthly</span>
+        <span className={clsx([!isYearly && styles.active])}>
+          {capitalize(switchesText[0])}
+        </span>
         &nbsp;/&nbsp;
-        <span className={clsx([isYearly && styles.active])}>Yearly</span>
+        <span className={clsx([isYearly && styles.active])}>
+          {capitalize(switchesText[1])}
+        </span>
       </span>
       <Switch sx={switchStyles} onChange={(event) => handleChange(event)} />
     </div>

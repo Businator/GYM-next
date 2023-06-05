@@ -3,11 +3,11 @@
 import React from "react";
 import { EffectCards } from "swiper";
 import { MySwiper } from "'@/components/MySwiper/MySwiper'";
-import { ReviewsCards } from "../ReviewsCards/ReviewsCards";
+import { ReviewsCards, cardType } from "../ReviewsCards/ReviewsCards";
 import styles from "./ReviewsSwiper.module.scss";
 import stylesForButtons from "../../assets/styles/stylesForButtons.module.scss";
 
-export const ReviewsSwiper = () => {
+export const ReviewsSwiper = ({ cards }: { cards: cardType[] }) => {
   return (
     <div className={styles.container}>
       <MySwiper
@@ -18,7 +18,7 @@ export const ReviewsSwiper = () => {
         useButtons={true}
         stylesForButtons={stylesForButtons.buttonContainer}
       >
-        {ReviewsCards()}
+        {ReviewsCards(cards)}
       </MySwiper>
     </div>
   );

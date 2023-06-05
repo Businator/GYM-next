@@ -2,27 +2,40 @@ import React from "react";
 import { SwiperSlide } from "swiper/react";
 
 import styles from "./HeroCards.module.scss";
-import { integral } from "'@/assets/fonts/fonts'";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
 
-export const HeroCards = () => {
+export const HeroCards = ({
+  headers,
+  description,
+}: {
+  headers: string[];
+  description: string;
+}) => {
+  const addLineBreak = (text: string) => {
+    const words = text.split(" ");
+    if (words.length > 2) {
+      return (
+        <>
+          {words[0]} <br />
+          {words.slice(1).join(" ")}
+        </>
+      );
+    }
+    return text;
+  };
+
   return (
     <>
-      <SwiperSlide className={styles.card}>
-        <h1 className={integral.className}>
-          WORK WITH <br /> PROFFESOINALS
-        </h1>
-        <p>Achieve your goals and become the best version of yourself</p>
-      </SwiperSlide>
-      <SwiperSlide className={styles.card}>
-        <h1 className={integral.className}>WORK ALONE</h1>
-        <p>Achieve your goals and become the best version of yourself</p>
-      </SwiperSlide>
-      <SwiperSlide className={styles.card}>
-        <h1 className={integral.className}>
-          WORK WITH <br /> OUR APPLICATION
-        </h1>
-        <p>Achieve your goals and become the best version of yourself</p>
-      </SwiperSlide>
+      {headers.map((header, index) => {
+        return (
+          <SwiperSlide key={index} className={styles.card}>
+            <h1 className={chooseLanguage()}>
+              {addLineBreak(header.toUpperCase())}
+            </h1>
+            <p>{description}</p>
+          </SwiperSlide>
+        );
+      })}
     </>
   );
 };

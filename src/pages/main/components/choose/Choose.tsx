@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import { TiFlashOutline } from "react-icons/ti";
@@ -5,47 +7,44 @@ import bottle from "./assets/image/bottle.png";
 import dumbbell from "./assets/image/dumbbell.png";
 import exspander from "./assets/image/exspander.png";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
-import { integral } from "../../../../assets/fonts/fonts";
 
 import styles from "./Choose.module.scss";
+import { useLanguage } from "'@/hooks/useLanguage'";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
 
-const data = [
-  {
-    id: 1,
-    header: "MUSCLE BUILDING",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus similique vero illum sed totam soluta voluptas",
-    img: dumbbell,
-  },
-  {
-    id: 2,
-    header: "MUSCLE BUILDING",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus similique vero illum sed totam soluta voluptas",
-    img: exspander,
-  },
-  {
-    id: 3,
-    header: "MUSCLE BUILDING",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus similique vero illum sed totam soluta voluptas",
-    img: bottle,
-  },
-];
+type chooseContentType = {
+  header: string;
+  cards: {
+    title: string;
+    description: string;
+    link: string;
+    image: string;
+  }[];
+};
 
 export const Choose = () => {
+  const chooseContent = useLanguage({
+    resourse: "main",
+    translationName: "main.choose",
+  }) as chooseContentType;
+
   return (
     <section>
-      <h2 className={integral.className}>WHY CHOOSE US</h2>
+      <h2 className={chooseLanguage()}>{chooseContent.header.toUpperCase()}</h2>
       <div className={styles.container}>
-        {data.map((element) => {
+        {chooseContent.cards.map((card, index) => {
           return (
-            <div key={element.id} className={styles.card}>
-              <Image alt={element.img.src} src={element.img} />
-              <h3 className={integral.className}>{element.header}</h3>
-              <p>{element.description}</p>
+            <div key={index} className={styles.card}>
+              <Image
+                alt="training apparatus"
+                src={index === 0 ? dumbbell : index === 1 ? exspander : bottle}
+                width={100}
+                height={100}
+              />
+              <h3 className={chooseLanguage()}>{card.title.toUpperCase()}</h3>
+              <p>{card.description}</p>
               <div>
-                <LinkWithArrow />
+                <LinkWithArrow children={card.link.toUpperCase()} />
                 <span className={styles.flash}>
                   <TiFlashOutline />
                 </span>

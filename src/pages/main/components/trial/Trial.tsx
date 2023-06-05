@@ -3,11 +3,12 @@
 import React, { FormEvent, useState } from "react";
 import { SxProps, TextField } from "@mui/material";
 
-import { integral } from "'@/assets/fonts/fonts'";
 import { Button } from "'@/UI/button/Button'";
 import { validateEmail } from "'@/utils/validateEmail'";
 import clsx from "clsx";
 import style from "./Trial.module.scss";
+import { useLanguage } from "'@/hooks/useLanguage'";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
 
 const textFieldStyles = {
   "& .MuiInputBase-input": {
@@ -31,9 +32,20 @@ const textFieldStyles = {
   },
 } as SxProps;
 
+type trialContentType = {
+  header: string;
+  decription: string;
+  button: string;
+};
+
 export const Trial = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+
+  const trialContent = useLanguage({
+    resourse: "main",
+    translationName: "main.trial",
+  }) as trialContentType;
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -49,11 +61,10 @@ export const Trial = () => {
   return (
     <div className={style.container}>
       <section className={style.trial}>
-        <h2 className={integral.className}>GET YOUR FIRST TRIAL VISIT</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-          voluptates, ipsam dolorum ipsa, placeat perferendis nemo
-        </p>
+        <h2 className={chooseLanguage()}>
+          {trialContent.header.toUpperCase()}
+        </h2>
+        <p>{trialContent.decription}</p>
         <form onSubmit={(event) => handleSubmit(event)}>
           <TextField
             value={email}
@@ -64,7 +75,7 @@ export const Trial = () => {
             sx={textFieldStyles}
           />
           <Button type="submit" className={clsx([error && style.buttonError])}>
-            SUBMIT
+            {trialContent.button.toUpperCase()}
           </Button>
         </form>
       </section>

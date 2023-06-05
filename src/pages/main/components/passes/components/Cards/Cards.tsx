@@ -1,15 +1,31 @@
 import { SwiperSlide } from "swiper/react";
-import passes from "../../mocks/passes.json";
-import { integral } from "'@/assets/fonts/fonts'";
 import { Button } from "'@/UI/button/Button'";
 import styles from "./Cards.module.scss";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
 
-export const Cards = (isYearly: boolean) => {
-  return passes.map((card, index) => {
+export type cardsType = {
+  title: string;
+  decription: string[];
+  price: {
+    month: number;
+    yaer: number;
+  };
+}[];
+
+export const Cards = ({
+  isYearly,
+  cards,
+  buttonChild,
+}: {
+  isYearly: boolean;
+  cards: cardsType;
+  buttonChild: string;
+}) => {
+  return cards.map((card, index) => {
     return (
-      <SwiperSlide key={card.id} className={styles.card}>
+      <SwiperSlide key={index} className={styles.card}>
         <div>
-          <h3 className={integral.className}>{card.title.toUpperCase()}</h3>
+          <h3 className={chooseLanguage()}>{card.title.toUpperCase()}</h3>
           <span className={styles.price}>
             {isYearly ? String(card.price.yaer) : String(card.price.month)}
           </span>
@@ -24,7 +40,7 @@ export const Cards = (isYearly: boolean) => {
             );
           })}
         </ul>
-        <Button>PUCHASE NOW</Button>
+        <Button>{buttonChild.toUpperCase()}</Button>
         {index % 2 || index === 2 ? (
           <span className={styles.border}></span>
         ) : (

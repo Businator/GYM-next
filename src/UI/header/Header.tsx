@@ -15,6 +15,7 @@ import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import "../../i18n/i18n";
+import { useLanguage } from "'@/hooks/useLanguage'";
 
 export type navigation = {
   name: string;
@@ -23,14 +24,11 @@ export type navigation = {
 
 export const Header = () => {
   const pathname = usePathname();
-  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
 
-  const { t, i18n } = useTranslation("header");
-  const pageList: navigation = t("navigation", { returnObjects: true });
-
-  useEffect(() => {
-    i18n.changeLanguage(searchParams.get("lang") as string | undefined);
-  }, [searchParams]);
+  const pageList = useLanguage({
+    resourse: "header",
+    translationName: "navigation",
+  }) as navigation;
 
   return (
     <header
