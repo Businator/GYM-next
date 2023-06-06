@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSwiper } from "swiper/react";
 import {
   HiOutlineArrowCircleLeft,
@@ -10,12 +10,29 @@ import clsx from "clsx";
 
 export const SwiperButtons = ({ className }: { className?: string }) => {
   const swiper = useSwiper();
+  const [isDisabledPrev, setIsDisabledPrev] = useState(true);
+  const [isDisabledNext, setIsDisabledNext] = useState(false);
+
+  const handlerClickPrev = () => {
+    swiper.slidePrev();
+    console.log(swiper.progress, "prev");
+    setIsDisabledPrev(swiper.progress === 0);
+    setIsDisabledNext(swiper.progress === 1);
+  };
+
+  const handlerClickNext = () => {
+    swiper.slideNext();
+    console.log(swiper.progress, "next");
+    setIsDisabledNext(swiper.progress === 1);
+    setIsDisabledPrev(swiper.progress === 0);
+  };
+
   return (
     <div className={clsx([styles.buttonContainer, className])}>
-      <button onClick={() => swiper.slidePrev()}>
+      <button onClick={handlerClickPrev} disabled={isDisabledPrev}>
         <HiOutlineArrowCircleLeft />
       </button>
-      <button onClick={() => swiper.slideNext()}>
+      <button onClick={handlerClickNext} disabled={isDisabledNext}>
         <HiOutlineArrowCircleRight />
       </button>
     </div>
