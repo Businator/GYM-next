@@ -1,0 +1,11 @@
+.light {
+  @apply bg-slate-100;
+
+  h2 {
+    @apply text-black;
+  }
+
+  P {
+    @apply text-gray-800;
+  }
+}

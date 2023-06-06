@@ -8,9 +8,11 @@ import dumbbell from "./assets/image/dumbbell.png";
 import exspander from "./assets/image/exspander.png";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 
-import styles from "./Choose.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import clsx from "clsx";
+import { useTheme } from "'@/hooks/useTheme'";
+import styles from "./Choose.module.scss";
 
 type chooseContentType = {
   header: string;
@@ -28,10 +30,14 @@ export const Choose = () => {
     translationName: "main.choose",
   }) as chooseContentType;
 
+  const theme = useTheme();
+
   return (
     <section>
       <h2 className={chooseLanguage()}>{chooseContent.header.toUpperCase()}</h2>
-      <div className={styles.container}>
+      <div
+        className={clsx(styles.container, theme === "light" && styles.light)}
+      >
         {chooseContent.cards.map((card, index) => {
           return (
             <div key={index} className={styles.card}>

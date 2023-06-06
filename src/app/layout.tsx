@@ -1,5 +1,4 @@
-import { Footer } from "'@/UI/footer/Footer'";
-import { Header } from "'@/UI/header/Header'";
+import { Layout } from "'@/layout/Layout'";
 import "./globals.scss";
 
 export const metadata = {
@@ -12,17 +11,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="icon/favicon.ico" />
-        <link rel="apple-touch-icon" href="icon/apple-touch.ico" />
-      </head>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
-  );
+  return <Layout>{children}</Layout>;
 }

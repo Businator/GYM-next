@@ -1,21 +1,17 @@
 "use client";
 
 import React, { useEffect } from "react";
-import {
-  ReadonlyURLSearchParams,
-  usePathname,
-  useSearchParams,
-} from "next/navigation";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { capitalize } from "@mui/material";
-import { useTranslation } from "react-i18next";
 import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 
-import styles from "./Header.module.scss";
 import Link from "next/link";
 import "../../i18n/i18n";
 import { useLanguage } from "'@/hooks/useLanguage'";
+import { useTheme } from "'@/hooks/useTheme'";
+import styles from "./Header.module.scss";
 
 export type navigation = {
   name: string;
@@ -24,6 +20,7 @@ export type navigation = {
 
 export const Header = () => {
   const pathname = usePathname();
+  const theme = useTheme();
 
   const pageList = useLanguage({
     resourse: "header",
@@ -32,7 +29,11 @@ export const Header = () => {
 
   return (
     <header
-      className={clsx(styles.header, pathname === "/" && styles.headerOnMain)}
+      className={clsx(
+        styles.header,
+        pathname === "/" && styles.headerOnMain,
+        theme === "light" && styles.light
+      )}
     >
       <Logo />
       <nav

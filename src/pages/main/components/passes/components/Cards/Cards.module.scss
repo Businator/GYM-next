@@ -1,6 +1,14 @@
 .card {
   @apply w-1/3 flex flex-col items-center gap-y-6;
 
+  &.light {
+    h3,
+    span,
+    .price {
+      @apply text-black;
+    }
+  }
+
   .price {
     @apply text-5xl font-bold;
   }

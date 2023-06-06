@@ -3,9 +3,10 @@ import { Menu, MenuItem, MenuList, SxProps, capitalize } from "@mui/material";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Switches } from "../Switches/Switches";
-import styles from "./MobileMenu.module.scss";
 import clsx from "clsx";
 import { navigation } from "../../Header";
+import styles from "./MobileMenu.module.scss";
+import { useTheme } from "'@/hooks/useTheme'";
 
 const menuStyle = {
   "& .MuiBackdrop-root": {
@@ -22,6 +23,7 @@ const menuStyle = {
 export const MobileMenu = ({ pages }: { pages?: navigation }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [element, setElement] = useState(null as unknown as HTMLElement);
+  const theme = useTheme();
 
   useEffect(() => {
     document.body && setElement(document.body);
@@ -61,7 +63,12 @@ export const MobileMenu = ({ pages }: { pages?: navigation }) => {
           <Switches />
         </MenuList>
       </Menu>
-      <div className={styles.buttonContainer}>
+      <div
+        className={clsx(
+          styles.buttonContainer,
+          theme === "light" && styles.light
+        )}
+      >
         <button onClick={() => setOpenMenu((prev) => !prev)}>
           <AiOutlineMenu />
         </button>

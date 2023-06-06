@@ -16,9 +16,12 @@ export const ThemeSwitch = () => {
   const changeTheme = (theme: string) => {
     const current = new URLSearchParams(searchParams.toString());
 
+    if (!searchParams.has("theme") && searchParams.has("lang")) {
+      return pathname + "?" + current.toString() + "&" + `theme=${theme}`;
+    }
+
     if (searchParams.has("theme") && searchParams.has("lang")) {
       current.delete("theme");
-      console.log(current.toString());
       return pathname + "?" + current.toString() + "&" + `theme=${theme}`;
     }
 
@@ -33,9 +36,9 @@ export const ThemeSwitch = () => {
   const handlerSwitch = (event: ChangeEvent<HTMLInputElement>) => {
     switch (event.target.checked) {
       case false:
-        router.replace(changeTheme("white"));
-        changeTheme("white");
-        localStorage.setItem("theme", "white");
+        router.replace(changeTheme("light"));
+        changeTheme("light");
+        localStorage.setItem("theme", "light");
         break;
       case true:
         router.replace(changeTheme("dark"));

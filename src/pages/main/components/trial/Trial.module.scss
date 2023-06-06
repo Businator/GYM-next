@@ -8,6 +8,15 @@
   .trial {
     @apply bg-hero-gradient h-[600px]  max-w-none w-full flex flex-col items-center justify-center gap-y-4;
 
+    &.light {
+      h2 {
+        @apply text-white;
+      }
+      p {
+        @apply text-gray-200;
+      }
+    }
+
     form {
       @apply min-[320px]:w-[300px] sm:w-auto 
       relative flex flex-row;

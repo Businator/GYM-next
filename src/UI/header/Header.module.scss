@@ -1,8 +1,26 @@
 .header {
   @apply z-[1] w-full flex justify-around py-4;
 
+  &.light {
+    a {
+      @apply text-black;
+    }
+
+    .thisPage {
+      @apply text-dark-green;
+    }
+  }
+
   &.headerOnMain {
     @apply absolute;
+
+    a {
+      @apply text-white;
+    }
+
+    .thisPage {
+      @apply text-acid-green;
+    }
   }
 
   .navigation {

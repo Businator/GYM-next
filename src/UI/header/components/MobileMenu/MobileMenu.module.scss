@@ -8,4 +8,10 @@
 
 .buttonContainer {
   @apply flex flex-row-reverse items-center gap-4;
+
+  &.light {
+    svg {
+      @apply text-black;
+    }
+  }
 }

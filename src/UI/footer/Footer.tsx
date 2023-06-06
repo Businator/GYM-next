@@ -2,11 +2,13 @@
 
 import React from "react";
 import { BsGithub, BsInstagram } from "react-icons/bs";
-import styles from "./Footer.module.scss";
 import { Logo } from "../logo/Logo";
 import "../../i18n/i18n";
 import { capitalize } from "@mui/material";
 import { useLanguage } from "'@/hooks/useLanguage'";
+import { useTheme } from "'@/hooks/useTheme'";
+import clsx from "clsx";
+import styles from "./Footer.module.scss";
 
 type footerContentType = {
   description: string;
@@ -22,8 +24,10 @@ export const Footer = () => {
     translationName: "footer",
   }) as footerContentType;
 
+  const theme = useTheme();
+
   return (
-    <footer className={styles.footer}>
+    <footer className={clsx(styles.footer, theme === "light" && styles.light)}>
       <div>
         <Logo />
         <p>{footerContent.description}</p>
@@ -47,7 +51,11 @@ export const Footer = () => {
               <h4>{capitalize(section.title)}</h4>
               <ul>
                 {section.list.map((item, index) => {
-                  return <li key={index}>{capitalize(item)}</li>;
+                  return (
+                    <li key={index} className={styles.listItem}>
+                      {capitalize(item)}
+                    </li>
+                  );
                 })}
               </ul>
             </li>

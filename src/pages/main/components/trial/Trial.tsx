@@ -6,9 +6,10 @@ import { SxProps, TextField } from "@mui/material";
 import { Button } from "'@/UI/button/Button'";
 import { validateEmail } from "'@/utils/validateEmail'";
 import clsx from "clsx";
-import style from "./Trial.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import styles from "./Trial.module.scss";
+import { useTheme } from "'@/hooks/useTheme'";
 
 const textFieldStyles = {
   "& .MuiInputBase-input": {
@@ -42,6 +43,8 @@ export const Trial = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
 
+  const theme = useTheme();
+
   const trialContent = useLanguage({
     resourse: "main",
     translationName: "main.trial",
@@ -59,8 +62,10 @@ export const Trial = () => {
   };
 
   return (
-    <div className={style.container}>
-      <section className={style.trial}>
+    <div className={styles.container}>
+      <section
+        className={clsx(styles.trial, theme === "light" && styles.light)}
+      >
         <h2 className={chooseLanguage()}>
           {trialContent.header.toUpperCase()}
         </h2>
@@ -74,7 +79,7 @@ export const Trial = () => {
             helperText={error && "Please enter a valid email address"}
             sx={textFieldStyles}
           />
-          <Button type="submit" className={clsx([error && style.buttonError])}>
+          <Button type="submit" className={clsx([error && styles.buttonError])}>
             {trialContent.button.toUpperCase()}
           </Button>
         </form>

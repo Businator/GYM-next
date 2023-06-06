@@ -1,7 +1,9 @@
 import { SwiperSlide } from "swiper/react";
 import { Button } from "'@/UI/button/Button'";
-import styles from "./Cards.module.scss";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import clsx from "clsx";
+import { useTheme } from "'@/hooks/useTheme'";
+import styles from "./Cards.module.scss";
 
 export type cardsType = {
   title: string;
@@ -21,9 +23,14 @@ export const Cards = ({
   cards: cardsType;
   buttonChild: string;
 }) => {
+  const theme = useTheme();
+
   return cards.map((card, index) => {
     return (
-      <SwiperSlide key={index} className={styles.card}>
+      <SwiperSlide
+        key={index}
+        className={clsx(styles.card, theme === "light" && styles.light)}
+      >
         <div>
           <h3 className={chooseLanguage()}>{card.title.toUpperCase()}</h3>
           <span className={styles.price}>

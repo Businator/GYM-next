@@ -32,6 +32,7 @@ module.exports = {
       },
       colors: {
         "acid-green": "#D6FD51",
+        "dark-green": "#00ff16",
       },
       borderRadius: {
         default: "15px",
