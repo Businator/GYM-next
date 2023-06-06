@@ -5,10 +5,10 @@ import { SwiperSlide } from "swiper/react";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 import { NewsList, workWithNews } from "../../API/NewsApi";
 import plug from "../../assets/image/plug.jpg";
-import { integral } from "'@/assets/fonts/fonts'";
 import styles from "./NewsCard.module.scss";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
 
-export const NewsCard = () => {
+export const NewsCard = (buttonText: string) => {
   const [news, setNews] = useState({} as NewsList);
 
   useEffect(() => {
@@ -37,9 +37,9 @@ export const NewsCard = () => {
           <LinkWithArrow
             href={res.webUrl}
             target="_blank"
-            className={clsx([integral.className, styles.link])}
+            className={clsx([chooseLanguage(), styles.link])}
           >
-            READ MORE
+            {buttonText.toUpperCase()}
           </LinkWithArrow>
         </SwiperSlide>
       );

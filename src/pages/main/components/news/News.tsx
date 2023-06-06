@@ -2,20 +2,35 @@
 
 import React from "react";
 import { NewsSwiper } from "./components/NewsSwiper/NewsSwiper";
-import { integral } from "'@/assets/fonts/fonts'";
 
+import { useLanguage } from "'@/hooks/useLanguage'";
+import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import clsx from "clsx";
 import styles from "./News.module.scss";
+import { useTheme } from "'@/hooks/useTheme'";
+
+type newsContentType = {
+  header: string;
+  descriptiom: string;
+  button: string;
+};
 
 export const News = () => {
+  const newsContent = useLanguage({
+    resourse: "main",
+    translationName: "main.news",
+  }) as newsContentType;
+
+  const theme = useTheme();
+
   return (
     <section className={styles.news}>
-      <div className={styles.container}>
-        <h2 className={integral.className}>BLOG & NEWS</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-          corporis, earum autem eligendi, modi error eum corrupti officiis
-        </p>
-        <NewsSwiper />
+      <div
+        className={clsx(styles.container, theme === "light" && styles.light)}
+      >
+        <h2 className={chooseLanguage()}>{newsContent.header.toUpperCase()}</h2>
+        <p>{newsContent.descriptiom}</p>
+        <NewsSwiper buttonText={newsContent.button} />
       </div>
     </section>
   );

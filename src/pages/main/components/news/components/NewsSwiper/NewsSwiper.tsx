@@ -10,7 +10,7 @@ import styles from "./NewsSwiper.module.scss";
 import stylesForButtons from "../../assets/styles/SwiperButtons.module.scss";
 import { showNumberOfCards } from "'@/utils/showNumberOfCards'";
 
-export const NewsSwiper = () => {
+export const NewsSwiper = ({ buttonText }: { buttonText: string }) => {
   const [numberOfCards, setNumberOfCards] = useState(0);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const NewsSwiper = () => {
         stylesForButtons={stylesForButtons.buttonContainer}
         style={{ height: 400 }}
       >
-        {NewsCard()}
+        {NewsCard(buttonText)}
       </MySwiper>
     </div>
   );

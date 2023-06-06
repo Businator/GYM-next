@@ -4,6 +4,13 @@
   .container {
     @apply w-full flex flex-col items-center gap-y-4;
 
+    &.light {
+      h2,
+      p {
+        @apply text-white;
+      }
+    }
+
     p {
       @apply text-center;
     }

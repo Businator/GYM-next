@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, capitalize } from "@mui/material";
 import styles from "./PassesSwitch.module.scss";
 import clsx from "clsx";
+import { useTheme } from "'@/hooks/useTheme'";
 
 const switchStyles = {
   width: 100,
@@ -42,6 +43,7 @@ export const PassesSwitch = ({
   switchesText: string[];
 }) => {
   const [isYearly, setIsYearly] = switchState;
+  const theme = useTheme();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsYearly(event.target.checked);
@@ -50,11 +52,21 @@ export const PassesSwitch = ({
   return (
     <div className={styles.container}>
       <span>
-        <span className={clsx([!isYearly && styles.active])}>
+        <span
+          className={clsx(
+            [!isYearly && styles.active],
+            theme === "light" && styles.light
+          )}
+        >
           {capitalize(switchesText[0])}
         </span>
         &nbsp;/&nbsp;
-        <span className={clsx([isYearly && styles.active])}>
+        <span
+          className={clsx(
+            [isYearly && styles.active],
+            theme === "light" && styles.light
+          )}
+        >
           {capitalize(switchesText[1])}
         </span>
       </span>
