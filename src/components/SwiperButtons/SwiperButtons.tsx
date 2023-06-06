@@ -15,14 +15,12 @@ export const SwiperButtons = ({ className }: { className?: string }) => {
 
   const handlerClickPrev = () => {
     swiper.slidePrev();
-    console.log(swiper.progress, "prev");
     setIsDisabledPrev(swiper.progress === 0);
     setIsDisabledNext(swiper.progress === 1);
   };
 
   const handlerClickNext = () => {
     swiper.slideNext();
-    console.log(swiper.progress, "next");
     setIsDisabledNext(swiper.progress === 1);
     setIsDisabledPrev(swiper.progress === 0);
   };
