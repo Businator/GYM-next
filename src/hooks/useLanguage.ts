@@ -12,6 +12,12 @@ export const useLanguage = ({ resourse, translationName }: useLangaugeType) => {
   const searchParams = useSearchParams() as ReadonlyURLSearchParams;
 
   useEffect(() => {
+    if (localStorage.getItem("lang")) {
+      i18n.changeLanguage(localStorage.getItem("lang") as string);
+    }
+  }, []);
+
+  useEffect(() => {
     i18n.changeLanguage(searchParams.get("lang") as string | undefined);
   }, [searchParams]);
 

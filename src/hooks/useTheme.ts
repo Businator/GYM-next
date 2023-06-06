@@ -9,6 +9,9 @@ export const useTheme = () => {
   const searchParams = useSearchParams() as ReadonlyURLSearchParams;
 
   useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      return;
+    }
     searchParams.get("theme") === null
       ? localStorage.setItem("theme", theme)
       : localStorage.setItem("theme", searchParams.get("theme") as string);
