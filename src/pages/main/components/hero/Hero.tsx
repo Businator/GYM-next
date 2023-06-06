@@ -40,7 +40,7 @@ export const Hero = () => {
           </MySwiper>
           <div className={styles.buttonsContainer}>
             <Button>{heroContent.button.toUpperCase()}</Button>
-            <LinkWithArrow children={heroContent.link.toUpperCase()} />
+            <LinkWithArrow>{heroContent.link.toUpperCase()}</LinkWithArrow>
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ export const Choose = () => {
               <h3 className={chooseLanguage()}>{card.title.toUpperCase()}</h3>
               <p>{card.description}</p>
               <div>
-                <LinkWithArrow children={card.link.toUpperCase()} />
+                <LinkWithArrow>{card.link.toUpperCase()}</LinkWithArrow>
                 <span className={styles.flash}>
                   <TiFlashOutline />
                 </span>

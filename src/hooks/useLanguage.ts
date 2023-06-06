@@ -15,11 +15,11 @@ export const useLanguage = ({ resourse, translationName }: useLangaugeType) => {
     if (localStorage.getItem("lang")) {
       i18n.changeLanguage(localStorage.getItem("lang") as string);
     }
-  }, []);
+  }, [i18n]);
 
   useEffect(() => {
     i18n.changeLanguage(searchParams.get("lang") as string | undefined);
-  }, [searchParams]);
+  }, [searchParams, i18n]);
 
   return t(translationName, { returnObjects: true });
 };
