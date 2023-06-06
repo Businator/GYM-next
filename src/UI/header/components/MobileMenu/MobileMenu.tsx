@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { navigation } from "../../Header";
 import styles from "./MobileMenu.module.scss";
 import { useTheme } from "'@/hooks/useTheme'";
+import { usePathname } from "next/navigation";
 
 const menuStyle = {
   "& .MuiBackdrop-root": {
@@ -24,6 +25,7 @@ export const MobileMenu = ({ pages }: { pages?: navigation }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [element, setElement] = useState(null as unknown as HTMLElement);
   const theme = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     document.body && setElement(document.body);
@@ -66,7 +68,7 @@ export const MobileMenu = ({ pages }: { pages?: navigation }) => {
       <div
         className={clsx(
           styles.buttonContainer,
-          theme === "light" && styles.light
+          pathname !== "/" && theme === "light" && styles.light
         )}
       >
         <button onClick={() => setOpenMenu((prev) => !prev)}>

@@ -12,6 +12,7 @@ export const useTheme = () => {
     if (localStorage.getItem("theme")) {
       return;
     }
+
     searchParams.get("theme") === null
       ? localStorage.setItem("theme", theme)
       : localStorage.setItem("theme", searchParams.get("theme") as string);
