@@ -9,6 +9,7 @@ import stylesForButtons from "./assets/styles/SwiperButtons.module.scss";
 import styles from "./Passes.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { Section } from "../section/Section";
 
 type passesContentType = {
   header: string;
@@ -26,7 +27,7 @@ export const Passes = () => {
   }) as passesContentType;
 
   return (
-    <section>
+    <Section>
       <h2 className={clsx([chooseLanguage(), styles.header])}>
         {passesContent.header.toUpperCase()}
       </h2>
@@ -49,6 +50,6 @@ export const Passes = () => {
           })}
         </MySwiper>
       </div>
-    </section>
+    </Section>
   );
 };

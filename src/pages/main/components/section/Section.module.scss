@@ -1,0 +1,7 @@
+.section {
+  @apply blur-xl transition delay-300 ease-in-out;
+
+  &.view {
+    @apply blur-none;
+  }
+}

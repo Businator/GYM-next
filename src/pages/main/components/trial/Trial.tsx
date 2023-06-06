@@ -8,8 +8,9 @@ import { validateEmail } from "'@/utils/validateEmail'";
 import clsx from "clsx";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
-import styles from "./Trial.module.scss";
 import { useTheme } from "'@/hooks/useTheme'";
+import { Section } from "../section/Section";
+import styles from "./Trial.module.scss";
 
 const textFieldStyles = {
   "& .MuiInputBase-input": {
@@ -62,10 +63,8 @@ export const Trial = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <section
-        className={clsx(styles.trial, theme === "light" && styles.light)}
-      >
+    <Section className={styles.container}>
+      <div className={clsx(styles.trial, theme === "light" && styles.light)}>
         <h2 className={chooseLanguage()}>
           {trialContent.header.toUpperCase()}
         </h2>
@@ -83,7 +82,7 @@ export const Trial = () => {
             {trialContent.button.toUpperCase()}
           </Button>
         </form>
-      </section>
-    </div>
+      </div>
+    </Section>
   );
 };

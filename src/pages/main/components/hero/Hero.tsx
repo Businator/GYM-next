@@ -11,6 +11,7 @@ import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
 import styles from "./Hero.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
+import { Section } from "../section/Section";
 
 type heroContentType = {
   header: string[];
@@ -29,7 +30,7 @@ export const Hero = () => {
   }) as heroContentType;
 
   return (
-    <section className={styles.hero}>
+    <Section className={styles.hero}>
       <div className={styles.heroBg}>
         <div className={styles.swiperContainer}>
           <MySwiper slidesPerView={1} useButtons={true}>
@@ -61,6 +62,6 @@ export const Hero = () => {
           })}
         </div>
       </Marquee>
-    </section>
+    </Section>
   );
 };

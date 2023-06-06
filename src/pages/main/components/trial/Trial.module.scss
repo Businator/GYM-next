@@ -1,12 +1,12 @@
 .container {
-  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center w-full;
+  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center h-[600px] max-w-none w-full p-0;
 
   p {
     @apply text-center;
   }
 
   .trial {
-    @apply bg-hero-gradient h-[600px]  max-w-none w-full flex flex-col items-center justify-center gap-y-4;
+    @apply bg-hero-gradient w-full h-full flex flex-col items-center justify-center gap-y-4;
 
     &.light {
       h2 {

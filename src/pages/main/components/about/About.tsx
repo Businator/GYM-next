@@ -10,6 +10,7 @@ import { Button } from "'@/UI/button/Button'";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
 import { capitalize } from "@mui/material";
+import { Section } from "../section/Section";
 
 type aboutContentType = {
   header: string;
@@ -27,7 +28,7 @@ export const About = () => {
   }) as aboutContentType;
 
   return (
-    <section>
+    <Section>
       <h2 className={chooseLanguage()}>{aboutContent.header.toUpperCase()}</h2>
       <Image src={aboutImg} alt="A man with a dumbbell" />
       <div className={styles.description}>
@@ -62,19 +63,6 @@ export const About = () => {
           })}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
-
-/*  <div>
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            </p>
-          </div>
-          <div>
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            </p>
-          </div> */

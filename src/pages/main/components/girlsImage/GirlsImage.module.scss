@@ -1,0 +1,7 @@
+.container {
+  @apply max-w-none w-full;
+
+  .girlsImg {
+    @apply h-[400px] object-cover rounded-none;
+  }
+}

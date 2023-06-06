@@ -13,6 +13,7 @@ import { chooseLanguage } from "'@/utils/chooseLanguage'";
 import clsx from "clsx";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./Choose.module.scss";
+import { Section } from "../section/Section";
 
 type chooseContentType = {
   header: string;
@@ -33,7 +34,7 @@ export const Choose = () => {
   const theme = useTheme();
 
   return (
-    <section>
+    <Section>
       <h2 className={chooseLanguage()}>{chooseContent.header.toUpperCase()}</h2>
       <div
         className={clsx(styles.container, theme === "light" && styles.light)}
@@ -59,6 +60,6 @@ export const Choose = () => {
           );
         })}
       </div>
-    </section>
+    </Section>
   );
 };

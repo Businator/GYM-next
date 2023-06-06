@@ -7,10 +7,11 @@ import { TBody } from "./component/TBody";
 import { Button } from "'@/UI/button/Button'";
 
 import style from "./Schedule.module.scss";
+import { Section } from "../section/Section";
 
 export const Schedule = () => {
   return (
-    <section className={style.shedule}>
+    <Section className={style.shedule}>
       <TableContainer>
         <Table>
           <THead />
@@ -18,6 +19,6 @@ export const Schedule = () => {
         </Table>
       </TableContainer>
       <Button>VIEW MORE</Button>
-    </section>
+    </Section>
   );
 };

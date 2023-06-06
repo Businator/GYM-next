@@ -13,6 +13,7 @@ import { chooseLanguage } from "'@/utils/chooseLanguage'";
 import clsx from "clsx";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./Coaches.module.scss";
+import { Section } from "../section/Section";
 
 type coachesContentType = {
   header: string;
@@ -33,7 +34,7 @@ export const Coaches = () => {
   }, []);
 
   return (
-    <section>
+    <Section>
       <h2 className={chooseLanguage()}>
         {coachesContent.header.toUpperCase()}
       </h2>
@@ -62,6 +63,6 @@ export const Coaches = () => {
           })}
         </MySwiper>
       </div>
-    </section>
+    </Section>
   );
 };

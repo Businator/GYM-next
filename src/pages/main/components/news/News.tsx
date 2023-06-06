@@ -8,6 +8,7 @@ import { chooseLanguage } from "'@/utils/chooseLanguage'";
 import clsx from "clsx";
 import styles from "./News.module.scss";
 import { useTheme } from "'@/hooks/useTheme'";
+import { Section } from "../section/Section";
 
 type newsContentType = {
   header: string;
@@ -24,7 +25,7 @@ export const News = () => {
   const theme = useTheme();
 
   return (
-    <section className={styles.news}>
+    <Section className={styles.news}>
       <div
         className={clsx(styles.container, theme === "light" && styles.light)}
       >
@@ -32,6 +33,6 @@ export const News = () => {
         <p>{newsContent.descriptiom}</p>
         <NewsSwiper buttonText={newsContent.button} />
       </div>
-    </section>
+    </Section>
   );
 };

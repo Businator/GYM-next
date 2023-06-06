@@ -7,6 +7,7 @@ import { ReviewsSwiper } from "./components/ReviewsSwiper/ReviewsSwiper";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { cardType } from "./components/ReviewsCards/ReviewsCards";
 import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { Section } from "../section/Section";
 
 type reviewsContentType = {
   header: string;
@@ -20,12 +21,12 @@ export const Reviews = () => {
   }) as reviewsContentType;
 
   return (
-    <section>
+    <Section>
       <h2 className={chooseLanguage()}>
         {reviewsContent.header.toUpperCase()}
       </h2>
       <Image src={imageForReviews} alt="a woman and a man train" />
       <ReviewsSwiper cards={reviewsContent.cards} />
-    </section>
+    </Section>
   );
 };
