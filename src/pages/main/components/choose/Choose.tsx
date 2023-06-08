@@ -9,7 +9,7 @@ import exspander from "./assets/image/exspander.png";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import clsx from "clsx";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./Choose.module.scss";
@@ -32,11 +32,11 @@ export const Choose = () => {
   }) as chooseContentType;
 
   const theme = useTheme();
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   return (
     <Section>
-      <h2 className={language}>{chooseContent.header.toUpperCase()}</h2>
+      <h2 className={font}>{chooseContent.header.toUpperCase()}</h2>
       <div
         className={clsx(styles.container, theme === "light" && styles.light)}
       >
@@ -49,7 +49,7 @@ export const Choose = () => {
                 width={100}
                 height={100}
               />
-              <h3 className={language}>{card.title.toUpperCase()}</h3>
+              <h3 className={font}>{card.title.toUpperCase()}</h3>
               <p>{card.description}</p>
               <div>
                 <LinkWithArrow>{card.link.toUpperCase()}</LinkWithArrow>

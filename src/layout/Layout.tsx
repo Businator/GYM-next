@@ -2,13 +2,13 @@
 import React from "react";
 import clsx from "clsx";
 
-import { Footer } from "'@/UI/footer/Footer'";
-import { Header } from "'@/UI/header/Header'";
+import Footer from "'@/UI/footer/Footer'";
+import Header from "'@/UI/header/Header'";
 import styles from "./Layout.module.scss";
 import { useTheme } from "'@/hooks/useTheme'";
 import Head from "next/head";
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const theme = useTheme();
 
   return (
@@ -25,3 +25,5 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     </html>
   );
 };
+
+export default Layout;

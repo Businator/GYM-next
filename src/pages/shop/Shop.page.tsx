@@ -1,5 +1,7 @@
 import React from "react";
 
-export const BlogPage = () => {
+const ShopPage = () => {
   return <div>Page under construction</div>;
 };
+
+export default ShopPage;

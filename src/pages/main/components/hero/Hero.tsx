@@ -8,7 +8,7 @@ import { Button } from "'@/UI/button/Button'";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 import { HeroCards } from "./components/HeroCards/HeroCards";
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import styles from "./Hero.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { Section } from "../section/Section";
@@ -23,7 +23,7 @@ type heroContentType = {
 
 export const Hero = () => {
   const searchParams = useSearchParams() as ReadonlyURLSearchParams;
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   const heroContent = useLanguage({
     resourse: "main",
@@ -47,7 +47,7 @@ export const Hero = () => {
         </div>
       </div>
       <Marquee className={styles.marqueeContainer}>
-        <div className={clsx([language, styles.marquee])}>
+        <div className={clsx([font, styles.marquee])}>
           {heroContent.marquee.map((text, index) => {
             return (
               <span

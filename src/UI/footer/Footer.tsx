@@ -3,7 +3,6 @@
 import React from "react";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 import { Logo } from "../logo/Logo";
-import "../../i18n/i18n";
 import { capitalize } from "@mui/material";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { useTheme } from "'@/hooks/useTheme'";
@@ -18,7 +17,7 @@ type footerContentType = {
   }[];
 };
 
-export const Footer = () => {
+const Footer = () => {
   const footerContent = useLanguage({
     resourse: "footer",
     translationName: "footer",
@@ -65,3 +64,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;
