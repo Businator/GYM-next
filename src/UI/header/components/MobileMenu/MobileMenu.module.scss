@@ -1,9 +1,5 @@
 .navigation {
-  @apply hidden;
-
-  &.active {
-    @apply block;
-  }
+  @apply block md:hidden;
 }
 
 .buttonContainer {

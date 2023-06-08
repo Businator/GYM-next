@@ -5,7 +5,7 @@ import { BsGithub, BsTelegram, BsTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
 import styles from "./ContactsPage.module.scss";
 
 type contactsContenttype = {
@@ -19,12 +19,12 @@ export const ContactsPage = () => {
     translationName: "contacts",
   }) as contactsContenttype;
 
+  const language = useChooseLanguage();
+
   return (
     <section className={styles.contacts}>
       <div className={styles.container}>
-        <h1 className={chooseLanguage()}>
-          {contactsContent.header.toUpperCase()}
-        </h1>
+        <h1 className={language}>{contactsContent.header.toUpperCase()}</h1>
         <ul>
           <li>
             <a href="https://github.com/Businator" target="_blank">

@@ -24,11 +24,7 @@
   }
 
   .navigation {
-    @apply hidden;
-
-    &.active {
-      @apply block;
-    }
+    @apply hidden md:block;
 
     ul {
       @apply flex gap-20;

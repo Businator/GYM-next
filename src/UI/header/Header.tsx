@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { capitalize } from "@mui/material";
@@ -36,12 +36,7 @@ export const Header = () => {
       )}
     >
       <Logo />
-      <nav
-        className={clsx(
-          styles.navigation,
-          document.documentElement.scrollWidth > 768 && styles.active
-        )}
-      >
+      <nav className={clsx(styles.navigation)}>
         <ul>
           {pageList.map((page, index) => {
             return (

@@ -6,10 +6,11 @@ import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
 import { NewsList, workWithNews } from "../../API/NewsApi";
 import plug from "../../assets/image/plug.jpg";
 import styles from "./NewsCard.module.scss";
-import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
 
 export const NewsCard = (buttonText: string) => {
   const [news, setNews] = useState({} as NewsList);
+  const language = useChooseLanguage();
 
   useEffect(() => {
     const getNews = async () => {
@@ -37,7 +38,7 @@ export const NewsCard = (buttonText: string) => {
           <LinkWithArrow
             href={res.webUrl}
             target="_blank"
-            className={clsx([chooseLanguage(), styles.link])}
+            className={clsx([language, styles.link])}
           >
             {buttonText.toUpperCase()}
           </LinkWithArrow>

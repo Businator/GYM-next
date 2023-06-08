@@ -8,7 +8,7 @@ import aboutCircTwo from "./assets/image/about-circ-2.jpg";
 import styles from "./About.module.scss";
 import { Button } from "'@/UI/button/Button'";
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
 import { capitalize } from "@mui/material";
 import { Section } from "../section/Section";
 
@@ -26,10 +26,11 @@ export const About = () => {
     resourse: "main",
     translationName: "main.about",
   }) as aboutContentType;
+  const language = useChooseLanguage();
 
   return (
     <Section>
-      <h2 className={chooseLanguage()}>{aboutContent.header.toUpperCase()}</h2>
+      <h2 className={language}>{aboutContent.header.toUpperCase()}</h2>
       <Image src={aboutImg} alt="A man with a dumbbell" />
       <div className={styles.description}>
         <p>{aboutContent.description}</p>

@@ -4,7 +4,7 @@ import React from "react";
 import { NewsSwiper } from "./components/NewsSwiper/NewsSwiper";
 
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
 import clsx from "clsx";
 import styles from "./News.module.scss";
 import { useTheme } from "'@/hooks/useTheme'";
@@ -23,13 +23,14 @@ export const News = () => {
   }) as newsContentType;
 
   const theme = useTheme();
+  const language = useChooseLanguage();
 
   return (
     <Section className={styles.news}>
       <div
         className={clsx(styles.container, theme === "light" && styles.light)}
       >
-        <h2 className={chooseLanguage()}>{newsContent.header.toUpperCase()}</h2>
+        <h2 className={language}>{newsContent.header.toUpperCase()}</h2>
         <p>{newsContent.descriptiom}</p>
         <NewsSwiper buttonText={newsContent.button} />
       </div>

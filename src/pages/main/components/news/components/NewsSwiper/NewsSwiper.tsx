@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Pagination } from "swiper";
 
@@ -8,18 +8,15 @@ import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { NewsCard } from "../NewsCard/NewsCard";
 import styles from "./NewsSwiper.module.scss";
 import stylesForButtons from "../../assets/styles/SwiperButtons.module.scss";
-import { showNumberOfCards } from "'@/utils/showNumberOfCards'";
+import { useWidth } from "'@/hooks/useWidth'";
 
 export const NewsSwiper = ({ buttonText }: { buttonText: string }) => {
-  const [numberOfCards, setNumberOfCards] = useState(0);
+  const isMobileWidth = useWidth();
 
-  useEffect(() => {
-    setNumberOfCards(showNumberOfCards());
-  }, []);
   return (
     <div className={styles.swiperContainer}>
       <MySwiper
-        slidesPerView={numberOfCards}
+        slidesPerView={isMobileWidth ? 1 : 3}
         spaceBetween={10}
         modules={[Pagination]}
         useButtons={true}

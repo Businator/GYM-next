@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { coachesList } from "./mocks/coahesList";
 import stylesForButtom from "./assets/styles/SwiperButtons.module.scss";
-import { showNumberOfCards } from "'@/utils/showNumberOfCards'";
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { chooseLanguage } from "'@/utils/chooseLanguage'";
+import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
 import clsx from "clsx";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./Coaches.module.scss";
 import { Section } from "../section/Section";
+import { useWidth } from "'@/hooks/useWidth'";
 
 type coachesContentType = {
   header: string;
@@ -21,27 +21,22 @@ type coachesContentType = {
 };
 
 export const Coaches = () => {
-  const [numberOfCards, setNumberOfCards] = useState(0);
   const theme = useTheme();
+  const language = useChooseLanguage();
+  const isMobileWidth = useWidth();
 
   const coachesContent = useLanguage({
     resourse: "main",
     translationName: "main.coaches",
   }) as coachesContentType;
 
-  useEffect(() => {
-    setNumberOfCards(showNumberOfCards());
-  }, []);
-
   return (
     <Section>
-      <h2 className={chooseLanguage()}>
-        {coachesContent.header.toUpperCase()}
-      </h2>
+      <h2 className={language}>{coachesContent.header.toUpperCase()}</h2>
       <p>{coachesContent.description}</p>
       <div className={styles.swiperContainer}>
         <MySwiper
-          slidesPerView={numberOfCards}
+          slidesPerView={isMobileWidth ? 1 : 3}
           spaceBetween={10}
           modules={[Pagination]}
           useButtons={true}
