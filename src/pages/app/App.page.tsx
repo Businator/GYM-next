@@ -1,7 +1,12 @@
 import React from "react";
+import { AppSwiper } from "./components/appSwiper/AppSwiper";
 
 const AppPage = () => {
-  return <div>Page under construction</div>;
+  return (
+    <>
+      <AppSwiper />
+    </>
+  );
 };
 
 export default AppPage;
