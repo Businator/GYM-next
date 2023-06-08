@@ -8,7 +8,7 @@ export const useChooseLanguage = () => {
     if (localStorage.getItem("lang") === "ru") {
       setLanguage(russoOne.className);
     }
-  });
+  }, []);
 
   return language;
 };
