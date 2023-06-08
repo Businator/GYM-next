@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSwiper } from "swiper/react";
 import {
   HiOutlineArrowCircleLeft,
@@ -13,16 +13,18 @@ export const SwiperButtons = ({ className }: { className?: string }) => {
   const [isDisabledPrev, setIsDisabledPrev] = useState(true);
   const [isDisabledNext, setIsDisabledNext] = useState(false);
 
+  useEffect(() => swiper.setProgress(0), [swiper]);
+
   const handlerClickPrev = () => {
     swiper.slidePrev();
-    setIsDisabledPrev(swiper.progress === 0);
-    setIsDisabledNext(swiper.progress === 1);
+    setIsDisabledPrev(swiper.isBeginning);
+    setIsDisabledNext(swiper.isEnd);
   };
 
   const handlerClickNext = () => {
     swiper.slideNext();
-    setIsDisabledNext(swiper.progress === 1);
-    setIsDisabledPrev(swiper.progress === 0);
+    setIsDisabledNext(swiper.isEnd);
+    setIsDisabledPrev(swiper.isBeginning);
   };
 
   return (
