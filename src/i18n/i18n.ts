@@ -1,3 +1,5 @@
+"use client";
+
 import i18next from "i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 import I18NextHttpBackend from "i18next-http-backend";
@@ -11,12 +13,14 @@ import ruMain from "../pages/main/assets/locales/ru/translation.json";
 import enContacts from "../pages/contacts/assets/locales/en/translation.json";
 import ruContacts from "../pages/contacts/assets/locales/ru/translation.json";
 
-export default i18next
+const language = localStorage.getItem("lang") || "en";
+i18next
   .use(initReactI18next)
   .use(I18nextBrowserLanguageDetector)
   .use(I18NextHttpBackend)
   .init({
-    lng: "en",
+    lng: language,
+    fallbackLng: "en",
     resources: {
       en: {
         header: enHeader,

@@ -4,7 +4,7 @@ import { Skeleton } from "@mui/material";
 import React from "react";
 import styles from "./ContactsLoading.module.scss";
 
-export const ContactsLoading = () => {
+const ContactsLoading = () => {
   return (
     <div className={styles.container}>
       <Skeleton
@@ -19,3 +19,5 @@ export const ContactsLoading = () => {
     </div>
   );
 };
+
+export default ContactsLoading;

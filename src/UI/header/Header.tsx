@@ -8,7 +8,6 @@ import { Logo } from "../logo/Logo";
 import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 
 import Link from "next/link";
-import "../../i18n/i18n";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./Header.module.scss";
@@ -18,7 +17,7 @@ export type navigation = {
   href: string;
 }[];
 
-export const Header = () => {
+const Header = () => {
   const pathname = usePathname();
   const theme = useTheme();
 
@@ -59,3 +58,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

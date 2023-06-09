@@ -8,7 +8,7 @@ import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { coachesList } from "./mocks/coahesList";
 import stylesForButtom from "./assets/styles/SwiperButtons.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import clsx from "clsx";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./Coaches.module.scss";
@@ -22,7 +22,7 @@ type coachesContentType = {
 
 export const Coaches = () => {
   const theme = useTheme();
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
   const isMobileWidth = useWidth();
 
   const coachesContent = useLanguage({
@@ -32,7 +32,7 @@ export const Coaches = () => {
 
   return (
     <Section>
-      <h2 className={language}>{coachesContent.header.toUpperCase()}</h2>
+      <h2 className={font}>{coachesContent.header.toUpperCase()}</h2>
       <p>{coachesContent.description}</p>
       <div className={styles.swiperContainer}>
         <MySwiper

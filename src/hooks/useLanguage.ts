@@ -1,6 +1,9 @@
+"use client";
+
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import "../i18n/i18n";
 
 type useLangaugeType = {
   resourse: string;

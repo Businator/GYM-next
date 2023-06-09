@@ -5,13 +5,13 @@ import clsx from "clsx";
 
 import styles from "./Button.module.scss";
 import { ButtonBaseProps } from "@mui/material";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 
 export const Button = ({ children, className, ...rest }: ButtonBaseProps) => {
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   return (
-    <button className={clsx([styles.button, language, className])} {...rest}>
+    <button className={clsx([styles.button, font, className])} {...rest}>
       {children}
     </button>
   );

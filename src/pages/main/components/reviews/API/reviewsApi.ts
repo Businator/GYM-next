@@ -1,4 +1,4 @@
-import reviewsList from "../mocks/reviewsList";
+import { reviewsList } from "../mocks/reviewsList";
 
 class ReviewsApi {
   getReviews() {

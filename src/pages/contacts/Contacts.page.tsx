@@ -5,7 +5,7 @@ import { BsGithub, BsTelegram, BsTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import styles from "./ContactsPage.module.scss";
 
 type contactsContenttype = {
@@ -13,18 +13,18 @@ type contactsContenttype = {
   location: string;
 };
 
-export const ContactsPage = () => {
+export default function ContactsPage() {
   const contactsContent = useLanguage({
     resourse: "contacts",
     translationName: "contacts",
   }) as contactsContenttype;
 
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   return (
     <section className={styles.contacts}>
       <div className={styles.container}>
-        <h1 className={language}>{contactsContent.header.toUpperCase()}</h1>
+        <h1 className={font}>{contactsContent.header.toUpperCase()}</h1>
         <ul>
           <li>
             <a href="https://github.com/Businator" target="_blank">
@@ -70,4 +70,4 @@ export const ContactsPage = () => {
       </div>
     </section>
   );
-};
+}
