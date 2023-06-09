@@ -1,5 +1,5 @@
 .container {
-  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center h-[600px] max-w-none w-full p-0;
+  @apply bg-[url('./assets/image/trialImage.jpg')] bg-center bg-no-repeat bg-cover h-[600px] max-w-none w-full p-0;
 
   p {
     @apply text-center;

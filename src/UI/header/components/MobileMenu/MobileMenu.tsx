@@ -46,12 +46,7 @@ export const MobileMenu = ({ pages }: { pages?: navigation }) => {
       >
         <MenuList>
           {pages && (
-            <nav
-              className={clsx(
-                styles.navigation,
-                document.documentElement.scrollWidth < 768 && styles.active
-              )}
-            >
+            <nav className={clsx(styles.navigation)}>
               {pages.map((page) => {
                 return (
                   <MenuItem key={page.name}>
