@@ -7,7 +7,7 @@ import { integral } from "'@/assets/fonts/fonts'";
 import image404 from "./assets/image/404.jpg";
 import styles from "./NotFoundPage.module.scss";
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   const router = useRouter();
   return (
     <div className={styles.container}>
@@ -26,3 +26,5 @@ export const NotFoundPage = () => {
     </div>
   );
 };
+
+export default NotFoundPage;

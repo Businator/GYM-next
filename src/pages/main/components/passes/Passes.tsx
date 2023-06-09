@@ -8,7 +8,7 @@ import { Cards, cardsType } from "./components/Cards/Cards";
 import stylesForButtons from "./assets/styles/SwiperButtons.module.scss";
 import styles from "./Passes.module.scss";
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import { Section } from "../section/Section";
 import { useWidth } from "'@/hooks/useWidth'";
 
@@ -21,7 +21,7 @@ type passesContentType = {
 
 export const Passes = () => {
   const [isYearly, setIsYearly] = useState(false);
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
   const isMobileWidth = useWidth();
 
   const passesContent = useLanguage({
@@ -31,7 +31,7 @@ export const Passes = () => {
 
   return (
     <Section>
-      <h2 className={clsx([language, styles.header])}>
+      <h2 className={clsx([font, styles.header])}>
         {passesContent.header.toUpperCase()}
       </h2>
       <PassesSwitch

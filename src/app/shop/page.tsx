@@ -1,4 +1,4 @@
-import { ShopPage } from "'@/pages/shop/ShopPage'";
+import ShopPage from "'@/pages/shop/Shop.page'";
 import React from "react";
 
 export default function Shop() {

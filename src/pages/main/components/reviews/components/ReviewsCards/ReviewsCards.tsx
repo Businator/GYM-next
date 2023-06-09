@@ -5,7 +5,7 @@ import Image from "next/image";
 import { capitalize } from "@mui/material";
 import clsx from "clsx";
 
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 
 import wick from "../../assets/image/john-wick.jpg";
 import toretto from "../../assets/image/dominic-toretto.jpg";
@@ -36,25 +36,25 @@ export const ReviewsCards = (cards: cardType[]) => {
         return wick;
     }
   };
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   return cards.map((card, index, array) => {
     return (
       <SwiperSlide key={index} className={styles.card}>
-        <span className={clsx([language, styles.pagination])}>
+        <span className={clsx([font, styles.pagination])}>
           {index + 1}/{array.length}
         </span>
         <div>
           <span>
             <FaQuoteLeft />
           </span>
-          <p className={language}>{card.review}</p>
+          <p className={font}>{card.review}</p>
         </div>
 
         <div className={styles.client}>
           <Image src={showImage(index)} alt={"user foto"} />
           <div>
-            <p className={language}>{capitalize(card.user)}</p>
+            <p className={font}>{capitalize(card.user)}</p>
             <p>{capitalize(card.status)}</p>
           </div>
         </div>

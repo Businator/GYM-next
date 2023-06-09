@@ -1,3 +1,6 @@
+.body {
+  @apply h-[100vh];
+}
 .light {
   @apply bg-slate-100;
 
@@ -8,4 +11,8 @@
   P {
     @apply text-gray-800;
   }
+}
+
+.main {
+  @apply h-auto;
 }

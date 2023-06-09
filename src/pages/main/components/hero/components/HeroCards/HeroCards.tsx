@@ -1,7 +1,7 @@
 import React from "react";
 import { SwiperSlide } from "swiper/react";
 
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import clsx from "clsx";
 import { useTheme } from "'@/hooks/useTheme'";
 import styles from "./HeroCards.module.scss";
@@ -14,7 +14,7 @@ export const HeroCards = ({
   description: string;
 }) => {
   const theme = useTheme();
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   const addLineBreak = (text: string) => {
     const words = text.split(" ");
@@ -37,7 +37,7 @@ export const HeroCards = ({
             key={index}
             className={clsx(styles.card, theme === "light" && styles.light)}
           >
-            <h1 className={language}>{addLineBreak(header.toUpperCase())}</h1>
+            <h1 className={font}>{addLineBreak(header.toUpperCase())}</h1>
             <p>{description}</p>
           </SwiperSlide>
         );

@@ -4,17 +4,17 @@ import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
 import clsx from "clsx";
 import styles from "./LinkWithArrow.module.scss";
-import { useChooseLanguage } from "'@/hooks/useChooseLanguage'";
+import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 
 export const LinkWithArrow = ({
   href = "/",
   children = "LEARN MORE",
   ...rest
 }) => {
-  const language = useChooseLanguage();
+  const font = useFontForLanguage();
 
   return (
-    <Link {...rest} className={clsx([language, styles.link])} href={href}>
+    <Link {...rest} className={clsx([font, styles.link])} href={href}>
       {children}
       <span>
         <ImArrowUpRight2 />
