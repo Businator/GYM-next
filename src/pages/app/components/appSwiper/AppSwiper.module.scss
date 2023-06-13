@@ -1,15 +1,15 @@
 .container {
-  @apply w-[90%] h-full;
+  @apply w-[90%];
 
   .card {
-    @apply relative h-[800px];
+    @apply relative h-[700px] flex flex-col items-center;
 
     img {
       @apply h-full w-full object-cover;
     }
 
     .content {
-      @apply relative z-10 bottom-[30%] flex flex-col gap-4;
+      @apply relative z-10 h-[27%] bottom-[10%] flex flex-col items-center gap-4;
       span {
         @apply text-center text-4xl font-bold;
       }
