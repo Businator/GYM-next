@@ -1,0 +1,21 @@
+.buttonContainer {
+  @apply z-10 absolute bottom-10 w-full flex items-center justify-around;
+
+  &.oneButton {
+    @apply w-0 right-[25%];
+  }
+
+  .buttonLeft {
+    @apply bg-white rounded-full transition-all active:scale-90;
+    svg {
+      @apply first:w-12 first:h-12 text-gray-600;
+    }
+  }
+
+  .buttonRight {
+    @apply flex items-center justify-center gap-2;
+    svg {
+      @apply mt-[3px];
+    }
+  }
+}

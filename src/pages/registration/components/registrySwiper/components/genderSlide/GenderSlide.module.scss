@@ -1,0 +1,18 @@
+.genderContainer {
+  @apply flex flex-col gap-12;
+
+  .gender {
+    @apply w-24 h-24 bg-gray-500 rounded-full flex flex-col items-center justify-center gap-2 text-white;
+    svg {
+      @apply w-8 h-8;
+    }
+
+    span {
+      @apply cursor-default;
+    }
+
+    &.checked {
+      @apply bg-acid-green text-black;
+    }
+  }
+}

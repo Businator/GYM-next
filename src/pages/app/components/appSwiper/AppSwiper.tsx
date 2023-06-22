@@ -14,18 +14,15 @@ import styles from "./AppSwiper.module.scss";
 
 const contentList = [
   {
-    title: "Meet your coach,",
-    descripion: "start your journey",
+    title: "Meet your coach, start your journey",
     img: img1,
   },
   {
-    title: "Create a workout plan",
-    descripion: "to stay fit",
+    title: "Create a workout plan, to stay fit",
     img: img2,
   },
   {
-    title: "Action is the",
-    descripion: "key to all success",
+    title: "Action is the key to all success",
     img: img3,
   },
 ];
@@ -40,7 +37,6 @@ export const AppSwiper = () => {
               <Image src={item.img} alt="" />
               <div className={styles.content}>
                 <span>{item.title.toUpperCase()}</span>
-                <span>{item.descripion.toUpperCase()}</span>
                 {index === arr.length - 1 && <Button>START NOW</Button>}
               </div>
               <div className={styles.block}></div>

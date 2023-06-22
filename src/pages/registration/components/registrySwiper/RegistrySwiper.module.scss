@@ -1,0 +1,11 @@
+.formGroup {
+  @apply w-full h-full;
+
+  .swiper {
+    @apply w-full h-full;
+
+    .slide {
+      @apply flex items-center justify-center;
+    }
+  }
+}
