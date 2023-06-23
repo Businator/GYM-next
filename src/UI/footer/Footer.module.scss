@@ -1,7 +1,7 @@
 .footer {
-  @apply w-full flex justify-around py-12
+  @apply w-full flex sm:justify-around justify-between  py-12 
   min-[320px]:flex-col min-[320px]:items-center min-[320px]:gap-y-3 
-  md:flex-row md:items-baseline md:gap-y-0;
+  md:flex-row md:items-baseline md:gap-y-0 lg:justify-around;
 
   &.light {
     h4 {
@@ -13,40 +13,35 @@
     }
   }
 
-  div {
+  .headerBox {
     @apply flex flex-col gap-y-4
     min-[320px]:w-[90%] min-[320px]:items-center
     md:w-1/4 md:items-baseline;
 
-    ul {
-      @apply flex gap-4;
-
-      li {
-        @apply w-16 h-16 flex items-center justify-center rounded-full bg-acid-green;
-
-        a {
-          @apply w-[92%] h-[92%] flex items-center justify-center rounded-full bg-black;
-
-          svg {
-            @apply h-8 w-8;
-          }
-        }
-      }
+    p {
+      @apply text-center md:text-left;
     }
   }
 
-  ul {
-    @apply flex min-[320px]:gap-3 sm:gap-16;
+  .contacts {
+    @apply grid gap-x-8 gap-y-4 
+    2xl:grid-cols-3 lg:gap-x-12 sm:grid-cols-2 sm:gap-y-8;
+    li {
+      @apply w-[240px] h-full flex gap-2 bg-gray-950 py-2 rounded-[25px] 
+      border-2 border-gray-700
+      transition-all
+      hover:scale-95;
 
-    h4 {
-      @apply text-acid-green text-sm sm:text-base;
-    }
+      a {
+        @apply relative w-full h-full flex items-center gap-2 justify-center font-bold;
 
-    ul {
-      @apply flex flex-col gap-2 mt-4;
+        span {
+          @apply absolute left-[-30px] w-14 h-14 flex items-center justify-center bg-black rounded-full text-white border-2 border-[#D6FD51];
 
-      .listItem {
-        @apply text-xs sm:text-base;
+          svg {
+            @apply w-5 h-5;
+          }
+        }
       }
     }
   }

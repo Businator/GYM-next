@@ -6,14 +6,13 @@ export const stylesForSwitch = {
   width: 80,
   padding: "5px",
   "& .MuiSwitch-track": {
-    height: 15,
     width: 70,
     borderRadius: 15,
     backgroundColor: "orange",
     opacity: 1,
   },
   "& .MuiButtonBase-root": {
-    top: "-9px",
+    top: "-3px",
     left: 0,
   },
   "& .MuiSwitch-thumb": {

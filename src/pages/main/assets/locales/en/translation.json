@@ -167,9 +167,9 @@
       "button": "read more"
     },
     "trial": {
-      "header": "reviews from clientsget your first trial visit",
+      "header": "get your first trial visit",
       "decription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptates, ipsam dolorum ipsa, placeat perferendis nemo",
-      "button": "submit"
+      "link": "registration"
     }
   }
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Menu, MenuItem, MenuList, SxProps, capitalize } from "@mui/material";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
-import { Switches } from "../Switches/Switches";
 import clsx from "clsx";
 import { navigation } from "../../Header";
 import styles from "./MobileMenu.module.scss";
@@ -43,6 +42,7 @@ export const MobileMenu = ({ pages }: { pages?: navigation }) => {
           setOpenMenu((prev) => !prev)
         }
         sx={menuStyle}
+        className={styles.menu}
       >
         <MenuList>
           {pages && (
@@ -50,14 +50,19 @@ export const MobileMenu = ({ pages }: { pages?: navigation }) => {
               {pages.map((page) => {
                 return (
                   <MenuItem key={page.name}>
-                    <Link href={page.href}>{capitalize(page.name)}</Link>
+                    <Link
+                      href={page.href}
+                      className={clsx([
+                        pathname === page.href ? styles.thisPage : undefined,
+                      ])}
+                    >
+                      {capitalize(page.name)}
+                    </Link>
                   </MenuItem>
                 );
               })}
             </nav>
           )}
-
-          <Switches />
         </MenuList>
       </Menu>
       <div

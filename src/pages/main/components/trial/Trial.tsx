@@ -10,6 +10,8 @@ import { useLanguage } from "'@/hooks/useLanguage'";
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import { useTheme } from "'@/hooks/useTheme'";
 import { Section } from "../section/Section";
+import Link from "next/link";
+import { integral } from "'@/assets/fonts/fonts'";
 import styles from "./Trial.module.scss";
 
 const textFieldStyles = {
@@ -37,13 +39,10 @@ const textFieldStyles = {
 type trialContentType = {
   header: string;
   decription: string;
-  button: string;
+  link: string;
 };
 
 export const Trial = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState(false);
-
   const theme = useTheme();
   const font = useFontForLanguage();
 
@@ -52,35 +51,17 @@ export const Trial = () => {
     translationName: "main.trial",
   }) as trialContentType;
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!validateEmail(email)) {
-      setError(true);
-    } else {
-      console.log(email);
-      setError(false);
-      setEmail("");
-    }
-  };
-
   return (
     <Section className={styles.container}>
       <div className={clsx(styles.trial, theme === "light" && styles.light)}>
         <h2 className={font}>{trialContent.header.toUpperCase()}</h2>
         <p>{trialContent.decription}</p>
-        <form onSubmit={(event) => handleSubmit(event)}>
-          <TextField
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            error={error}
-            placeholder="youemail@email.com"
-            helperText={error && "Please enter a valid email address"}
-            sx={textFieldStyles}
-          />
-          <Button type="submit" className={clsx([error && styles.buttonError])}>
-            {trialContent.button.toUpperCase()}
-          </Button>
-        </form>
+        <Link
+          href={"/registration"}
+          className={clsx(integral.className, styles.link)}
+        >
+          {trialContent.link.toUpperCase()}
+        </Link>
       </div>
     </Section>
   );

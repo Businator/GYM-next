@@ -1,5 +1,5 @@
 .header {
-  @apply z-[1] w-full flex justify-around py-4;
+  @apply z-[1] w-full flex sm:justify-around justify-between py-4;
 
   &.light {
     a {

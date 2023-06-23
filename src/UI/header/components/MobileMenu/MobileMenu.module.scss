@@ -1,9 +1,16 @@
-.navigation {
+.menu {
   @apply block md:hidden;
-}
 
+  .navigation {
+    @apply block md:hidden;
+
+    .thisPage {
+      @apply font-bold;
+    }
+  }
+}
 .buttonContainer {
-  @apply flex flex-row-reverse items-center gap-4;
+  @apply flex-row-reverse items-center gap-4 md:hidden;
 
   &.light {
     svg {

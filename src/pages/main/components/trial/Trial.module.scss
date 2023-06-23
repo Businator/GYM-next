@@ -1,3 +1,5 @@
+@import "../../../../assets/styles/button";
+
 .container {
   @apply bg-[url('./assets/image/trialImage.jpg')] bg-center bg-no-repeat bg-cover h-[600px] max-w-none w-full p-0;
 
@@ -17,21 +19,8 @@
       }
     }
 
-    form {
-      @apply min-[320px]:w-[300px] sm:w-auto 
-      relative flex flex-row;
-
-      button {
-        @apply absolute right-[-5px] top-[-3px];
-
-        &.buttonError {
-          @apply bg-red-600 shadow-button-error;
-        }
-      }
-    }
-
-    .error {
-      @apply p-2 rounded-default text-red-600 font-bold;
+    .link {
+      @include button;
     }
   }
 }
