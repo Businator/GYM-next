@@ -14,7 +14,7 @@
   }
 
   .marqueeContainer {
-    @apply absolute bottom-0 flex gap-8 h-[35px] w-full bg-acid-green overflow-hidden;
+    @apply absolute bottom-0 h-[35px] w-full bg-acid-green overflow-hidden;
     .marquee {
       @apply flex gap-8 text-right text-black;
 

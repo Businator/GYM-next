@@ -48,7 +48,7 @@ export const Hero = () => {
       </div>
       <Marquee className={styles.marqueeContainer}>
         <div className={clsx([font, styles.marquee])}>
-          {heroContent.marquee.map((text, index) => {
+          {heroContent.marquee.map((text, index, array) => {
             return (
               <span
                 className={clsx(
@@ -56,8 +56,9 @@ export const Hero = () => {
                 )}
                 key={index}
               >
-                {text}
                 <GiDeathStar />
+                {text}
+                {index === array.length - 1 && <GiDeathStar />}
               </span>
             );
           })}

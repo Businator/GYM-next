@@ -1,7 +1,7 @@
 .footer {
-  @apply w-full flex sm:justify-around justify-between  py-12 
+  @apply w-full flex justify-around lg:justify-between py-12 
   min-[320px]:flex-col min-[320px]:items-center min-[320px]:gap-y-3 
-  md:flex-row md:items-baseline md:gap-y-0 lg:justify-around;
+  md:flex-row md:items-baseline md:gap-y-0;
 
   &.light {
     h4 {
