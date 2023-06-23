@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "./Registration.module.scss";
 import { RegistrySwiper } from "./components/registrySwiper/RegistrySwiper";

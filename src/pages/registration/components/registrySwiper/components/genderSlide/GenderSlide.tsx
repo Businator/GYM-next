@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
 import { BiFemaleSign, BiMaleSign } from "react-icons/bi";
 import clsx from "clsx";
-import {
-  FormControl,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  SxProps,
-} from "@mui/material";
+import { FormControl, Radio, RadioGroup, SxProps } from "@mui/material";
 
 import { Card } from "../../UI/card/Card";
 import { Headers } from "../../UI/headers/Headers";
@@ -15,16 +9,16 @@ import styles from "./GenderSlide.module.scss";
 
 export const GenderSlide = ({
   genderState,
-  setIsNextSlide,
+  setDisabledButtonNext,
 }: {
   genderState: [string, React.Dispatch<React.SetStateAction<string>>];
-  setIsNextSlide: React.Dispatch<React.SetStateAction<boolean>>;
+  setDisabledButtonNext: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [gender, setGender] = genderState;
 
   const chooseGender = (event: React.ChangeEvent<HTMLInputElement>) => {
     setGender(event.target.value);
-    setIsNextSlide(false);
+    setDisabledButtonNext(false);
   };
 
   const formControlStyle = {

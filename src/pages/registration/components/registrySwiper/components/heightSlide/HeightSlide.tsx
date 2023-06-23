@@ -24,12 +24,14 @@ export const HeightSlide = ({
   const chooseHeight = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setValue(event.target.value);
-    Number(event.target.value) < 1 && setValue("1");
-    const { text, isValid } = validateHeight(event.target.value);
+    let string = event.target.value;
+    string = string.replace(/[a-zа-яё]/gi, "");
+    setValue(string);
+    Number(string) < 1 && setValue("1");
+    const { text, isValid } = validateHeight(string);
     setError({ value: text, isValid: isValid });
     setIsSubmit(!isValid);
-    isValid && setHeight(event.target.value);
+    isValid && setHeight(string);
   };
 
   return (
@@ -40,7 +42,7 @@ export const HeightSlide = ({
       />
       <MyFormControl
         inputProps={{
-          type: "number",
+          type: "text",
           onChange: chooseHeight,
           placeholder: "Set your Height",
           endAdornment: "sm",

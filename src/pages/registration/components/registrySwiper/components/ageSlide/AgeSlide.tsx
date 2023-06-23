@@ -6,10 +6,10 @@ import { validateAge } from "../../../../utils/validators";
 
 export const AgeSlide = ({
   ageState,
-  setIsNextSlide,
+  setDisabledButtonNext,
 }: {
   ageState: [string, React.Dispatch<React.SetStateAction<string>>];
-  setIsNextSlide: React.Dispatch<React.SetStateAction<boolean>>;
+  setDisabledButtonNext: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [age, setAge] = ageState;
 
@@ -23,17 +23,15 @@ export const AgeSlide = ({
   const chooseAge = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setValue(event.target.value);
-    Number(event.target.value) < 1 && setValue("1");
-    const { text, isValid } = validateAge(event.target.value);
+    let string = event.target.value;
+    string = string.replace(/[a-zа-яё]/gi, "");
+    setValue(string);
+    Number(string) < 1 && setValue("1");
+    const { text, isValid } = validateAge(string);
     setError({ value: text, isValid: isValid });
-    setIsNextSlide(!isValid);
-    isValid && setAge(event.target.value);
+    setDisabledButtonNext(!isValid);
+    isValid && setAge(string);
   };
-
-  useEffect(() => {
-    age.length && setIsNextSlide(false);
-  }, [age.length]);
 
   return (
     <Card>
@@ -43,7 +41,7 @@ export const AgeSlide = ({
       />
       <MyFormControl
         inputProps={{
-          type: "number",
+          type: "text",
           onChange: chooseAge,
           placeholder: "Set your age",
           value: value,

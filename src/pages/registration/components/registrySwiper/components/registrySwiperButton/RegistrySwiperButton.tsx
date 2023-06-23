@@ -4,21 +4,21 @@ import { useSwiper } from "swiper/react";
 import { BiRightArrow } from "react-icons/bi";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
-import styles from "./RegistrySwiperButton.module.scss";
 import { Button } from "'@/UI/button/Button'";
 import clsx from "clsx";
-import { IUser } from "../../../../interfaces/IUser";
+import styles from "./RegistrySwiperButton.module.scss";
 
 export const RegistrySwiperButton = ({
-  user,
-  isNextSlideState,
+  isDisabledButtonState,
 }: {
-  user: IUser;
-  isNextSlideState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  isDisabledButtonState: [
+    boolean,
+    React.Dispatch<React.SetStateAction<boolean>>
+  ];
 }) => {
   const swiper = useSwiper();
   const [isDisabledPrev, setIsDisabledPrev] = useState(true);
-  const [isNextSlide, setIsNextSlide] = isNextSlideState;
+  const [isNextSlide, setIsNextSlide] = isDisabledButtonState;
 
   useEffect(() => {
     swiper.setProgress(0);
@@ -27,7 +27,7 @@ export const RegistrySwiperButton = ({
   const handlerClickPrev = () => {
     swiper.slidePrev();
     setIsDisabledPrev(swiper.isBeginning);
-    setIsNextSlide(false);
+    setIsNextSlide(true);
   };
 
   const handlerClickNext = () => {
@@ -44,25 +44,35 @@ export const RegistrySwiperButton = ({
       )}
     >
       <button
+        type="button"
         className={clsx(styles.buttonLeft, swiper.isBeginning && "hidden")}
         onClick={handlerClickPrev}
         disabled={isDisabledPrev}
       >
         <BsFillArrowLeftCircleFill />
       </button>
-      {swiper.isEnd ? (
-        <Button type="submit" disabled={isNextSlide}>
-          Submit
+
+      {/* {swiper.isEnd ? (
+        <Button type="button" onClick={handlerClickNext}>
+          SUBMIT
+          <BiRightArrow />
         </Button>
       ) : (
-        <Button
-          className={styles.buttonRight}
-          onClick={handlerClickNext}
-          disabled={isNextSlide}
-        >
-          Next <BiRightArrow />
+        <Button type="button" onClick={handlerClickNext} disabled={isNextSlide}>
+          NEXT
+          <BiRightArrow />
         </Button>
-      )}
+      )} */}
+
+      <Button
+        type={swiper.isEnd ? "submit" : "button"}
+        className={styles.buttonRight}
+        onClick={swiper.isEnd ? () => {} : handlerClickNext}
+        disabled={isNextSlide}
+      >
+        {swiper.isEnd ? "SUBMIT" : "NEXT"}
+        <BiRightArrow />
+      </Button>
     </div>
   );
 };

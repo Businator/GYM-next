@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { MdVisibilityOff, MdVisibility } from "react-icons/md";
 import { IconButton, InputAdornment } from "@mui/material";
 import { Card } from "../../UI/card/Card";
@@ -14,12 +14,12 @@ import {
 export const UserInfoSlide = ({
   nameState,
   emailState,
-  setIsNextSlide,
+  setDisabledButtonNext,
   passwordState,
 }: {
   nameState: React.Dispatch<React.SetStateAction<string>>;
   emailState: React.Dispatch<React.SetStateAction<string>>;
-  setIsNextSlide: React.Dispatch<React.SetStateAction<boolean>>;
+  setDisabledButtonNext: React.Dispatch<React.SetStateAction<boolean>>;
   passwordState: [string, React.Dispatch<React.SetStateAction<string>>];
 }) => {
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
@@ -37,19 +37,22 @@ export const UserInfoSlide = ({
     },
   });
 
-  const nextSlide = () =>
-    Object.values(errors)
-      .map((value) => value.isValid)
-      .includes(null) ||
-    Object.values(errors)
-      .map((value) => value.isValid)
-      .includes(false)
-      ? setIsNextSlide(true)
-      : setIsNextSlide(false);
+  const nextSlide = useCallback(
+    () =>
+      Object.values(errors)
+        .map((value) => value.isValid)
+        .includes(null) ||
+      Object.values(errors)
+        .map((value) => value.isValid)
+        .includes(false)
+        ? setDisabledButtonNext(true)
+        : setDisabledButtonNext(false),
+    [errors]
+  );
 
   useEffect(() => {
     nextSlide();
-  }, [errors, nextSlide]);
+  }, [nextSlide]);
 
   const showPassword = (
     setIsVisible: React.Dispatch<React.SetStateAction<boolean>>
@@ -80,7 +83,7 @@ export const UserInfoSlide = ({
       />
       <MyFormControl
         inputProps={{
-          type: "string",
+          type: "text",
           placeholder: "Your name",
           onChange: (event) =>
             inputHandler(event, "name", validateName, nameState),

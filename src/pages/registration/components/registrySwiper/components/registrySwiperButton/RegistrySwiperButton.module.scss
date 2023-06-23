@@ -1,5 +1,5 @@
 .buttonContainer {
-  @apply z-10 absolute bottom-10 w-full flex items-center justify-around;
+  @apply z-10 bottom-10 w-full flex items-center justify-around md:absolute;
 
   &.oneButton {
     @apply w-0 right-[25%];

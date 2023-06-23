@@ -7,10 +7,10 @@ import { MyFormControl } from "'@/UI/formControl/MyFormControl'";
 
 export const WeightSlide = ({
   weightState,
-  setIsNextSlide,
+  setDisabledButtonNext,
 }: {
   weightState: [string, React.Dispatch<React.SetStateAction<string>>];
-  setIsNextSlide: React.Dispatch<React.SetStateAction<boolean>>;
+  setDisabledButtonNext: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [weight, setWeight] = weightState;
 
@@ -24,24 +24,22 @@ export const WeightSlide = ({
   const chooseWeight = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setValue(event.target.value);
-    Number(event.target.value) < 1 && setValue("1");
-    const { text, isValid } = validateWeight(event.target.value);
+    let string = event.target.value;
+    string = string.replace(/[a-zа-яё]/gi, "");
+    setValue(string);
+    Number(string) < 1 && setValue("1");
+    const { text, isValid } = validateWeight(string);
     setError({ value: text, isValid: isValid });
-    setIsNextSlide(!isValid);
-    isValid && setWeight(event.target.value);
+    setDisabledButtonNext(!isValid);
+    isValid && setWeight(string);
   };
-
-  useEffect(() => {
-    weight.length && setIsNextSlide(false);
-  }, [weight.length]);
 
   return (
     <Card>
       <Headers h2="What's your weight?" h3="You can always change this later" />
       <MyFormControl
         inputProps={{
-          type: "number",
+          type: "text",
           onChange: chooseWeight,
           placeholder: "Set your weight",
           endAdornment: "kg",

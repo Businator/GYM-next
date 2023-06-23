@@ -2,7 +2,7 @@
   @apply w-full h-full;
 
   .swiper {
-    @apply w-full h-full;
+    @apply w-full h-full flex flex-col items-center;
 
     .slide {
       @apply flex items-center justify-center;

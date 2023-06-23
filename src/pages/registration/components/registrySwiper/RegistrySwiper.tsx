@@ -12,7 +12,7 @@ import { WeightSlide } from "./components/weightSlide/WeightSlide";
 import { HeightSlide } from "./components/heightSlide/HeightSlide";
 import { UserInfoSlide } from "./components/userInfoSlide/UserInfoSlide";
 import { IUser } from "../../interfaces/IUser";
-import { FormGroup } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 export const RegistrySwiper = () => {
   const [name, setName] = useState("");
@@ -24,6 +24,8 @@ export const RegistrySwiper = () => {
   const [height, setHeight] = useState("");
 
   const [disabledButtonNext, setDisabledButtonNext] = useState(true);
+
+  const router = useRouter();
 
   const userInfo = {
     name: name,
@@ -40,23 +42,23 @@ export const RegistrySwiper = () => {
       key={1}
       nameState={setName}
       emailState={setEmail}
-      setIsNextSlide={setDisabledButtonNext}
+      setDisabledButtonNext={setDisabledButtonNext}
       passwordState={[password, setPassword]}
     />,
     <GenderSlide
       key={2}
       genderState={[gender, setGender]}
-      setIsNextSlide={setDisabledButtonNext}
+      setDisabledButtonNext={setDisabledButtonNext}
     />,
     <AgeSlide
       key={3}
       ageState={[age, setAge]}
-      setIsNextSlide={setDisabledButtonNext}
+      setDisabledButtonNext={setDisabledButtonNext}
     />,
     <WeightSlide
       key={4}
       weightState={[weight, setWeight]}
-      setIsNextSlide={setDisabledButtonNext}
+      setDisabledButtonNext={setDisabledButtonNext}
     />,
     <HeightSlide
       key={5}
@@ -67,8 +69,8 @@ export const RegistrySwiper = () => {
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(userInfo);
     localStorage.setItem("user", JSON.stringify(userInfo));
+    router.replace("/app");
   };
 
   return (
@@ -86,8 +88,7 @@ export const RegistrySwiper = () => {
           );
         })}
         <RegistrySwiperButton
-          user={userInfo}
-          isNextSlideState={[disabledButtonNext, setDisabledButtonNext]}
+          isDisabledButtonState={[disabledButtonNext, setDisabledButtonNext]}
         />
       </Swiper>
     </form>
