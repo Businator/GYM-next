@@ -1,4 +1,4 @@
 @mixin button() {
   @apply text-black bg-acid-green rounded-3xl px-4 pt-[10px] pb-[10px] shadow-button
-transition-all hover:bg-lime-400 hover:shadow-lime-400 active:scale-90;
+transition-all hover:bg-lime-400 hover:shadow-lime-400 active:scale-90 disabled:opacity-50 disabled:active:scale-100 disabled:hover:bg-acid-green disabled:hover:shadow-button;
 }
