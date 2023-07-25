@@ -34,9 +34,8 @@ interface WorkWithNews {
 }
 
 class NewsApi implements WorkWithNews {
-  protected url =
-    "https://content.guardianapis.com/search?section=sport&show-elements=image&show-fields=thumbnail&page-size=5";
-  protected key = "959373c5-1d02-4552-8b97-9934891f59ce";
+  protected url = process.env.NEXT_PUBLIC_GUARDIAN_URL;
+  protected key = process.env.NEXT_PUBLIC_GUARDIAN_KEY;
 
   async getNews(): Promise<NewsList> {
     const response = await fetch(`${this.url}&api-key=${this.key}`);

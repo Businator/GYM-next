@@ -58,7 +58,7 @@ export const Trial = () => {
         <p>{trialContent.decription}</p>
         <Link
           href={"/registration"}
-          className={clsx(integral.className, styles.link)}
+          className={clsx(integral.className, styles.link, font)}
         >
           {trialContent.link.toUpperCase()}
         </Link>
