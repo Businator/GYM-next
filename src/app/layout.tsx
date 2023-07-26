@@ -1,5 +1,9 @@
+"use client";
+
 import Layout from "'@/layout/Layout'";
+import { ThemeProvider } from "@emotion/react";
 import "./globals.scss";
+import { theme } from "'@/assets/styles/theme'";
 
 export const metadata = {
   title: "GYM",
@@ -11,5 +15,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <Layout>{children}</Layout>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>{children}</Layout>
+    </ThemeProvider>
+  );
 }

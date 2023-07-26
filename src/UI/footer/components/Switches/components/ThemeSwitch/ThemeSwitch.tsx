@@ -6,7 +6,7 @@ import {
   useSearchParams,
   ReadonlyURLSearchParams,
 } from "next/navigation";
-import { stylesForSwitch } from "./assets/styles/stylesForSwitch";
+import { stylesForSwitch } from "./assets/styles/stylesForThemeSwitch";
 
 export const ThemeSwitch = () => {
   const router = useRouter();

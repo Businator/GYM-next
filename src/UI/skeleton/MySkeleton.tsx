@@ -13,9 +13,6 @@ export const MySkeleton = (props: SkeletonProps) => {
         width={"100%"}
         height={"100%"}
         animation="pulse"
-        sx={{
-          backgroundColor: "gray",
-        }}
         {...props}
       />
     </div>

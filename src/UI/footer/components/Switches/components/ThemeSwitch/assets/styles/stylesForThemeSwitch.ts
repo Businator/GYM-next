@@ -2,18 +2,16 @@ import { SxProps } from "@mui/material";
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 export const stylesForSwitch = {
-  width: 80,
   padding: "5px",
   "& .MuiSwitch-root": {},
   "& .MuiSwitch-track": {
-    width: 70,
     borderRadius: 15,
     backgroundColor: "orange",
     opacity: 1,
   },
   "& .MuiButtonBase-root": {
     top: "-3px",
-    left: 0,
+    left: "-3px",
   },
   "& .MuiSwitch-thumb": {
     width: 25,
@@ -39,7 +37,6 @@ export const stylesForSwitch = {
     },
   },
   "& .Mui-checked": {
-    transform: "translateX(38px)",
     "&+ .MuiSwitch-track": {
       backgroundColor: "gray",
       opacity: 1,
