@@ -1,27 +1,9 @@
-"use client";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
+'use client';
+import { RootState } from './../store/store';
+import { useSelector } from 'react-redux';
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState("dark") as [
-    string,
-    Dispatch<SetStateAction<string | undefined>>
-  ];
-  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
-
-  useEffect(() => {
-    if (localStorage.getItem("theme")) {
-      return;
-    }
-
-    searchParams.get("theme") === null
-      ? localStorage.setItem("theme", theme)
-      : localStorage.setItem("theme", searchParams.get("theme") as string);
-  });
-
-  useEffect(() => {
-    setTheme(localStorage.getItem("theme") as string);
-  }, [searchParams]);
+  const theme = useSelector((state: RootState) => state.theme.theme);
 
   return theme;
 };

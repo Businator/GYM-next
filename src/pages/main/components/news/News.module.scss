@@ -1,15 +1,15 @@
 .news {
   @apply bg-stone-900 max-w-none w-full py-12;
 
+  &.light {
+    @apply bg-slate-100;
+    a {
+      @apply text-black;
+    }
+  }
+
   .container {
     @apply w-full flex flex-col items-center gap-y-4;
-
-    &.light {
-      h2,
-      p {
-        @apply text-white;
-      }
-    }
 
     p {
       @apply text-center;

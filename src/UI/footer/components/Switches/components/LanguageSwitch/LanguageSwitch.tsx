@@ -1,45 +1,30 @@
-"use client";
+'use client';
 
-import React, { ChangeEvent } from "react";
-import { Switch } from "@mui/material";
-
-import {
-  ReadonlyURLSearchParams,
-  usePathname,
-  useRouter,
-  useSearchParams,
-} from "next/navigation";
-import { stylesForSwitch } from "./assets/styles/stylesForLanguageSwitch";
+import React, { ChangeEvent } from 'react';
+import { Switch } from '@mui/material';
+import { stylesForSwitch } from './assets/styles/stylesForLanguageSwitch';
+import { useSelector, useDispatch } from 'react-redux';
+import { switchEng, switchRus } from "'@/store/slices/langSlice'";
+import { RootState } from "'@/store/store'";
 
 export const LanguageSwitch = () => {
-  const router = useRouter();
-  const pathname = usePathname() as string;
-  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
-
-  const changeLanguage = (lang: string) => {
-    const current = new URLSearchParams(searchParams.toString());
-    current.delete("lang");
-    const path = pathname + `?lang=${lang}` + "&" + current.toString();
-
-    return path;
-  };
+  const lang = useSelector((state: RootState) => state.lang.lang);
+  const dispatch = useDispatch();
 
   const handlerSwitch = (event: ChangeEvent<HTMLInputElement>) => {
     switch (event.target.checked) {
       case false:
-        router.replace(changeLanguage("en"));
-        localStorage.setItem("lang", "en");
+        dispatch(switchEng());
         break;
       case true:
-        router.replace(changeLanguage("ru"));
-        localStorage.setItem("lang", "ru");
+        dispatch(switchRus());
         break;
     }
   };
   return (
     <Switch
       onChange={handlerSwitch}
-      checked={localStorage.getItem("lang") === "ru"}
+      checked={lang === 'ru'}
       sx={stylesForSwitch}
     />
   );

@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import "../i18n/i18n";
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import '../i18n/i18n';
+import { RootState } from './../store/store';
+import { useSelector } from 'react-redux';
 
 type useLangaugeType = {
   resourse: string;
@@ -12,17 +13,10 @@ type useLangaugeType = {
 
 export const useLanguage = ({ resourse, translationName }: useLangaugeType) => {
   const { t, i18n } = useTranslation(resourse);
-  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
-
+  const lang = useSelector((state: RootState) => state.lang.lang);
   useEffect(() => {
-    if (localStorage.getItem("lang")) {
-      i18n.changeLanguage(localStorage.getItem("lang") as string);
-    }
-  }, [i18n]);
-
-  useEffect(() => {
-    i18n.changeLanguage(searchParams.get("lang") as string | undefined);
-  }, [searchParams, i18n]);
+    i18n.changeLanguage(lang);
+  }, [i18n, lang]);
 
   return t(translationName, { returnObjects: true });
 };

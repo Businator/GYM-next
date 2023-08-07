@@ -1,17 +1,19 @@
-"use client";
-import React from "react";
-import clsx from "clsx";
-import Marquee from "react-fast-marquee";
-import { GiDeathStar } from "react-icons/gi";
+'use client';
+import React from 'react';
+import clsx from 'clsx';
+import Marquee from 'react-fast-marquee';
+import { GiDeathStar } from 'react-icons/gi';
 import { MySwiper } from "'@/components/MySwiper/MySwiper'";
 import { Button } from "'@/UI/button/Button'";
 import { LinkWithArrow } from "'@/UI/link/LinkWithArrow'";
-import { HeroCards } from "./components/HeroCards/HeroCards";
-import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
+import { HeroCards } from './components/HeroCards/HeroCards';
+
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
-import styles from "./Hero.module.scss";
+import styles from './Hero.module.scss';
 import { useLanguage } from "'@/hooks/useLanguage'";
-import { Section } from "../section/Section";
+import { Section } from '../section/Section';
+import { useSelector } from 'react-redux';
+import { RootState } from "'@/store/store'";
 
 type heroContentType = {
   header: string[];
@@ -22,12 +24,12 @@ type heroContentType = {
 };
 
 export const Hero = () => {
-  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
   const font = useFontForLanguage();
+  const lang = useSelector((state: RootState) => state.lang.lang);
 
   const heroContent = useLanguage({
-    resourse: "main",
-    translationName: "main.hero",
+    resourse: 'main',
+    translationName: 'main.hero',
   }) as heroContentType;
 
   return (
@@ -51,14 +53,14 @@ export const Hero = () => {
           {heroContent.marquee.map((text, index, array) => {
             return (
               <span
-                className={clsx(
-                  searchParams.get("lang") === "en" ? "mb-[2px]" : "mt-[4px]"
-                )}
+                className={clsx([
+                  lang === 'ru' && 'mt-1',
+                  index === array.length - 1 && 'mr-8',
+                ])}
                 key={index}
               >
                 <GiDeathStar />
                 {text}
-                {index === array.length - 1 && <GiDeathStar />}
               </span>
             );
           })}
