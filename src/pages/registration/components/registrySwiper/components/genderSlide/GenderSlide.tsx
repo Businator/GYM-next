@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { BiFemaleSign, BiMaleSign } from "react-icons/bi";
-import clsx from "clsx";
-import { FormControl, Radio, RadioGroup, SxProps } from "@mui/material";
+import React, { useEffect } from 'react';
+import { BiFemaleSign, BiMaleSign } from 'react-icons/bi';
+import clsx from 'clsx';
+import { FormControl, Radio, RadioGroup, SxProps } from '@mui/material';
 
-import { Card } from "../../UI/card/Card";
-import { Headers } from "../../UI/headers/Headers";
-import styles from "./GenderSlide.module.scss";
+import Card from '../../UI/card/Card';
+import Headers from '../../UI/headers/Headers';
+import styles from './GenderSlide.module.scss';
 
-export const GenderSlide = ({
+const GenderSlide = ({
   genderState,
   setDisabledButtonNext,
 }: {
@@ -28,15 +28,15 @@ export const GenderSlide = ({
   return (
     <Card>
       <Headers
-        h2="Tell us about yourself!"
-        h3="To give you a better experience we need to know your gender"
+        h2='Tell us about yourself!'
+        h3='To give you a better experience we need to know your gender'
       />
       <div className={styles.genderContainer}>
         <RadioGroup>
           <FormControl sx={formControlStyle}>
             <Radio
               onChange={chooseGender}
-              value="male"
+              value='male'
               icon={
                 <div className={clsx(styles.gender)}>
                   <BiMaleSign />
@@ -54,7 +54,7 @@ export const GenderSlide = ({
           <FormControl sx={formControlStyle}>
             <Radio
               onChange={chooseGender}
-              value="female"
+              value='female'
               icon={
                 <div className={clsx(styles.gender)}>
                   <BiFemaleSign />
@@ -74,3 +74,5 @@ export const GenderSlide = ({
     </Card>
   );
 };
+
+export default GenderSlide;

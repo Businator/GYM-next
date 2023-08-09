@@ -1,8 +1,8 @@
-import React from "react";
-import { TableHead, TableCell, TableRow } from "@mui/material";
-import { workWithTableApi } from "../API/TableApi";
+import React from 'react';
+import { TableHead, TableCell, TableRow } from '@mui/material';
+import { workWithTableApi } from '../API/TableApi';
 
-export const THead = () => {
+const THead = () => {
   const arrayListOfDay = workWithTableApi.getDays();
 
   return (
@@ -10,7 +10,7 @@ export const THead = () => {
       <TableRow>
         <TableCell></TableCell>
         {arrayListOfDay.map((day, index) => (
-          <TableCell key={index} align="center">
+          <TableCell key={index} align='center'>
             {day.toUpperCase()}
           </TableCell>
         ))}
@@ -18,3 +18,5 @@ export const THead = () => {
     </TableHead>
   );
 };
+
+export default THead;

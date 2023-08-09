@@ -1,21 +1,23 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
-import girlsImage from "./assets/image/girls.jpg";
+import girlsImage from './assets/image/girls.jpg';
 
-import { Section } from "../section/Section";
-import styles from "./GirlsImage.module.scss";
+import Section from '../section/Section';
+import styles from './GirlsImage.module.scss';
 
-export const GirlsImage = () => {
+const GirlsImage = () => {
   return (
     <Section className={styles.container}>
       <Image
         src={girlsImage}
-        alt="girls pump their abs"
+        alt='girls pump their abs'
         className={styles.girlsImg}
       />
     </Section>
   );
 };
+
+export default GirlsImage;

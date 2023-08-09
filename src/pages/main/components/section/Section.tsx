@@ -1,9 +1,9 @@
-import React from "react";
-import { useInView } from "react-intersection-observer";
-import styles from "./Section.module.scss";
-import clsx from "clsx";
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
+import styles from './Section.module.scss';
+import clsx from 'clsx';
 
-export const Section = ({
+const Section = ({
   children,
   className,
   ...rest
@@ -23,3 +23,5 @@ export const Section = ({
     </section>
   );
 };
+
+export default Section;

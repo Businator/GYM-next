@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./Headers.module.scss";
+import styles from './Headers.module.scss';
 import { integral } from "'@/assets/fonts/fonts'";
 
-export const Headers = ({ h2, h3 }: { h2: string; h3: string }) => {
+const Headers = ({ h2, h3 }: { h2: string; h3: string }) => {
   return (
     <div className={styles.headers}>
       <h2 className={integral.className}>{h2}</h2>
@@ -11,3 +11,5 @@ export const Headers = ({ h2, h3 }: { h2: string; h3: string }) => {
     </div>
   );
 };
+
+export default Headers;

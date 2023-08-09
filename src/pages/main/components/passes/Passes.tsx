@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import clsx from "clsx";
-import { PassesSwitch } from "./components/PassesSwitch/PassesSwitch";
-import { MySwiper } from "'@/components/MySwiper/MySwiper'";
-import { Cards, cardsType } from "./components/Cards/Cards";
-import stylesForButtons from "./assets/styles/SwiperButtons.module.scss";
-import styles from "./Passes.module.scss";
+import React, { useState } from 'react';
+import clsx from 'clsx';
+import PassesSwitch from './components/PassesSwitch/PassesSwitch';
+import MySwiper from "'@/components/MySwiper/MySwiper'";
+import Cards, { cardsType } from './components/Cards/Cards';
+import stylesForButtons from './assets/styles/SwiperButtons.module.scss';
+import styles from './Passes.module.scss';
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
-import { Section } from "../section/Section";
+import Section from '../section/Section';
 import { useWidth } from "'@/hooks/useWidth'";
 
 type passesContentType = {
@@ -19,14 +19,14 @@ type passesContentType = {
   button: string;
 };
 
-export const Passes = () => {
+const Passes = () => {
   const [isYearly, setIsYearly] = useState(false);
   const font = useFontForLanguage();
   const isMobileWidth = useWidth();
 
   const passesContent = useLanguage({
-    resourse: "main",
-    translationName: "main.passes",
+    resourse: 'main',
+    translationName: 'main.passes',
   }) as passesContentType;
 
   return (
@@ -56,3 +56,5 @@ export const Passes = () => {
     </Section>
   );
 };
+
+export default Passes;

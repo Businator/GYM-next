@@ -1,8 +1,8 @@
-import React from "react";
-import { BiDumbbell } from "react-icons/bi";
-import styles from "./AppLoading.module.scss";
+import React from 'react';
+import { BiDumbbell } from 'react-icons/bi';
+import styles from './AppLoading.module.scss';
 
-export const AppLoading = () => {
+const AppLoading = () => {
   return (
     <div className={styles.container}>
       <div>
@@ -12,3 +12,5 @@ export const AppLoading = () => {
     </div>
   );
 };
+
+export default AppLoading;

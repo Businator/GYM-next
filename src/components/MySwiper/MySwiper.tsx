@@ -1,13 +1,13 @@
-"use client";
-import React, { ReactNode } from "react";
-import { Swiper } from "swiper/react";
-import { Pagination, SwiperOptions } from "swiper";
-import "swiper/scss";
-import "swiper/scss/pagination";
-import "swiper/css/effect-cards";
+'use client';
+import React, { ReactNode } from 'react';
+import { Swiper } from 'swiper/react';
+import { Pagination, SwiperOptions } from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/pagination';
+import 'swiper/css/effect-cards';
 
-import styles from "./MySwiper.module.scss";
-import { SwiperButtons } from "../SwiperButtons/SwiperButtons";
+import styles from './MySwiper.module.scss';
+import { SwiperButtons } from '../SwiperButtons/SwiperButtons';
 
 interface MySwiperProps extends SwiperOptions {
   children: ReactNode;
@@ -16,7 +16,7 @@ interface MySwiperProps extends SwiperOptions {
   stylesForButtons?: string;
 }
 
-export const MySwiper: React.FC<MySwiperProps> = ({
+const MySwiper: React.FC<MySwiperProps> = ({
   children,
   useButtons,
   stylesForButtons,
@@ -34,7 +34,9 @@ export const MySwiper: React.FC<MySwiperProps> = ({
       }}
     >
       {children}
-      {useButtons ? <SwiperButtons className={stylesForButtons} /> : ""}
+      {useButtons ? <SwiperButtons className={stylesForButtons} /> : ''}
     </Swiper>
   );
 };
+
+export default MySwiper;

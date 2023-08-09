@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import { SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import { MySwiper } from "'@/components/MySwiper/MySwiper'";
-import { coachesList } from "./mocks/coahesList";
-import stylesForButtom from "./assets/styles/SwiperButtons.module.scss";
+import React from 'react';
+import Image from 'next/image';
+import { SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import MySwiper from "'@/components/MySwiper/MySwiper'";
+import { coachesList } from './mocks/coahesList';
+import stylesForButtom from './assets/styles/SwiperButtons.module.scss';
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
-import clsx from "clsx";
+import clsx from 'clsx';
 import { useTheme } from "'@/hooks/useTheme'";
-import styles from "./Coaches.module.scss";
-import { Section } from "../section/Section";
+import styles from './Coaches.module.scss';
+import Section from '../section/Section';
 import { useWidth } from "'@/hooks/useWidth'";
 
 type coachesContentType = {
@@ -20,14 +20,14 @@ type coachesContentType = {
   description: string;
 };
 
-export const Coaches = () => {
+const Coaches = () => {
   const theme = useTheme();
   const font = useFontForLanguage();
   const isMobileWidth = useWidth();
 
   const coachesContent = useLanguage({
-    resourse: "main",
-    translationName: "main.coaches",
+    resourse: 'main',
+    translationName: 'main.coaches',
   }) as coachesContentType;
 
   return (
@@ -46,7 +46,7 @@ export const Coaches = () => {
             return (
               <SwiperSlide
                 key={coach.id}
-                className={clsx(styles.card, theme === "light" && styles.light)}
+                className={clsx(styles.card, theme === 'light' && styles.light)}
               >
                 <Image src={coach.img} alt={coach.name} />
                 <div>
@@ -61,3 +61,5 @@ export const Coaches = () => {
     </Section>
   );
 };
+
+export default Coaches;

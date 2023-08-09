@@ -1,14 +1,14 @@
 'use client';
 
 import React from 'react';
-import { NewsSwiper } from './components/NewsSwiper/NewsSwiper';
+import NewsSwiper from './components/NewsSwiper/NewsSwiper';
 
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 import clsx from 'clsx';
 import styles from './News.module.scss';
 import { useTheme } from "'@/hooks/useTheme'";
-import { Section } from '../section/Section';
+import Section from '../section/Section';
 
 type newsContentType = {
   header: string;
@@ -16,7 +16,7 @@ type newsContentType = {
   button: string;
 };
 
-export const News = () => {
+const News = () => {
   const newsContent = useLanguage({
     resourse: 'main',
     translationName: 'main.news',
@@ -35,3 +35,5 @@ export const News = () => {
     </Section>
   );
 };
+
+export default News;

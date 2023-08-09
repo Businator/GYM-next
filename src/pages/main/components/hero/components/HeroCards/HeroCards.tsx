@@ -1,12 +1,12 @@
-import React from "react";
-import { SwiperSlide } from "swiper/react";
+import React from 'react';
+import { SwiperSlide } from 'swiper/react';
 
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
-import clsx from "clsx";
+import clsx from 'clsx';
 import { useTheme } from "'@/hooks/useTheme'";
-import styles from "./HeroCards.module.scss";
+import styles from './HeroCards.module.scss';
 
-export const HeroCards = ({
+const HeroCards = ({
   headers,
   description,
 }: {
@@ -17,12 +17,12 @@ export const HeroCards = ({
   const font = useFontForLanguage();
 
   const addLineBreak = (text: string) => {
-    const words = text.split(" ");
+    const words = text.split(' ');
     if (words.length > 2) {
       return (
         <>
           {words[0]} <br />
-          {words.slice(1).join(" ")}
+          {words.slice(1).join(' ')}
         </>
       );
     }
@@ -35,7 +35,7 @@ export const HeroCards = ({
         return (
           <SwiperSlide
             key={index}
-            className={clsx(styles.card, theme === "light" && styles.light)}
+            className={clsx(styles.card, theme === 'light' && styles.light)}
           >
             <h1 className={font}>{addLineBreak(header.toUpperCase())}</h1>
             <p>{description}</p>
@@ -45,3 +45,5 @@ export const HeroCards = ({
     </>
   );
 };
+
+export default HeroCards;

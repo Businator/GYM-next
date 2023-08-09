@@ -1,11 +1,11 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
-export const theme = createTheme({
+export const themeMUI = createTheme({
   components: {
     MuiSkeleton: {
       styleOverrides: {
         rectangular: {
-          backgroundColor: "gray",
+          backgroundColor: 'gray',
         },
       },
     },

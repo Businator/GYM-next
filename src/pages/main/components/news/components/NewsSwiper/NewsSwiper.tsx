@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { Pagination } from "swiper";
+import { Pagination } from 'swiper';
 
-import { MySwiper } from "'@/components/MySwiper/MySwiper'";
-import { NewsCard } from "../NewsCard/NewsCard";
-import styles from "./NewsSwiper.module.scss";
-import stylesForButtons from "../../assets/styles/SwiperButtons.module.scss";
+import MySwiper from "'@/components/MySwiper/MySwiper'";
+import NewsCard from '../NewsCard/NewsCard';
+import styles from './NewsSwiper.module.scss';
+import stylesForButtons from '../../assets/styles/SwiperButtons.module.scss';
 import { useWidth } from "'@/hooks/useWidth'";
 
-export const NewsSwiper = ({ buttonText }: { buttonText: string }) => {
+const NewsSwiper = ({ buttonText }: { buttonText: string }) => {
   const isMobileWidth = useWidth();
 
   return (
@@ -28,3 +28,5 @@ export const NewsSwiper = ({ buttonText }: { buttonText: string }) => {
     </div>
   );
 };
+
+export default NewsSwiper;

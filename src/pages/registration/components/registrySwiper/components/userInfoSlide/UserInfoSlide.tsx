@@ -1,17 +1,17 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { MdVisibilityOff, MdVisibility } from "react-icons/md";
-import { IconButton, InputAdornment } from "@mui/material";
-import { Card } from "../../UI/card/Card";
-import { Headers } from "../../UI/headers/Headers";
+import React, { useCallback, useEffect, useState } from 'react';
+import { MdVisibilityOff, MdVisibility } from 'react-icons/md';
+import { IconButton, InputAdornment } from '@mui/material';
+import Card from '../../UI/card/Card';
+import Headers from '../../UI/headers/Headers';
 import { MyFormControl } from "'@/UI/formControl/MyFormControl'";
 import {
   validateEmail,
   validateName,
   validatePassword,
   validatePasswordRepeat,
-} from "../../../../utils/validators";
+} from '../../../../utils/validators';
 
-export const UserInfoSlide = ({
+const UserInfoSlide = ({
   nameState,
   emailState,
   setDisabledButtonNext,
@@ -66,49 +66,49 @@ export const UserInfoSlide = ({
   ) => {
     const { text, isValid } = validationFunction(
       event.target.value,
-      objectName === "passwordRepeat" ? password : ""
+      objectName === 'passwordRepeat' ? password : ''
     );
     setErrors((prev) => ({
       ...prev,
       [objectName]: { value: text, isValid: isValid },
     }));
-    if (dispatch) isValid ? dispatch(event.target.value) : dispatch("");
+    if (dispatch) isValid ? dispatch(event.target.value) : dispatch('');
   };
 
   return (
     <Card>
       <Headers
-        h2="Tell us about yourself!"
-        h3="You can always change this later"
+        h2='Tell us about yourself!'
+        h3='You can always change this later'
       />
       <MyFormControl
         inputProps={{
-          type: "text",
-          placeholder: "Your name",
+          type: 'text',
+          placeholder: 'Your name',
           onChange: (event) =>
-            inputHandler(event, "name", validateName, nameState),
+            inputHandler(event, 'name', validateName, nameState),
         }}
         text={errors.name.value}
         isValid={errors.name.isValid}
       />
       <MyFormControl
         inputProps={{
-          type: "email",
-          placeholder: "user@email.com",
+          type: 'email',
+          placeholder: 'user@email.com',
           onBlur: (event) =>
-            inputHandler(event, "email", validateEmail, emailState),
+            inputHandler(event, 'email', validateEmail, emailState),
         }}
         text={errors.email.value}
         isValid={errors.email.isValid}
       />
       <MyFormControl
         inputProps={{
-          type: isVisiblePassword ? "text" : "password",
-          placeholder: "Set your password",
+          type: isVisiblePassword ? 'text' : 'password',
+          placeholder: 'Set your password',
           onBlur: (event) =>
-            inputHandler(event, "password", validatePassword, setPassword),
+            inputHandler(event, 'password', validatePassword, setPassword),
           endAdornment: (
-            <InputAdornment position="end">
+            <InputAdornment position='end'>
               <IconButton onClick={() => showPassword(setIsVisiblePassword)}>
                 {isVisiblePassword ? <MdVisibilityOff /> : <MdVisibility />}
               </IconButton>
@@ -120,12 +120,12 @@ export const UserInfoSlide = ({
       />
       <MyFormControl
         inputProps={{
-          type: isVisiblePasswordRepeat ? "text" : "password",
-          placeholder: "Confirm your password",
+          type: isVisiblePasswordRepeat ? 'text' : 'password',
+          placeholder: 'Confirm your password',
           onChange: (event) =>
-            inputHandler(event, "passwordRepeat", validatePasswordRepeat),
+            inputHandler(event, 'passwordRepeat', validatePasswordRepeat),
           endAdornment: (
-            <InputAdornment position="end">
+            <InputAdornment position='end'>
               <IconButton
                 onClick={() => showPassword(setIsVisiblePasswordRepeat)}
               >
@@ -144,3 +144,5 @@ export const UserInfoSlide = ({
     </Card>
   );
 };
+
+export default UserInfoSlide;

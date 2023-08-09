@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import aboutImg from "./assets/image/about.jpg";
-import aboutCircOne from "./assets/image/about-circ-1.jpg";
-import aboutCircTwo from "./assets/image/about-circ-2.jpg";
-import styles from "./About.module.scss";
+import React from 'react';
+import Image from 'next/image';
+import aboutImg from './assets/image/about.jpg';
+import aboutCircOne from './assets/image/about-circ-1.jpg';
+import aboutCircTwo from './assets/image/about-circ-2.jpg';
+import styles from './About.module.scss';
 import { Button } from "'@/UI/button/Button'";
 import { useLanguage } from "'@/hooks/useLanguage'";
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
-import { capitalize } from "@mui/material";
-import { Section } from "../section/Section";
+import { capitalize } from '@mui/material';
+import Section from '../section/Section';
 
 type aboutContentType = {
   header: string;
@@ -21,17 +21,17 @@ type aboutContentType = {
   }[];
 };
 
-export const About = () => {
+const About = () => {
   const aboutContent = useLanguage({
-    resourse: "main",
-    translationName: "main.about",
+    resourse: 'main',
+    translationName: 'main.about',
   }) as aboutContentType;
   const font = useFontForLanguage();
 
   return (
     <Section>
       <h2 className={font}>{aboutContent.header.toUpperCase()}</h2>
-      <Image src={aboutImg} alt="A man with a dumbbell" />
+      <Image src={aboutImg} alt='A man with a dumbbell' />
       <div className={styles.description}>
         <p>{aboutContent.description}</p>
         <Button>10 YEARS</Button>
@@ -41,14 +41,14 @@ export const About = () => {
           <div className={styles.cirgBg}>
             <Image
               src={aboutCircOne}
-              alt="man training"
+              alt='man training'
               className={styles.circImg}
             />
           </div>
           <div className={styles.cirgBg}>
             <Image
               src={aboutCircTwo}
-              alt="woman training"
+              alt='woman training'
               className={styles.circImg}
             />
           </div>
@@ -67,3 +67,5 @@ export const About = () => {
     </Section>
   );
 };
+
+export default About;

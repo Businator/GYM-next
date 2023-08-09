@@ -1,18 +1,18 @@
-import React from "react";
-import { SwiperSlide } from "swiper/react";
-import { FaQuoteLeft } from "react-icons/fa";
-import Image from "next/image";
-import { capitalize } from "@mui/material";
-import clsx from "clsx";
+import React from 'react';
+import { SwiperSlide } from 'swiper/react';
+import { FaQuoteLeft } from 'react-icons/fa';
+import Image from 'next/image';
+import { capitalize } from '@mui/material';
+import clsx from 'clsx';
 
 import { useFontForLanguage } from "'@/hooks/useFontForLanguage'";
 
-import wick from "../../assets/image/john-wick.jpg";
-import toretto from "../../assets/image/dominic-toretto.jpg";
-import rock from "../../assets/image/the-rock.jpg";
-import scott from "../../assets/image/michael-scott.jpg";
+import wick from '../../assets/image/john-wick.jpg';
+import toretto from '../../assets/image/dominic-toretto.jpg';
+import rock from '../../assets/image/the-rock.jpg';
+import scott from '../../assets/image/michael-scott.jpg';
 
-import styles from "./ReviewsCards.module.scss";
+import styles from './ReviewsCards.module.scss';
 
 export type cardType = {
   user: string;
@@ -20,7 +20,7 @@ export type cardType = {
   review: string;
 };
 
-export const ReviewsCards = (cards: cardType[]) => {
+const ReviewsCards = (cards: cardType[]) => {
   const showImage = (index: number) => {
     switch (index) {
       case 0:
@@ -52,7 +52,7 @@ export const ReviewsCards = (cards: cardType[]) => {
         </div>
 
         <div className={styles.client}>
-          <Image src={showImage(index)} alt={"user foto"} />
+          <Image src={showImage(index)} alt={'user foto'} />
           <div>
             <p className={font}>{capitalize(card.user)}</p>
             <p>{capitalize(card.status)}</p>
@@ -62,3 +62,5 @@ export const ReviewsCards = (cards: cardType[]) => {
     );
   });
 };
+
+export default ReviewsCards;

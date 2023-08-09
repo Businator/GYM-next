@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useSwiper } from "swiper/react";
+import React, { useEffect, useState } from 'react';
+import { useSwiper } from 'swiper/react';
 
-import { BiRightArrow } from "react-icons/bi";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { BiRightArrow } from 'react-icons/bi';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 
 import { Button } from "'@/UI/button/Button'";
-import clsx from "clsx";
-import styles from "./RegistrySwiperButton.module.scss";
+import clsx from 'clsx';
+import styles from './RegistrySwiperButton.module.scss';
 
-export const RegistrySwiperButton = ({
+const RegistrySwiperButton = ({
   isDisabledButtonState,
 }: {
   isDisabledButtonState: [
@@ -44,35 +44,25 @@ export const RegistrySwiperButton = ({
       )}
     >
       <button
-        type="button"
-        className={clsx(styles.buttonLeft, swiper.isBeginning && "hidden")}
+        type='button'
+        className={clsx(styles.buttonLeft, swiper.isBeginning && 'hidden')}
         onClick={handlerClickPrev}
         disabled={isDisabledPrev}
       >
         <BsFillArrowLeftCircleFill />
       </button>
 
-      {/* {swiper.isEnd ? (
-        <Button type="button" onClick={handlerClickNext}>
-          SUBMIT
-          <BiRightArrow />
-        </Button>
-      ) : (
-        <Button type="button" onClick={handlerClickNext} disabled={isNextSlide}>
-          NEXT
-          <BiRightArrow />
-        </Button>
-      )} */}
-
       <Button
-        type={swiper.isEnd ? "submit" : "button"}
+        type={swiper.isEnd ? 'submit' : 'button'}
         className={styles.buttonRight}
         onClick={swiper.isEnd ? () => {} : handlerClickNext}
         disabled={isNextSlide}
       >
-        {swiper.isEnd ? "SUBMIT" : "NEXT"}
+        {swiper.isEnd ? 'SUBMIT' : 'NEXT'}
         <BiRightArrow />
       </Button>
     </div>
   );
 };
+
+export default RegistrySwiperButton;

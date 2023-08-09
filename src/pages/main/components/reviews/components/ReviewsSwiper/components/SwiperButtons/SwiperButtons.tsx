@@ -1,13 +1,13 @@
-import React from "react";
-import { useSwiper } from "swiper/react";
+import React from 'react';
+import { useSwiper } from 'swiper/react';
 import {
   HiOutlineArrowCircleLeft,
   HiOutlineArrowCircleRight,
-} from "react-icons/hi";
+} from 'react-icons/hi';
 
-import styles from "./SwiperButtons.module.scss";
+import styles from './SwiperButtons.module.scss';
 
-export const SwiperButtons = () => {
+const SwiperButtons = () => {
   const swiper = useSwiper();
   return (
     <div className={styles.buttonContainer}>
@@ -20,3 +20,5 @@ export const SwiperButtons = () => {
     </div>
   );
 };
+
+export default SwiperButtons;

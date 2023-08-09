@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { Card } from "../../UI/card/Card";
-import { Headers } from "../../UI/headers/Headers";
-import { validateWeight } from "../../../../utils/validators";
+import Card from '../../UI/card/Card';
+import Headers from '../../UI/headers/Headers';
+import { validateWeight } from '../../../../utils/validators';
 import { MyFormControl } from "'@/UI/formControl/MyFormControl'";
 
-export const WeightSlide = ({
+const WeightSlide = ({
   weightState,
   setDisabledButtonNext,
 }: {
@@ -19,15 +19,15 @@ export const WeightSlide = ({
     isValid: null as null | boolean,
   });
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   const chooseWeight = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     let string = event.target.value;
-    string = string.replace(/[a-zа-яё]/gi, "");
+    string = string.replace(/[a-zа-яё]/gi, '');
     setValue(string);
-    Number(string) < 1 && setValue("1");
+    Number(string) < 1 && setValue('1');
     const { text, isValid } = validateWeight(string);
     setError({ value: text, isValid: isValid });
     setDisabledButtonNext(!isValid);
@@ -36,13 +36,13 @@ export const WeightSlide = ({
 
   return (
     <Card>
-      <Headers h2="What's your weight?" h3="You can always change this later" />
+      <Headers h2="What's your weight?" h3='You can always change this later' />
       <MyFormControl
         inputProps={{
-          type: "text",
+          type: 'text',
           onChange: chooseWeight,
-          placeholder: "Set your weight",
-          endAdornment: "kg",
+          placeholder: 'Set your weight',
+          endAdornment: 'kg',
           value: value,
         }}
         isValid={error.isValid}
@@ -51,3 +51,5 @@ export const WeightSlide = ({
     </Card>
   );
 };
+
+export default WeightSlide;

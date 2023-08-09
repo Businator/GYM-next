@@ -1,41 +1,41 @@
-import React from "react";
-import { Switch, capitalize } from "@mui/material";
-import styles from "./PassesSwitch.module.scss";
-import clsx from "clsx";
+import React from 'react';
+import { Switch, capitalize } from '@mui/material';
+import styles from './PassesSwitch.module.scss';
+import clsx from 'clsx';
 import { useTheme } from "'@/hooks/useTheme'";
 
 const switchStyles = {
   width: 100,
   height: 55,
-  "& .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked": {
-    transform: "translateX(45px)",
+  '& .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked': {
+    transform: 'translateX(45px)',
   },
-  "& .MuiButtonBase-root": {
-    color: "black",
-    top: "6px",
-    left: "6px",
+  '& .MuiButtonBase-root': {
+    color: 'black',
+    top: '6px',
+    left: '6px',
   },
-  "& .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track":
+  '& .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track':
     {
-      backgroundColor: "orange",
-      opacity: "1",
+      backgroundColor: 'orange',
+      opacity: '1',
     },
-  "& .MuiSwitch-track": {
-    backgroundColor: "orange",
-    borderRadius: "15px",
-    opacity: "1",
+  '& .MuiSwitch-track': {
+    backgroundColor: 'orange',
+    borderRadius: '15px',
+    opacity: '1',
   },
-  "& .Mui-checked+.MuiSwitch-track": {
-    backgroundColor: "orange",
+  '& .Mui-checked+.MuiSwitch-track': {
+    backgroundColor: 'orange',
   },
-  "& .MuiSwitch-thumb": {
-    backgroundColor: "black",
-    width: "25px",
-    height: "25px",
+  '& .MuiSwitch-thumb': {
+    backgroundColor: 'black',
+    width: '25px',
+    height: '25px',
   },
 };
 
-export const PassesSwitch = ({
+const PassesSwitch = ({
   switchState,
   switchesText,
 }: {
@@ -55,7 +55,7 @@ export const PassesSwitch = ({
         <span
           className={clsx(
             [!isYearly && styles.active],
-            theme === "light" && styles.light
+            theme === 'light' && styles.light
           )}
         >
           {capitalize(switchesText[0])}
@@ -64,7 +64,7 @@ export const PassesSwitch = ({
         <span
           className={clsx(
             [isYearly && styles.active],
-            theme === "light" && styles.light
+            theme === 'light' && styles.light
           )}
         >
           {capitalize(switchesText[1])}
@@ -74,3 +74,5 @@ export const PassesSwitch = ({
     </div>
   );
 };
+
+export default PassesSwitch;

@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/scss";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/scss';
 
-import { GenderSlide } from "./components/genderSlide/GenderSlide";
-import { AgeSlide } from "./components/ageSlide/AgeSlide";
+import GenderSlide from './components/genderSlide/GenderSlide';
+import AgeSlide from './components/ageSlide/AgeSlide';
 
-import { RegistrySwiperButton } from "./components/registrySwiperButton/RegistrySwiperButton";
-import styles from "./RegistrySwiper.module.scss";
-import { WeightSlide } from "./components/weightSlide/WeightSlide";
-import { HeightSlide } from "./components/heightSlide/HeightSlide";
-import { UserInfoSlide } from "./components/userInfoSlide/UserInfoSlide";
-import { IUser } from "../../interfaces/IUser";
-import { useRouter } from "next/navigation";
+import RegistrySwiperButton from './components/registrySwiperButton/RegistrySwiperButton';
+import styles from './RegistrySwiper.module.scss';
+import WeightSlide from './components/weightSlide/WeightSlide';
+import HeightSlide from './components/heightSlide/HeightSlide';
+import UserInfoSlide from './components/userInfoSlide/UserInfoSlide';
+import { IUser } from '../../interfaces/IUser';
+import { useRouter } from 'next/navigation';
 
-export const RegistrySwiper = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [gender, setGender] = useState("");
-  const [age, setAge] = useState("");
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
+const RegistrySwiper = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [gender, setGender] = useState('');
+  const [age, setAge] = useState('');
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
 
   const [disabledButtonNext, setDisabledButtonNext] = useState(true);
 
@@ -69,8 +69,8 @@ export const RegistrySwiper = () => {
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    localStorage.setItem("user", JSON.stringify(userInfo));
-    router.replace("/app");
+    localStorage.setItem('user', JSON.stringify(userInfo));
+    router.replace('/app');
   };
 
   return (
@@ -94,3 +94,5 @@ export const RegistrySwiper = () => {
     </form>
   );
 };
+
+export default RegistrySwiper;

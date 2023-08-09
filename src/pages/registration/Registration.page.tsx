@@ -1,10 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import styles from "./Registration.module.scss";
-import { RegistrySwiper } from "./components/registrySwiper/RegistrySwiper";
+import styles from './Registration.module.scss';
+import RegistrySwiper from './components/registrySwiper/RegistrySwiper';
 
-export const RegistrationPage = () => {
+const RegistrationPage = () => {
   return <RegistrySwiper />;
 };
+
+export default RegistrationPage;
