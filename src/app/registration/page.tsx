@@ -1,5 +1,5 @@
 import React from 'react';
-import RegistrationPage from "'@/pages/registration/Registration.page'";
+import RegistrationPage from "'@/page/registration/Registration.page'";
 
 export default function Registration() {
   return <RegistrationPage />;

@@ -8,8 +8,8 @@ import enHeader from '../UI/header/assets/locales/en/translation.json';
 import ruHeader from '../UI/header/assets/locales/ru/translation.json';
 import enFooter from '../UI/footer/assets/locales/en/translation.json';
 import ruFooter from '../UI/footer/assets/locales/ru/translation.json';
-import enMain from '../pages/main/assets/locales/en/translation.json';
-import ruMain from '../pages/main/assets/locales/ru/translation.json';
+import enMain from '../page/main/assets/locales/en/translation.json';
+import ruMain from '../page/main/assets/locales/ru/translation.json';
 
 i18next
   .use(initReactI18next)
